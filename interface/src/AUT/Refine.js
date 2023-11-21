@@ -48,17 +48,20 @@ const Refine = () => {
         return () => clearInterval(timer);
     }, [time]);
 
-    // const model = new OpenAI({
-    //     temperature: 0, // determine how stochastic we want it to be, 0 for experimentation
-    //     azureOpenAIApiKey: "ec79f9fb01954ecbaf4f727ff65ede2f",
-    //     azureOpenAIApiVersion: "gpt-35-turbo-16k",
-    //     azureOpenAIApiInstanceName: "quickta-playground",
-    //     azureOpenAIApiDeploymentName: "GPT3_16k",
-    //   });
+    const model = new OpenAI({
+        temperature: 0, // determine how stochastic we want it to be, 0 for experimentation
+        azureOpenAIApiKey: "ec79f9fb01954ecbaf4f727ff65ede2f",
+        azureOpenAIApiVersion: "gpt-35-turbo-16k",
+        azureOpenAIApiInstanceName: "quickta-playground",
+        azureOpenAIApiDeploymentName: "GPT3_16k",
+      });
 
-    // const res = await model.call(
-    //     "Give feedback on how feasible {item} would be at being an alternative use to a {prompt} "
-    // );
+    async function refine(userIdeas) {
+        const feedback = await model.call (
+            `Give feedback on how feasible ${userIdeas.toString()} would be at being an alternative use to a box`
+        );
+        alert(feedback);
+    }
 
     return (
         <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
