@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { prompts } from "./Prompts";
-import { OpenAI } from "langchain/llms/openai";
+import { OpenAIChat } from "langchain/llms/openai";
 
 let nextId = 0;
 
@@ -48,10 +48,10 @@ const Refine = () => {
         return () => clearInterval(timer);
     }, [time]);
 
-    const model = new OpenAI({
+    const model = new OpenAIChat({
         temperature: 0, // determine how stochastic we want it to be, 0 for experimentation
         azureOpenAIApiKey: "ec79f9fb01954ecbaf4f727ff65ede2f",
-        azureOpenAIApiVersion: "gpt-35-turbo-16k",
+        azureOpenAIApiVersion: "2023-07-01-preview",
         azureOpenAIApiInstanceName: "quickta-playground",
         azureOpenAIApiDeploymentName: "GPT3_16k",
       });
