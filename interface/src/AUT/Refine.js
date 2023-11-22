@@ -56,9 +56,9 @@ const Refine = () => {
         azureOpenAIApiDeploymentName: "GPT3_16k",
       });
 
-    async function refine(userIdeas) {
+    async function refine() {
         const feedback = await model.call (
-            `Give feedback on how feasible ${userIdeas.toString()} would be at being an alternative use to a box`
+            `Give feedback on how feasible ${ideas[0].name} would be at being an alternative use to a cardboard box`
         );
         alert(feedback);
     }
@@ -161,13 +161,15 @@ const Refine = () => {
             <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full p-6">
                 <div className="flex flex-row space-x-2 items-center justify-between mt-8">
                     <h2 className="text-2xl text-center">Generative AI</h2>
-                    <button className="outline outline-offset-2 outline-3 rounded-md font-bold text-xl px-2 hover:bg-orange-600">REFINE</button>
+                    <button onClick={refine}
+                    className="outline outline-offset-2 outline-3 rounded-md font-bold text-xl px-2 hover:bg-orange-600">REFINE</button>
                 </div>
                 <text className="text-lg mt-2">
                     Click refine to have Chat-GPT process them
                 </text>
-                <div className="h-5/6 w-full bg-orange-600 rounded-b-[60px] rounded-lg mt-4">
-
+                <div className="h-5/6 text-xs w-full bg-orange-600 rounded-b-[60px] rounded-lg mt-4 p-2">
+                For the following objects, come up with alternative uses that are different from it's typical intended use.
+The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
                 </div>
             </div>
         </div>
