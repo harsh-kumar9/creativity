@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { prompts } from "./Prompts";
 
 let nextId = 0;
+let promptId = 0;
 
 const Absent = () => {
   const [input, setInput] = useState(""); // store currently inputted idea in input form
@@ -29,7 +30,8 @@ const Absent = () => {
     setEditingText("");
   }
 
-  const [time, setTime] = useState(300);
+  // timer countdown in seconds
+  const [time, setTime] = useState(2);
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -44,6 +46,30 @@ const Absent = () => {
     // Cleanup the interval on component unmount or when time reaches 0
     return () => clearInterval(timer);
   }, [time]);
+
+  // useEffect(() => {
+  //   while (prompId < Object.keys(prompts).length) {
+  //     if (time === 0) {
+  //       prompId += 1;
+  //       // reset states and timer
+  //       setTime(10);
+  //       setInput("");
+  //       setIdeas([]);
+  //     }
+  //   }
+  //   return;
+  // }, [time])
+  
+  useEffect(() => {
+    if (time === 0) {
+      promptId += 1;
+      // reset states and timer
+      setTime(2);
+      setInput("");
+      setIdeas([]);
+    }
+    if (promptId >= Object.keys(prompts).length) { setTime(0); }
+  }, [time])
 
   return (
     <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-14 bg-amber-400">
@@ -62,10 +88,11 @@ const Absent = () => {
                 <div className="w-full rounded-[60px] bg-orange-500 flex justify-center items-center p-8">
                 <img
                     className="object-contain rounded-[60px]"
-                    src={prompts["Cardboard Box"]}
+                    src={prompts[Object.keys(prompts)[promptId]]}
+                    alt={Object.keys(prompts)[promptId]}
                 />
                 </div>
-                <h1 className="mt-4 text-center">{Object.keys(prompts)[0]}</h1>
+                <h1 className="mt-4 text-center">{Object.keys(prompts)[promptId]}</h1>
             </div>
 
           <div className="w-1/2 h-full flex flex-col space-y-4">
