@@ -1,0 +1,29 @@
+#game-area {
+    position: relative;
+    background-color: #bd2c07;
+    width: 600px;
+    height: 500px;
+    border: 2px solid #b97b06;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px #abbfc0;
+  }
+
+#snake {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    background-color: #dcaa04;
+    border: 1px solid white;
+    z-index: 2;
+  }
+  
+#food {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 1;
+  }
