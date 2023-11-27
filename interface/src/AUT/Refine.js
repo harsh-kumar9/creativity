@@ -4,6 +4,7 @@ import { prompts } from "./Prompts";
 import { OpenAIChat } from "langchain/llms/openai";
 
 let nextId = 0;
+let promptId = 0;
 
 const Refine = () => {
     
@@ -15,9 +16,15 @@ const Refine = () => {
     const [feedback, setFeedback] = useState("");
 
     const handleSubmit = (e) => { // e is short for event
-        e.preventDefault(); // prevents page from refreshing upon clicking submit
-        setIdeas([...ideas, { id: nextId++, name: input }]);
-        setInput(''); // clears the input form
+        if (!calling) {
+            e.preventDefault(); // prevents page from refreshing upon clicking submit
+            setIdeas([...ideas, { id: nextId++, name: input }]);
+            setInput(''); // clears the input form
+        } else {
+            e.preventDefault(); // prevents page from refreshing upon clicking submit
+            alert("Processing Feedback for inputted idea");
+        }
+        
     }
 
     function editIdea(id) {
@@ -34,7 +41,8 @@ const Refine = () => {
         setEditingText("");
     }
 
-    const [time, setTime] = useState(300);
+    // timer countdown in seconds
+    const [time, setTime] = useState(20);
 
     useEffect(() => {
         let timer = setInterval(() => {
@@ -50,6 +58,18 @@ const Refine = () => {
         return () => clearInterval(timer);
     }, [time]);
 
+    useEffect(() => {
+        if (time === 0) {
+          promptId += 1;
+          // reset states and timer
+          setTime(30);
+          setInput("");
+          setIdeas([]);
+          setFeedback("");
+        }
+        if (promptId >= Object.keys(prompts).length) { setTime(0); }
+      }, [time])
+
     const model = new OpenAIChat({
         temperature: 0, // determine how stochastic we want it to be, 0 for experimentation
         azureOpenAIApiKey: "ec79f9fb01954ecbaf4f727ff65ede2f",
@@ -62,7 +82,7 @@ const Refine = () => {
         setCalling(true);
         console.log("calling refine");
         const feedback = await model.call (
-            `Give feedback on how feasible ${ideas[ideas.length-1].name} would be at being an alternative use to a cardboard box`
+            `Give feedback on how feasible ${ideas[ideas.length-1].name} would be at being an alternative use to a ${Object.keys(prompts)[promptId]}`
         );
         // let feedback = ideas[ideas.length-1].name;
         setFeedback(feedback);
@@ -88,14 +108,15 @@ const Refine = () => {
                 <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4 mt-4">
                     <img
                         className="object-contain rounded-[60px]"
-                        src={prompts["Cardboard Box"]}
+                        src={prompts[Object.keys(prompts)[promptId]]}
+                        alt={Object.keys(prompts)[promptId]}
                     />
                 </div>
-                <h1 className="mt-8 text-center text-2xl">{Object.keys(prompts)[0]}</h1>
+                <h1 className="mt-8 text-center text-2xl">{Object.keys(prompts)[promptId]}</h1>
             </div>
 
             <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">
-                    <form onSubmit={handleSubmit} className="w-full">
+                    <form onSubmit={handleSubmit} className={`w-full ${calling ? 'pointer-events-none' : 'pointer-events-auto'}`}>
                         <div className="flex flex-row justify-between items-center mt-8 mb-4 px-3">
                             <h2 className="text-2xl text-center">Enter Alternative Uses below</h2>
                             <p className="w-fit bg-orange-400 rounded-lg text-xl p-1">
@@ -111,7 +132,7 @@ const Refine = () => {
                                 onChange={(e) => setInput(e.target.value)}
                             />
                             <input type="submit" value="SUBMIT" 
-                            className={`outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500`}/>
+                            className={`outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500 ${calling ? 'pointer-events-none' : 'pointer-events-auto'}`}/>
                         </div>
                     </form>
 
@@ -174,11 +195,11 @@ const Refine = () => {
             <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full p-6">
                 <div className="flex flex-row space-x-2 items-center justify-between mt-8">
                     <h2 className="text-2xl text-center">Generative AI</h2>
-                    <button onClick={refine}
-                    className="outline outline-offset-2 outline-3 rounded-md font-bold text-xl px-2 hover:bg-orange-600">REFINE</button>
+                    {/* <button onClick={refine}
+                    className="outline outline-offset-2 outline-3 rounded-md font-bold text-xl px-2 hover:bg-orange-600">REFINE</button> */}
                 </div>
                 <text className="text-lg mt-2">
-                    Click refine to have Chat-GPT process them
+                    Chat-GPT's Feedback
                 </text>
                 <div className="h-5/6 text-xs w-full bg-orange-600 rounded-b-[60px] rounded-lg mt-4 p-2">
                     {feedback}

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { prompts } from "./Prompts";
 
 let nextId = 0;
+let promptId = 0;
 
 const Generate = () => {
     const [input, setInput] = useState(""); // store currently inputted idea in input form
@@ -30,7 +31,8 @@ const Generate = () => {
         setEditingText("");
     }
 
-    const [time, setTime] = useState(300);
+    // timer countdown in seconds
+    const [time, setTime] = useState(5);
 
     useEffect(() => {
         let timer = setInterval(() => {
@@ -46,6 +48,17 @@ const Generate = () => {
         return () => clearInterval(timer);
     }, [time]);
 
+    useEffect(() => {
+        if (time === 0) {
+          promptId += 1;
+          // reset states and timer
+          setTime(2);
+          setInput("");
+          setIdeas([]);
+        }
+        if (promptId >= Object.keys(prompts).length) { setTime(0); }
+      }, [time])
+
     return (
         <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
             <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
@@ -58,11 +71,11 @@ const Generate = () => {
                     </text>
                     <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4 mt-4">
                         <img
-                            className="object-contain rounded-[60px]"
-                            src={prompts["Cardboard Box"]}
+                            src={prompts[Object.keys(prompts)[promptId]]}
+                            alt={Object.keys(prompts)[promptId]}
                         />
                     </div>
-                    <h1 className="mt-8 text-center text-2xl">{Object.keys(prompts)[0]}</h1>
+                    <h1 className="mt-8 text-center text-2xl">{Object.keys(prompts)[promptId]}</h1>
                 </div>
 
                 <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">
