@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useSyncExternalStore } from "react";
 import { prompts } from "./Prompts";
 
 let nextId = 0;
@@ -28,6 +28,14 @@ const Absent = () => {
     // reset editing hooks
     setIdeaEditing(null);
     setEditingText("");
+  }
+
+    // Fisher-Yates shuffle algorithm
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
 
   // timer countdown in seconds

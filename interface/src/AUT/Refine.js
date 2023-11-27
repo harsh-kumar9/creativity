@@ -11,6 +11,8 @@ const Refine = () => {
     const [ideas, setIdeas] = useState([]); // previously entered ideas
     const [ideaEditing, setIdeaEditing] = useState(null); // id of idea we are editing
     const [editingText, setEditingText] = useState("");
+    const [calling, setCalling] = useState(false);
+    const [feedback, setFeedback] = useState("");
 
     const handleSubmit = (e) => { // e is short for event
         e.preventDefault(); // prevents page from refreshing upon clicking submit
@@ -57,11 +59,21 @@ const Refine = () => {
       });
 
     async function refine() {
+        setCalling(true);
+        console.log("calling refine");
         const feedback = await model.call (
-            `Give feedback on how feasible ${ideas[0].name} would be at being an alternative use to a cardboard box`
+            `Give feedback on how feasible ${ideas[ideas.length-1].name} would be at being an alternative use to a cardboard box`
         );
-        alert(feedback);
+        // let feedback = ideas[ideas.length-1].name;
+        setFeedback(feedback);
+        setCalling(false);
     }
+
+    useEffect(() => {
+        if (ideas.length > 0) { // using === compares object identity instead of contents
+            refine();
+        }
+    }, [ideas])
 
     return (
         <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
@@ -95,10 +107,11 @@ const Refine = () => {
                             <input 
                                 type="text" 
                                 value={input}
-                                className="w-2/3 p-1 text-lg"
+                                className={`w-2/3 p-1 text-lg  ${calling ? 'pointer-events-none' : 'pointer-events-auto'}`}
                                 onChange={(e) => setInput(e.target.value)}
                             />
-                            <input type="submit" value="SUBMIT" className="outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500"/>
+                            <input type="submit" value="SUBMIT" 
+                            className={`outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500`}/>
                         </div>
                     </form>
 
@@ -168,8 +181,7 @@ const Refine = () => {
                     Click refine to have Chat-GPT process them
                 </text>
                 <div className="h-5/6 text-xs w-full bg-orange-600 rounded-b-[60px] rounded-lg mt-4 p-2">
-                For the following objects, come up with alternative uses that are different from it's typical intended use.
-The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
+                    {feedback}
                 </div>
             </div>
         </div>
