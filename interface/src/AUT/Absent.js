@@ -39,7 +39,7 @@ const Absent = () => {
   }
 
   // timer countdown in seconds
-  const [time, setTime] = useState(2);
+  const [time, setTime] = useState(10);
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -72,7 +72,7 @@ const Absent = () => {
     if (time === 0) {
       promptId += 1;
       // reset states and timer
-      setTime(2);
+      setTime(10);
       setInput("");
       setIdeas([]);
     }

@@ -118,7 +118,7 @@ const Refine = () => {
             <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">
                     <form onSubmit={handleSubmit} className={`w-full ${calling ? 'pointer-events-none' : 'pointer-events-auto'}`}>
                         <div className="flex flex-row justify-between items-center mt-8 mb-4 px-3">
-                            <h2 className="text-2xl text-center">Enter Alternative Uses below</h2>
+                            <h2 className="text-lg 2xl:text-2xl text-center">Enter Alternative Uses below</h2>
                             <p className="w-fit bg-orange-400 rounded-lg text-xl p-1">
                             Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
                             {`${time % 60}`.padStart(2, 0)}
