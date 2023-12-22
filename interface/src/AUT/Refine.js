@@ -15,11 +15,30 @@ const Refine = () => {
     const [calling, setCalling] = useState(false);
     const [feedback, setFeedback] = useState("");
 
+    const model = new OpenAIChat({
+        temperature: 0, // determine how stochastic we want it to be, 0 for experimentation
+        azureOpenAIApiKey: "ec79f9fb01954ecbaf4f727ff65ede2f",
+        azureOpenAIApiVersion: "2023-07-01-preview",
+        azureOpenAIApiInstanceName: "quickta-playground",
+        azureOpenAIApiDeploymentName: "GPT3_16k",
+      });
+
+    async function refine(use) {
+        setCalling(true);
+        console.log("calling refine");
+        const feedback = await model.call (
+            `Give feedback on how feasible ${use} would be at being an alternative use to a ${Object.keys(prompts)[promptId]}`
+        );
+        setFeedback(feedback);
+        setCalling(false);
+    }
+
     const handleSubmit = (e) => { // e is short for event
         if (!calling) {
             e.preventDefault(); // prevents page from refreshing upon clicking submit
             setIdeas([...ideas, { id: nextId++, name: input }]);
             setInput(''); // clears the input form
+            refine(input);
         } else {
             e.preventDefault(); // prevents page from refreshing upon clicking submit
             alert("Processing Feedback for inputted idea");
@@ -39,10 +58,11 @@ const Refine = () => {
         // reset editing hooks
         setIdeaEditing(null);
         setEditingText("");
+        refine(ideas[id].name);
     }
 
     // timer countdown in seconds
-    const [time, setTime] = useState(20);
+    const [time, setTime] = useState(120);
 
     useEffect(() => {
         let timer = setInterval(() => {
@@ -70,41 +90,16 @@ const Refine = () => {
         if (promptId >= Object.keys(prompts).length) { setTime(0); }
       }, [time])
 
-    const model = new OpenAIChat({
-        temperature: 0, // determine how stochastic we want it to be, 0 for experimentation
-        azureOpenAIApiKey: "ec79f9fb01954ecbaf4f727ff65ede2f",
-        azureOpenAIApiVersion: "2023-07-01-preview",
-        azureOpenAIApiInstanceName: "quickta-playground",
-        azureOpenAIApiDeploymentName: "GPT3_16k",
-      });
-
-    async function refine() {
-        setCalling(true);
-        console.log("calling refine");
-        const feedback = await model.call (
-            `Give feedback on how feasible ${ideas[ideas.length-1].name} would be at being an alternative use to a ${Object.keys(prompts)[promptId]}`
-        );
-        // let feedback = ideas[ideas.length-1].name;
-        setFeedback(feedback);
-        setCalling(false);
-    }
-
-    useEffect(() => {
-        if (ideas.length > 0) { // using === compares object identity instead of contents
-            refine();
-        }
-    }, [ideas])
-
     return (
         <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
         <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
             <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left p-8">
-                <text className="text-lg ml-4 mb-4">
+                <div className="text-lg ml-4 mb-4">
                     For the following objects, come up with alternative uses that are different from it's typical intended use.
-                </text>
-                <text className="text-lg mb-4 ml-4">
+                </div>
+                <div className="text-lg mb-4 ml-4">
                     The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
-                </text>
+                </div>
                 <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4 mt-4">
                     <img
                         className="object-contain rounded-[60px]"
@@ -128,7 +123,8 @@ const Refine = () => {
                             <input 
                                 type="text" 
                                 value={input}
-                                className={`w-2/3 p-1 text-lg  ${calling ? 'pointer-events-none' : 'pointer-events-auto'}`}
+                                className={`w-2/3 p-1 text-lg  ${calling ? 'bg-slate-600' : ''}`}
+                                disabled={calling ? true : false}
                                 onChange={(e) => setInput(e.target.value)}
                             />
                             <input type="submit" value="SUBMIT" 
@@ -145,7 +141,7 @@ const Refine = () => {
                             >
                             <div className="flex flex-row w-full justify-between items-center justify-center">
                                 
-                                {ideaEditing === idea.id ? 
+                                {(ideaEditing === idea.id) ? 
                                 (
                                 <form onSubmit={() => editIdea(idea.id)} className="flex flex-row">
                                 <input
@@ -164,6 +160,7 @@ const Refine = () => {
 
                                 <div className="flex justify-center">
                                 <button 
+                                    disabled={calling ? true : false}
                                     onClick={() => {
                                     setIdeaEditing(idea.id)
                                     setEditingText(idea.name)
