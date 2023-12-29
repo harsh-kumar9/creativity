@@ -14,3 +14,11 @@ export const prompts = {
     "Pencil": pencil,
     "Candle": candle,
 };
+
+export const promptsArray = [
+    ["Cardboard Box", cardboardbox],
+    ["Flashlight", flashlight],
+    ["Wooden Ruler", woodenruler],
+    ["Rope", rope],
+    ["Pencil", pencil]
+]
