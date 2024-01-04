@@ -1,32 +1,20 @@
-  import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { DataContext } from "./App";
 import { useNavigate } from 'react-router-dom';
 import "./Controls.css";
 
 const Controls = () => {
 
   const navigate = useNavigate();
-    
-  // const handleAbsentClick = () => {
-  //   // Redirect to the "/absent" route
-  //   navigate('/absent')
-  // };
-
-  // const handleGenerateClick = () => {
-  //   // Redirect to the "/generate" route
-  //   navigate('/generate')
-  // };
-
-  // const handleRefineClick = () => {
-  //   // Redirect to the "/refine" route
-  //   navigate('/refine')
-  // };
 
   const experimentTypes = ["absent", "generate", "refine"]
+
+  const {data, addData} = useContext(DataContext);
 
   useEffect(() => {
     const randomType = experimentTypes[Math.floor(Math.random() * 3)];
     navigate(`/${randomType}`);
-    console.log(randomType);
+    addData(randomType);
   }, [])
 
   return (

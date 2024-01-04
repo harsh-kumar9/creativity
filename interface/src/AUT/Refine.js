@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { DataContext } from "../App";
 import { prompts, promptsArray } from "./Prompts";
 import { useNavigate } from 'react-router-dom';
 import ReactTyped from "react-typed";
@@ -22,6 +23,10 @@ const Refine = () => {
 
     const [promptCopy, setPromptCopy] = useState([...promptsArray]);
     const [shuffled, setShuffled] = useState(false);
+
+    const {data, addData} = useContext(DataContext);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
     // Shuffle the array using the Fisher-Yates shuffle algorithm
@@ -110,14 +115,20 @@ const Refine = () => {
     }, [time]);
 
     useEffect(() => {
-        if (time === 0) {
+      if (time === 0) {
+        if (promptId === 5) {
+          addData({
+            "Response": ideas
+          })
+          navigate('/feedback')
+        } else {
           promptId += 1;
           // reset states and timer
           setTime(5);
           setInput("");
           setIdeas([]);
-          setFeedback("");
         }
+      }
         if (promptId >= Object.keys(promptCopy).length) {
              setTime(0); 
             }

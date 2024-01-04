@@ -1,6 +1,14 @@
 import React from "react";
+import { useEffect, useContext } from "react";
+import { DataContext } from "../App";
 
 const Feedback = () => {
+
+    const {data, addData} = useContext(DataContext);
+
+    useEffect(() => {
+        console.log(data);
+    }, [])
 
     return (
         <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold bg-amber-400 p-14"> 
