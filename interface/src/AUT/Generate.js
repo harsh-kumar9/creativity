@@ -83,12 +83,15 @@ const Generate = () => {
 
     useEffect(() => {
       if (time === 0) {
-        if (promptId === 5) {
+        if (!(promptId === 4)) {
           addData({
-            "Response": ideas
+            "Prompt": promptCopy[promptId][0],
+            "Response": ideas,
+            "Time": 5
           })
-          navigate('/feedback')
-        } else {
+        }
+        if (promptId === 5) {navigate('/feedback')} 
+        else {
           promptId += 1;
           // reset states and timer
           setTime(5);
@@ -98,6 +101,24 @@ const Generate = () => {
       }
         if (promptId >= Object.keys(promptCopy).length) { setTime(0); }
       }, [time])
+
+      const nextItem = () => {
+        if (!(promptId === 4)) {
+          addData({
+            "Prompt": promptCopy[promptId][0],
+            "Response": ideas,
+            "Time": (5 - time)
+          })
+        }
+        if (promptId === 5) {navigate('/feedback')} 
+        else {
+          promptId += 1;
+          // reset states and timer
+          setTime(5);
+          setInput("");
+          setIdeas([]);
+        }
+      }
 
     return (
         ( (!(promptId === 4)) ?
@@ -115,7 +136,7 @@ const Generate = () => {
         </div>
         
         <div className="flex flex-row w-full justify-evenly">
-            <div className="w-1/3 flex flex-col justify-center">
+            <div className="w-1/3 flex flex-col justify-center items-center">
                 <div className="w-full rounded-[60px] bg-orange-500 flex justify-center items-center p-8">
                   {
                     (shuffled) ?
@@ -133,17 +154,19 @@ const Generate = () => {
                       :
                       <p></p>
                 }
+                <button className="outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
             </div>
 
           <div className="w-1/2 h-full flex flex-col space-y-4">
 
-            <p className="w-fit bg-orange-500 rounded-lg p-2 text-2xl">
-              Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
-              {`${time % 60}`.padStart(2, 0)}
-            </p>
-
             <form onSubmit={handleSubmit}>
-                <h2 className="mb-4 text-3xl">Enter Alternative Uses below</h2>
+                <div className="flex flex-row justify-between">
+                  <h2 className="mb-4 text-3xl">Enter Alternative Uses below</h2>
+                  <p className="w-fit bg-orange-500 rounded-lg p-2 text-2xl mb-4">
+                    Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
+                    {`${time % 60}`.padStart(2, 0)}
+                  </p>
+                </div>
                 <div className="flex flex-row justify-between space-x-4">
                   <input 
                     type="text" 
@@ -217,7 +240,7 @@ const Generate = () => {
             :
             (<div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
             <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
-                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left p-10">
+                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left items-center p-10">
                     <text className="text-lg ml-4 mb-4">
                         For the following objects, come up with alternative uses that are different from it's typical intended use.
                     </text>
@@ -241,6 +264,7 @@ const Generate = () => {
                         :
                         <p></p>
                     }
+                    <button className="outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
                 </div>
 
                 <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">
