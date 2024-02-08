@@ -6,15 +6,6 @@ import rope from '../assets/rope.png';
 import pencil from "../assets/pencil.png";
 import candle from "../assets/candle.png";
 
-export const prompts = {
-    "Cardboard Box": cardboardbox,
-    "Flashlight": flashlight,
-    "Wooden Ruler": woodenruler,
-    "Rope": rope,
-    "Pencil": pencil,
-    "Candle": candle,
-};
-
 export const promptsArray = [
     ["Cardboard Box", cardboardbox],
     ["Flashlight", flashlight],

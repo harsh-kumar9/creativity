@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { DataContext } from "../App";
 import { useNavigate } from 'react-router-dom';
-import { prompts, promptsArray } from "./Prompts";
+import { promptsArray } from "./Prompts";
 import Game from "../Game/Game";
 
 let nextId = 0;
@@ -65,7 +65,7 @@ const Generate = () => {
     }
 
     // timer countdown in seconds
-    const [time, setTime] = useState(5);
+    const [time, setTime] = useState(900);
 
     useEffect(() => {
         let timer = setInterval(() => {
@@ -128,7 +128,7 @@ const Generate = () => {
       <div className="flex flex-col h-full w-full items-center justify-center bg-amber-500 rounded-[60px]">
         <div className="text-2xl">
           For the following objects, come up with alternative uses that are
-          different from it's typical intended use.
+          different from its typical intended use.
         </div>
         <div className="text-2xl mb-8">
           The ideas don't have to be practical/realistic, so long as they strike
@@ -240,14 +240,14 @@ const Generate = () => {
             :
             (<div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
             <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
-                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left items-center p-10">
+                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left items-center p-8">
                     <text className="text-lg ml-4 mb-4">
                         For the following objects, come up with alternative uses that are different from it's typical intended use.
                     </text>
                     <text className="text-lg mb-4 ml-4">
                         The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
                     </text>
-                    <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4 mt-4">
+                    <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4">
                         {
                         (shuffled) ?
                             <img
@@ -260,11 +260,15 @@ const Generate = () => {
                     </div>
                     {
                     (shuffled) ?
-                    <h1 className="mt-8 text-center text-2xl">{promptCopy[promptId][0]}</h1>
+                    
+                    <h1 className="mt-8 flex justify-between text-center text-2xl space-x-4">
+                      <span className="whitespace-nowrap">{promptCopy[promptId][0]}</span>
+                      <button className="outline outline-offset-2 outline-2 rounded-md w-4/5 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+                    </h1>
                         :
                         <p></p>
                     }
-                    <button className="outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+                  
                 </div>
 
                 <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { DataContext } from "../App";
-import { prompts, promptsArray } from "./Prompts";
+import { promptsArray } from "./Prompts";
 import { useNavigate } from 'react-router-dom';
 import ReactTyped from "react-typed";
 import { OpenAIChat } from "langchain/llms/openai";
@@ -275,31 +275,34 @@ const Refine = () => {
             :
             (<div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
             <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
-                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full text-left p-8">
-                    <div className="text-lg ml-4 mb-4">
+                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left items-center p-8">
+                    <text className="text-lg ml-4 mb-4">
                         For the following objects, come up with alternative uses that are different from it's typical intended use.
-                    </div>
-                    <div className="text-lg mb-4 ml-4">
+                    </text>
+                    <text className="text-lg mb-4 ml-4">
                         The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
-                    </div>
-                    <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4 mt-4">
+                    </text>
+                    <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4">
                         {
-                            (shuffled) ?
-                                <img
-                                className="object-contain rounded-[60px]"
-                                src={promptCopy[promptId][1]}
-                                alt={promptCopy[promptId][0]}/>
-                                :
-                                <p></p>
+                        (shuffled) ?
+                            <img
+                            className="object-contain rounded-[60px]"
+                            src={promptCopy[promptId][1]}
+                            alt={promptCopy[promptId][0]}/>
+                            :
+                            <p></p>
                         }
                     </div>
                     {
-                        (shuffled) ?
-                        <h1 className="mt-8 text-center text-2xl">{promptCopy[promptId][0]}</h1>
+                    (shuffled) ?
+                    
+                    <h1 className="mt-8 flex justify-between text-center text-2xl space-x-4">
+                      <span className="whitespace-nowrap">{promptCopy[promptId][0]}</span>
+                      <button className="outline outline-offset-2 outline-2 rounded-md w-4/5 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+                    </h1>
                             :
                             <p></p>
                     }
-                    <button className="outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
                 </div>
 
                 <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">
