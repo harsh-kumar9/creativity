@@ -393,7 +393,7 @@ const Refine = () => {
                     </div>
                     {/* pre line css property ensures same formatting is maintained */}
                     <div className="h-5/6 text-xs w-full bg-orange-600 rounded-b-[60px] rounded-lg mt-4 p-2 whitespace-pre-line" >
-                        <ReactTyped key={feedback} strings={[feedback]} typeSpeed={1} cursorChar="⬤" showCursor={true} />
+                        <ReactTyped key={feedback} strings={[feedback]} typeSpeed={0.1} cursorChar="⬤" showCursor={true} />
                     </div>
                 </div>
             </div>
