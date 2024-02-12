@@ -22,7 +22,7 @@ const Consent = () => {
 
     return (
         <div className="flex flex-col items-center justify-center bg-amber-500 rounded-[60px] px-10">    
-            <h1 className="text-3xl font-bold mb-4">Participation Consent Form</h1>
+            <h1 className="text-3xl font-bold mb-4">University of Toronto Research Project Participation Consent Form</h1>
     
             <div className="consent-form text-lg">
                 <p className="text-main mb-2">Researchers at the <strong>University of Toronto</strong> are studying how people’s usage of <em>Artificial Intelligence</em> impacts their creative thinking abilities. Nowadays, people are often offloading tedious cognitive tasks to various AI tools to boost productivity and save time. Our project investigates the implications this has on human creativity.</p>
