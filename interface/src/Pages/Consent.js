@@ -8,7 +8,7 @@ const Consent = () => {
 
     const handleClick = () => {
         if (checked) {
-            navigate('/controls')
+            navigate('/creativity/controls')
         } else {
             alert("Please give your consent to proceed");
         }
@@ -25,8 +25,8 @@ const Consent = () => {
             <div className="flex flex-col text-center h-full w-full items-center justify-center bg-amber-500 rounded-[60px] px-10">
                 <h1 className="mb-4"> Creativity Research Project Participation Consent Form </h1>
 
-                <h2 className="text-2xl">PRINCIPAL INVESTIGATORS</h2>
-                <div className="text-xl">Harsh Kumar, Jonathan Vincentius</div>
+                <h2 className="text-2xl">PRINCIPAL INVESTIGATOR</h2>
+                <div className="text-xl">Ashton Anderson</div>
 
                 <h2 className="text-2xl">PURPOSE</h2>
                 <div className="text-xl"></div>

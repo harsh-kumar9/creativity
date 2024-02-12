@@ -97,7 +97,7 @@ const Absent = () => {
           "Time": 5
         })
       }
-      if (promptId === 5) {navigate('/feedback')} 
+      if (promptId === 5) {navigate('/creativity/feedback')} 
       else {
         promptId += 1;
         // reset states and timer
@@ -117,7 +117,7 @@ const Absent = () => {
         "Time": (5 - time)
       })
     }
-    if (promptId === 5) {navigate('/feedback')} 
+    if (promptId === 5) {navigate('/creativity/feedback')} 
     else {
       promptId += 1;
       // reset states and timer

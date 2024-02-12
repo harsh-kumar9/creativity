@@ -5,7 +5,7 @@ const Introduction = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate('/consent')
+        navigate('/creativity/consent')
     }
 
     return (
