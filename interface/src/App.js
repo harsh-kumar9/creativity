@@ -11,6 +11,7 @@ import Feedback from "./Pages/Feedback";
 import Game from "./Game/Game";
 
 export const DataContext = createContext();
+export const mTurkContext = createContext();
 
 function App() {
 
@@ -18,6 +19,15 @@ function App() {
 
   const addData = (newData) => {
     setData((prevArray) => [...prevArray, newData]);
+  }
+
+  const [mTurk, setMTurk] = useState({});
+
+  const addMTurk = (key, value) => {
+    setMTurk((prevData) => ({
+      ...prevData,
+      [key]: value 
+    }));
   }
 
   const [acceptedHIT, setAcceptedHIT] = useState(false);
@@ -30,7 +40,11 @@ function App() {
 		const turkSubmitTo = urlParams.get("turkSubmitTo") || "test";  
 		const workerId = urlParams.get("workerId") || "test" + Math.floor(Math.random() * 10000);  
 
-		console.log(assignmentId, hitId, turkSubmitTo, workerId);  
+    addMTurk("assignmentId", assignmentId);
+    addMTurk("hitId", hitId);
+    addMTurk("turkSubmitTo", turkSubmitTo);
+    addMTurk("workerId", workerId);
+
 	  }, []); 
   
     return (
@@ -42,18 +56,20 @@ function App() {
           </div>
         ) : (
           <DataContext.Provider value={{data, addData}}>
-            <Router>
-              <Routes>
-                <Route path="/creativity/" element={<Introduction />} />
-                <Route path="/creativity/consent" element={<Consent />} />
-                <Route path="/creativity/controls" element={<Controls />} />
-                <Route path="/creativity/absent" element={<Absent />} />
-                <Route path="/creativity/generate" element={<Generate />} />
-                <Route path="/creativity/refine" element={<Refine />} />
-                <Route path="/creativity/feedback" element={<Feedback />} />
-                <Route path="/creativity/game" element={<Game />} />
-              </Routes>
-            </Router>
+            <mTurkContext.Provider value={{mTurk, addMTurk}}>
+              <Router>
+                <Routes>
+                  <Route path="/creativity/" element={<Introduction />} />
+                  <Route path="/creativity/consent" element={<Consent />} />
+                  <Route path="/creativity/controls" element={<Controls />} />
+                  <Route path="/creativity/absent" element={<Absent />} />
+                  <Route path="/creativity/generate" element={<Generate />} />
+                  <Route path="/creativity/refine" element={<Refine />} />
+                  <Route path="/creativity/feedback" element={<Feedback />} />
+                  <Route path="/creativity/game" element={<Game />} />
+                </Routes>
+              </Router>
+            </mTurkContext.Provider>
           </DataContext.Provider>
         )}
       </div>

@@ -72,7 +72,7 @@ const Absent = () => {
   }
 
   // timer countdown in seconds
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(180);
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -101,7 +101,12 @@ const Absent = () => {
       else {
         promptId += 1;
         // reset states and timer
-        setTime(5);
+        if (promptId === 4) {
+          setTime(60);
+        } else {
+          setTime(180);
+        }
+
         setInput("");
         setIdeas([]);
       }
@@ -114,14 +119,18 @@ const Absent = () => {
       addData({
         "Prompt": promptCopy[promptId][0],
         "Response": ideas,
-        "Time": (5 - time)
+        "Time": (180 - time)
       })
     }
     if (promptId === 5) {navigate('/creativity/feedback')} 
     else {
       promptId += 1;
       // reset states and timer
-      setTime(5);
+      if (promptId === 4) {
+        setTime(60);
+      } else {
+        setTime(180);
+      }
       setInput("");
       setIdeas([]);
     }

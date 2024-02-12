@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useEffect, useContext } from "react";
 import { DataContext } from "../App";
+import { mTurkContext } from "../App";
 
 const Feedback = () => {
 
     const {data, addData} = useContext(DataContext);
+    const {mTurk, addMTurk} = useContext(mTurkContext);
+
+    // const [date, setDate] = useState(new Date());
 
     const [q1, setQ1] = useState("");
     const [q2, setQ2] = useState("");
@@ -13,7 +17,9 @@ const Feedback = () => {
     const [q5, setQ5] = useState("");
 
     useEffect(() => {
-        console.log(data);
+        addMTurk("data", data);
+        addMTurk("timestamp", new Date().toISOString())
+        console.log(mTurk);
     }, [])
 
     return (
