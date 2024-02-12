@@ -1,5 +1,6 @@
 {
-  "name": "client",
+  "name": "llm-creativity",
+  "homepage": "https://harsh-kumar.com/creativity/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
