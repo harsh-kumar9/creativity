@@ -1,16 +1,25 @@
 {
   "files": {
-    "main.css": "/creativity/static/css/main.8ca91b50.css",
-    "main.js": "/creativity/static/js/main.d340223c.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/creativity/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/cardboardbox.jpg": "/creativity/static/media/cardboardbox.541545bd9e95e447d4ff.jpg",
-    "index.html": "/creativity/index.html",
-    "main.8ca91b50.css.map": "/creativity/static/css/main.8ca91b50.css.map",
-    "main.d340223c.js.map": "/creativity/static/js/main.d340223c.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/creativity/static/js/787.c4e7f8f9.chunk.js.map"
+    "main.css": "/static/css/main.5072b637.css",
+    "main.js": "/static/js/main.33da28e4.js",
+    "static/js/127.92a8fee5.chunk.js": "/static/js/127.92a8fee5.chunk.js",
+    "static/js/795.b3cc913d.chunk.js": "/static/js/795.b3cc913d.chunk.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/rope.png": "/static/media/rope.5108b31a4985f90331c2.png",
+    "static/media/candle.png": "/static/media/candle.c4d84075c12a71b66f7b.png",
+    "static/media/flashlight.jpg": "/static/media/flashlight.f87106da949d6c87ee02.jpg",
+    "static/media/pencil.png": "/static/media/pencil.7240bee856c0e670308a.png",
+    "static/media/woodenruler.jpg": "/static/media/woodenruler.22019034b4da8963e30e.jpg",
+    "static/media/cardboardbox.jpg": "/static/media/cardboardbox.541545bd9e95e447d4ff.jpg",
+    "index.html": "/index.html",
+    "main.5072b637.css.map": "/static/css/main.5072b637.css.map",
+    "main.33da28e4.js.map": "/static/js/main.33da28e4.js.map",
+    "127.92a8fee5.chunk.js.map": "/static/js/127.92a8fee5.chunk.js.map",
+    "795.b3cc913d.chunk.js.map": "/static/js/795.b3cc913d.chunk.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ca91b50.css",
-    "static/js/main.d340223c.js"
+    "static/css/main.5072b637.css",
+    "static/js/main.33da28e4.js"
   ]
 }
