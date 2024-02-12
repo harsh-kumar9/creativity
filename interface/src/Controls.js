@@ -13,7 +13,7 @@ const Controls = () => {
 
   useEffect(() => {
     const randomType = experimentTypes[Math.floor(Math.random() * 3)];
-    navigate(`/${randomType}`);
+    navigate(`/creativity/${randomType}`);
     addData(randomType);
   }, [])
 
