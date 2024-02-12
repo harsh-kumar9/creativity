@@ -25,14 +25,14 @@ function App() {
       <DataContext.Provider value={{data, addData}}>
         <Router>
           <Routes>
-            <Route path="/" element={<Introduction />} />
-            <Route path="/consent" element={<Consent />} />
-            <Route path="/controls" element={<Controls />} />
-            <Route path="/absent" element={<Absent />} />
-            <Route path="/generate" element={<Generate />} />
-            <Route path="/refine" element={<Refine />} />
-            <Route path="/feedback" element={<Feedback />} />
-            <Route path="/game" element={<Game />} />
+            <Route path="/creativity/" element={<Introduction />} />
+            <Route path="/creativity/consent" element={<Consent />} />
+            <Route path="/creativity/controls" element={<Controls />} />
+            <Route path="/creativity/absent" element={<Absent />} />
+            <Route path="/creativity/generate" element={<Generate />} />
+            <Route path="/creativity/refine" element={<Refine />} />
+            <Route path="/creativity/feedback" element={<Feedback />} />
+            <Route path="/creativity/game" element={<Game />} />
           </Routes>
         </Router>
       </DataContext.Provider>
