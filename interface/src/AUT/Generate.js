@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactTyped from "react-typed";
 import { promptsArray } from "./Prompts";
 import { gptAid } from "./Aid";
+import background from "../assets/blur-background.svg";
 import Game from "../Game/Game";
 
 let nextId = 0;
@@ -134,20 +135,21 @@ const Generate = () => {
         ( (!(promptId === 4)) ?
             ( (promptId === 5) ?
             (
-                <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-14 bg-amber-400">
-      <div className="flex flex-col h-full w-full items-center justify-center bg-amber-500 rounded-[60px]">
-        <div className="text-2xl">
+                <div style={{ backgroundImage: `url(${background})` }}
+      className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-14 bg-amber-400 bg-cover">
+      <div className="flex flex-col h-full w-full items-center justify-center bg-transparent outline outline-2 outline-white rounded-[60px] bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
+        <div className="text-white text-2xl">
           For the following objects, come up with alternative uses that are
-          different from its typical intended use.
+          different from it's typical intended use.
         </div>
-        <div className="text-2xl mb-8">
+        <div className="text-white text-2xl  text-center mb-8">
           The ideas don't have to be practical/realistic, so long as they strike
-          people as clever, original, unusual, and innovative.
+          people as clever, original & innovative.
         </div>
         
         <div className="flex flex-row w-full justify-evenly">
-            <div className="w-1/3 flex flex-col justify-center items-center">
-                <div className="w-full rounded-[60px] bg-orange-500 flex justify-center items-center p-8">
+              <div className="w-1/3 flex flex-col justify-center items-center">
+                <div className="w-full rounded-[60px] bg-orange-500 flex justify-center items-center p-8" style={{ backgroundColor: 'rgba(217, 119, 6, 0.9)' }}>
                   {
                     (shuffled) ?
                       <img
@@ -160,19 +162,19 @@ const Generate = () => {
                 </div>
                 {
                   (shuffled) ?
-                      <h1 className="mt-8 text-center text-2xl">{promptCopy[promptId][0]}</h1>
+                      <h1 className="text-white mt-8 text-center text-2xl">{promptCopy[promptId][0]}</h1>
                       :
                       <p></p>
                 }
-                <button className="outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
-            </div>
+                <button className="text-white outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+              </div>
 
           <div className="w-1/2 h-full flex flex-col space-y-4">
 
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row justify-between">
-                  <h2 className="mb-4 text-3xl">Enter Alternative Uses below</h2>
-                  <p className="w-fit bg-orange-500 rounded-lg p-2 text-2xl mb-4">
+                  <h2 className="mb-4 text-white text-3xl">Enter Alternative Uses below</h2>
+                  <p className="w-fit text-white bg-transparent outline outline-2 rounded-lg p-2 text-2xl mb-4">
                     Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
                     {`${time % 60}`.padStart(2, 0)}
                   </p>
@@ -184,12 +186,12 @@ const Generate = () => {
                     className="grow p-2"
                     onChange={(e) => setInput(e.target.value)}
                   />
-                  <input type="submit" value="SUBMIT" className="outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500"/>
+                  <input type="submit" value="SUBMIT" className="outline outline-offset-2 outline-white text-white outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500"/>
                 </div>
             </form>
 
-            <div className="flex flex-col items-center w-full h-96 bg-orange-500 p-3 rounded-lg">
-              <ul className="flex flex-col items-center w-full h-full overflow-hidden overflow-y-auto">
+            <div className="flex flex-col items-center w-full h-96 p-3 rounded-lg text-white outline outline-2 bg-slate-500" style={{ backgroundColor: 'rgba(71, 85, 105, 0.18)' }}>
+              <ul className="flex flex-col items-center w-full h-full overflow-hidden overflow-y-auto ">
                   {ideas.map((idea) => (
                     <li
                       key={idea.id}
@@ -248,15 +250,16 @@ const Generate = () => {
     </div>
             )
             :
-            (<div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-amber-400">
+            (<div  style={{ backgroundImage: `url(${background})` }}
+             className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-8 bg-cover">
             <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
-                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left items-center p-8">
-                    <text className="text-lg ml-4 mb-4">
+                <div className="w-1/3 rounded-[60px] flex flex-col h-full text-left items-center p-8 outline outline-2 outline-white bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
+                    <div className="text-white text-lg ml-4 mb-4">
                         For the following objects, come up with alternative uses that are different from it's typical intended use.
-                    </text>
-                    <text className="text-lg mb-4 ml-4">
+                    </div>
+                    <div className="text-white text-lg mb-4 ml-4">
                         The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
-                    </text>
+                    </div>
                     <div className="w-full rounded-[60px] bg-orange-600 flex justify-center items-center p-4">
                         {
                         (shuffled) ?
@@ -271,7 +274,7 @@ const Generate = () => {
                     {
                     (shuffled) ?
                     
-                    <h1 className="mt-8 flex justify-between text-center text-2xl space-x-4">
+                    <h1 className="mt-8 text-white  flex justify-between text-center text-2xl space-x-4">
                       <span className="whitespace-nowrap">{promptCopy[promptId][0]}</span>
                       <button className="outline outline-offset-2 outline-2 rounded-md w-4/5 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
                     </h1>
@@ -281,12 +284,12 @@ const Generate = () => {
                   
                 </div>
 
-                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4">
+                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col items-center h-full px-4  outline outline-2 outline-white bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
                     
                     <form onSubmit={handleSubmit} className="w-full">
                         <div className="flex flex-row justify-between items-center mt-8 mb-4 px-3">
-                            <h2 className="text-lg 2xl:text-2xl text-center">Enter Alternative Uses below</h2>
-                            <p className="w-fit bg-orange-400 rounded-lg text-xl p-1">
+                            <h2 className="text-white text-lg 2xl:text-2xl text-center">Enter Alternative Uses below</h2>
+                            <p className="text-white w-fit  outline outline-1  rounded-lg text-xl p-1">
                             Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
                             {`${time % 60}`.padStart(2, 0)}
                             </p>
@@ -299,11 +302,11 @@ const Generate = () => {
                                 className="w-2/3 p-1 text-lg"
                                 onChange={(e) => setInput(e.target.value)}
                             />
-                            <input type="submit" value="SUBMIT" className="outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500"/>
+                            <input type="submit" value="SUBMIT" className="text-white outline outline-offset-2 outline-2 rounded-md font-bold text-xl px-2 hover:bg-orange-500"/>
                         </div>
                     </form>
 
-                    <div className="h-3/4 w-full rounded-b-[60px] bg-orange-600 mt-6 rounded-lg p-4 grid place-items-start">
+                    <div className="h-3/4 w-full rounded-b-[60px] bg-orange-600 mt-6 rounded-lg p-4 grid place-items-start bg-slate-500" style={{ backgroundColor: 'rgba(71, 85, 105, 0.18)' }}>
                     <ul className="flex flex-col items-center w-full h-full overflow-hidden overflow-y-auto">
                         {ideas.map((idea) => (
                             <li
@@ -359,12 +362,12 @@ const Generate = () => {
                     
                 </div>
 
-                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full p-6">
-                    <h2 className="mb-4 text-2xl text-center mt-4">Generative AI Ideas</h2>
-                    <text className="text-lg mb-4 ml-4">
+                <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full p-6 outline outline-2 outline-white bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }} >
+                    <h2 className="text-white mb-4 text-2xl text-center mt-4">Generative AI Ideas</h2>
+                    <text className="text-white  text-lg mb-4 ml-4">
                         Alternative uses generated by GPT-4
                     </text>
-                    <div className="h-5/6 text-xs w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto">
+                    <div className="text-white h-5/6 text-xs w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"  style={{ backgroundColor: 'rgba(71, 85, 105, 0.18)' }}>
                       <ReactTyped key={gptAid[promptCopy[promptId][0]]} strings={[gptAid[promptCopy[promptId][0]]]} typeSpeed={0.1} cursorChar="⬤" showCursor={true} startDelay={5000}/>
                     </div>
                 </div>

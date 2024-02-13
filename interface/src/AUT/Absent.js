@@ -178,7 +178,7 @@ const Absent = () => {
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-row justify-between">
                   <h2 className="mb-4 text-white text-3xl">Enter Alternative Uses below</h2>
-                  <p className="w-fit text-white bg-transparent outline outline-2 rounded-lg p-2 text-2xl mb-4">
+                  <p className="w-fit text-white bg-transparent outline outline-1 rounded-lg p-2 text-2xl mb-4">
                     Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
                     {`${time % 60}`.padStart(2, 0)}
                   </p>
