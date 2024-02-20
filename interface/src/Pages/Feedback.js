@@ -28,7 +28,7 @@ const Feedback = () => {
                 <h1 className="mb-4"> Creativity Research Project Feedback Form</h1>
                 <h2 className="text-xl">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
 
-                <h2 className="text-2xl">Question 1</h2>
+                <h2 className="text-2xl">How difficult did you find the object in the Test round</h2>
                 <form className="text-lg space-x-4">
                     <label>
                         <input 
@@ -38,7 +38,7 @@ const Feedback = () => {
                             checked={q1 === "option1"}
                             onChange={(e) => setQ1(e.target.value)} 
                         />
-                        Option 1
+                        Very easy
                     </label>
                     <label>
                         <input 
@@ -48,7 +48,7 @@ const Feedback = () => {
                             checked={q1 === "option2"}
                             onChange={(e) => setQ1(e.target.value)} 
                         />
-                        Option 2
+                        Somewhat easy
                     </label>
                     <label>
                         <input 
@@ -58,11 +58,21 @@ const Feedback = () => {
                             checked={q1 === "option3"}
                             onChange={(e) => setQ1(e.target.value)} 
                         />
-                        Option 3
+                        Somewhat difficult
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="q1"
+                            value="option3"
+                            checked={q1 === "option3"}
+                            onChange={(e) => setQ1(e.target.value)} 
+                        />
+                        Very difficult
                     </label>
                 </form>
                 
-                <h2 className="text-2xl">Question 2</h2>
+                <h2 className="text-2xl">Artificial intelligence computer programs are designed to learn tasks that humans typically do. Would you say the increased use of artificial intelligence computer programs in daily life makes you feel...</h2>
                 <form className="text-lg space-x-4">
                     <label>
                         <input 
@@ -72,7 +82,7 @@ const Feedback = () => {
                             checked={q2 === "option1"}
                             onChange={(e) => setQ2(e.target.value)} 
                         />
-                        Option 1
+                        More concerned than excited
                     </label>
                     <label>
                         <input 
@@ -82,7 +92,7 @@ const Feedback = () => {
                             checked={q2 === "option2"}
                             onChange={(e) => setQ2(e.target.value)} 
                         />
-                        Option 2
+                        More excited than concerned
                     </label>
                     <label>
                         <input 
@@ -92,11 +102,11 @@ const Feedback = () => {
                             checked={q2 === "option3"}
                             onChange={(e) => setQ2(e.target.value)} 
                         />
-                        Option 3
+                        Equally excited and concerned
                     </label>
                 </form>
 
-                <h2 className="text-2xl">Question 3</h2>
+                <h2 className="text-2xl">How helpful was AI in helping you with the task?</h2>
                 <form className="text-lg space-x-4">
                     <label>
                         <input 
@@ -106,7 +116,7 @@ const Feedback = () => {
                             checked={q3 === "option1"}
                             onChange={(e) => setQ3(e.target.value)} 
                         />
-                        Option 1
+                        Not helpful at all
                     </label>
                     <label>
                         <input 
@@ -116,7 +126,7 @@ const Feedback = () => {
                             checked={q3 === "option2"}
                             onChange={(e) => setQ3(e.target.value)} 
                         />
-                        Option 2
+                        Somewhat helpful
                     </label>
                     <label>
                         <input 
@@ -126,11 +136,11 @@ const Feedback = () => {
                             checked={q3 === "option3"}
                             onChange={(e) => setQ3(e.target.value)} 
                         />
-                        Option 3
+                        Very helpful
                     </label>
                 </form>
 
-                <h2 className="text-2xl">Question 4</h2>
+                <h2 className="text-2xl">How else would the AI have been helpful?</h2>
                 <input 
                     type="text" 
                     value={q4}
@@ -138,7 +148,7 @@ const Feedback = () => {
                     onChange={(e) => setQ4(e.target.value)}
                   />
 
-                <h2 className="text-2xl">Question 5</h2>
+                <h2 className="text-2xl">How do you use ChatGPT on a day-to-day basis?</h2>
                 <input 
                     type="text" 
                     value={q5}

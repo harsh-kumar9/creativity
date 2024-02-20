@@ -143,7 +143,7 @@ const Absent = () => {
       className="h-screen w-screen items-center justify-center flex text-3xl font-semibold space-y-8 p-14 bg-amber-400 bg-cover">
       <div className="flex flex-col h-full w-full items-center justify-center bg-transparent outline outline-2 outline-white rounded-[60px] bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
         <div className="text-white text-2xl">
-          For the following objects, come up with alternative uses that are
+          For the following object, come up with alternative uses that are
           different from it's typical intended use.
         </div>
         <div className="text-white text-2xl  text-center mb-8">
