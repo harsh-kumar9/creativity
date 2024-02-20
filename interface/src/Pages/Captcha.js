@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Introduction.css';
+import './Captcha.css';
 
 
 const Introduction = () => {

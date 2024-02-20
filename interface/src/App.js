@@ -5,7 +5,8 @@ import Controls from './Controls';
 import Absent from './AUT/Absent';
 import Generate from './AUT/Generate';
 import Refine from './AUT/Refine';
-import Introduction from "./Pages/Introduction";
+import Introduction from "./Pages/Captcha";
+import Captcha from "./Pages/Captcha";
 import Consent from "./Pages/Consent";
 import Feedback from "./Pages/Feedback";
 import Game from "./Game/Game";
@@ -59,7 +60,7 @@ function App() {
             <mTurkContext.Provider value={{mTurk, addMTurk}}>
               <Router>
                 <Routes>
-                  <Route path="/creativity/" element={<Introduction />} />
+                  <Route path="/creativity/" element={<Captcha />} />
                   <Route path="/creativity/consent" element={<Consent />} />
                   <Route path="/creativity/controls" element={<Controls />} />
                   <Route path="/creativity/absent" element={<Absent />} />
