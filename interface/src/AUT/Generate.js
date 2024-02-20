@@ -68,7 +68,7 @@ const Generate = () => {
     }
 
     // timer countdown in seconds
-    const [time, setTime] = useState(180);
+    const [time, setTime] = useState(60);
 
     useEffect(() => {
         let timer = setInterval(() => {
@@ -100,7 +100,7 @@ const Generate = () => {
           if (promptId === 4) {
             setTime(60);
           } else {
-            setTime(180);
+            setTime(60);
           }
           setInput("");
           setIdeas([]);
@@ -114,7 +114,7 @@ const Generate = () => {
           addData({
             "Prompt": promptCopy[promptId][0],
             "Response": ideas,
-            "Time": (180 - time)
+            "Time": (60 - time)
           })
         }
         if (promptId === 5) {navigate('/creativity/feedback')} 
@@ -124,7 +124,7 @@ const Generate = () => {
           if (promptId === 4) {
             setTime(60);
           } else {
-            setTime(180);
+            setTime(60);
           }
           setInput("");
           setIdeas([]);
@@ -166,7 +166,7 @@ const Generate = () => {
                       :
                       <p></p>
                 }
-                <button className="text-white outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+                {/* <button className="text-white outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button> */}
               </div>
 
           <div className="w-1/2 h-full flex flex-col space-y-4">
@@ -276,7 +276,7 @@ const Generate = () => {
                     
                     <h1 className="mt-8 text-white  flex justify-between text-center text-2xl space-x-4">
                       <span className="whitespace-nowrap">{promptCopy[promptId][0]}</span>
-                      <button className="outline outline-offset-2 outline-2 rounded-md w-4/5 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+                      {/* <button className="outline outline-offset-2 outline-2 rounded-md w-4/5 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button> */}
                     </h1>
                         :
                         <p></p>

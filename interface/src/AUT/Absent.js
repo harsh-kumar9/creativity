@@ -73,7 +73,7 @@ const Absent = () => {
   }
 
   // timer countdown in seconds
-  const [time, setTime] = useState(180);
+  const [time, setTime] = useState(60);
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -105,7 +105,7 @@ const Absent = () => {
         if (promptId === 4) {
           setTime(60);
         } else {
-          setTime(180);
+          setTime(60);
         }
 
         setInput("");
@@ -120,7 +120,7 @@ const Absent = () => {
       addData({
         "Prompt": promptCopy[promptId][0],
         "Response": ideas,
-        "Time": (180 - time)
+        "Time": (60 - time)
       })
     }
     if (promptId === 5) {navigate('/creativity/feedback')} 
@@ -130,7 +130,7 @@ const Absent = () => {
       if (promptId === 4) {
         setTime(60);
       } else {
-        setTime(180);
+        setTime(60);
       }
       setInput("");
       setIdeas([]);
@@ -170,7 +170,7 @@ const Absent = () => {
                       :
                       <p></p>
                 }
-                <button className="text-white outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button>
+                {/* <button className="text-white outline outline-offset-2 outline-2 rounded-md w-1/3 mt-4 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button> */}
               </div>
 
           <div className="w-1/2 h-full flex flex-col space-y-4">
