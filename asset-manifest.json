@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/creativity/static/css/main.6e853a1b.css",
-    "main.js": "/creativity/static/js/main.67e66ac2.js",
+    "main.css": "/creativity/static/css/main.9c10b290.css",
+    "main.js": "/creativity/static/js/main.eee0dc39.js",
     "static/js/127.ee1c244f.chunk.js": "/creativity/static/js/127.ee1c244f.chunk.js",
     "static/js/795.b953f243.chunk.js": "/creativity/static/js/795.b953f243.chunk.js",
     "static/js/787.ee2b75c0.chunk.js": "/creativity/static/js/787.ee2b75c0.chunk.js",
@@ -13,14 +13,14 @@
     "static/media/cardboardbox.jpg": "/creativity/static/media/cardboardbox.541545bd9e95e447d4ff.jpg",
     "index.html": "/creativity/index.html",
     "static/media/blur-background.svg": "/creativity/static/media/blur-background.793407f819514a1a28864591914e67e4.svg",
-    "main.6e853a1b.css.map": "/creativity/static/css/main.6e853a1b.css.map",
-    "main.67e66ac2.js.map": "/creativity/static/js/main.67e66ac2.js.map",
+    "main.9c10b290.css.map": "/creativity/static/css/main.9c10b290.css.map",
+    "main.eee0dc39.js.map": "/creativity/static/js/main.eee0dc39.js.map",
     "127.ee1c244f.chunk.js.map": "/creativity/static/js/127.ee1c244f.chunk.js.map",
     "795.b953f243.chunk.js.map": "/creativity/static/js/795.b953f243.chunk.js.map",
     "787.ee2b75c0.chunk.js.map": "/creativity/static/js/787.ee2b75c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e853a1b.css",
-    "static/js/main.67e66ac2.js"
+    "static/css/main.9c10b290.css",
+    "static/js/main.eee0dc39.js"
   ]
 }
