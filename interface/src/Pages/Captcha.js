@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import background from "../assets/blur-background.svg";
 import './Captcha.css';
 
 
@@ -64,8 +65,8 @@ const Introduction = () => {
     }, [captchaMessage]);  
 
     return (
-    <div className="h-screen w-screen items-center justify-center flex text-3xl font-semibold bg-amber-400 p-14"> 
-        <div className="flex flex-col h-full w-full items-center justify-center bg-amber-500 rounded-[60px] px-32">
+    <div style={{ backgroundImage: `url(${background})` }} className="text-white h-screen w-screen items-center justify-center flex text-3xl font-semibold p-14 bg-cover"> 
+        <div className="flex flex-col h-full w-full items-center justify-center outline outline-2 outline-white rounded-[60px] px-32 bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
         <div className="custom-captcha">  
         <h2>Input the code that appears in the box below:</h2>  
         <canvas ref={canvasRef} height="75" width="100" />  
@@ -73,10 +74,12 @@ const Introduction = () => {
             <input  
             type="text"  
             value={inputCaptcha}  
+            className="text-black"
             onChange={(e) => setInputCaptcha(e.target.value)}  
             />  
         </div>  
-        <button onClick={handleSubmit}>Submit</button>
+        <input type="submit" value="SUBMIT" onClick={handleSubmit}
+        className="outline outline-offset-2 outline-white text-white outline-2 rounded-md mt-4 font-bold text-2xl px-2 py-2 hover:bg-orange-500"/>
         </div>  
         </div>
     </div>

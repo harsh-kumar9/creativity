@@ -4,8 +4,12 @@ import { useState, createContext, useEffect } from 'react';
 import Controls from './Controls';
 import Absent from './AUT/Absent';
 import Generate from './AUT/Generate';
+import Coach from './AUT/Coach';
 import Refine from './AUT/Refine';
 import Introduction from "./Pages/Captcha";
+import InstructAbsent from './Pages/InstructAbsent';
+import InstructGenerate from './Pages/InstructGenerate';
+import InstructCoach from './Pages/InstructCoach';
 import Captcha from "./Pages/Captcha";
 import Consent from "./Pages/Consent";
 import Feedback from "./Pages/Feedback";
@@ -61,10 +65,14 @@ function App() {
               <Router>
                 <Routes>
                   <Route path="/creativity/" element={<Captcha />} />
+                  <Route path="/creativity/instructabsent" element={<InstructAbsent />} />
+                  <Route path="/creativity/instructgenerate" element={<InstructGenerate />} />
+                  <Route path="/creativity/instructcoach" element={<InstructCoach />} />
                   <Route path="/creativity/consent" element={<Consent />} />
                   <Route path="/creativity/controls" element={<Controls />} />
                   <Route path="/creativity/absent" element={<Absent />} />
                   <Route path="/creativity/generate" element={<Generate />} />
+                  <Route path="/creativity/coach" element={<Coach />} />
                   <Route path="/creativity/refine" element={<Refine />} />
                   <Route path="/creativity/feedback" element={<Feedback />} />
                   <Route path="/creativity/game" element={<Game />} />

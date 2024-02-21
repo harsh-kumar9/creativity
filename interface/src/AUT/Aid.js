@@ -20,26 +20,6 @@ export const gptAid = {
     9. Insulated Cooler: Line with aluminum foil and padding for a makeshift cooler for picnics.
 
     10. Temporary Shelf: Stack and secure them for a customizable, recyclable shelving unit.
-
-    11. Portable Puppet Theatre: Cut out a window and use it as a stage for puppet shows.
-
-    12. Boot Tray: Flatten and use as a tray to place under wet or muddy shoes.
-
-    13. Mini-Golf Obstacle: Create a tunnel or ramp for a homemade mini-golf course.
-
-    14. Costume Material: Cut and shape into armor, animal shapes, or robots for costumes.
-
-    15. Car Trunk Organizer: Use it to keep groceries and items from sliding around in the trunk.
-
-    16. Bike Pannier: Rig it to a bike rack for a cheap, spacious alternative to a traditional pannier.
-
-    17. Portable Lap Desk: Flatten and cover with fabric for a simple lap desk.
-
-    18. Vision Board: Pin or glue images and quotes for a visualization of goals and dreams.
-
-    19. Movie Projector Screen: Stretch white paper or fabric across it to create a surface for projecting movies.
-
-    20. Footstool: Reinforce with duct tape and cover with fabric for a makeshift footrest.
     `,
     "Flashlight":
     `
@@ -84,16 +64,6 @@ export const gptAid = {
     9. Makeshift Spirit Level: By balancing a marble or another small spherical object on the ruler, it can be used to find a roughly horizontal surface.
 
     10. Impromptu Defense Tool: In a whimsical take on self-defense, a sturdy ruler can be humorously suggested as a mock sword for dueling with office mates or siblings.
-
-    11. DIY Rain Gauge: Stand it upright in the garden to measure rainfall by marking the water level on the ruler after a rainstorm.
-
-    12. Cooking Utensil: The edge of the ruler can be used to score dough or level off dry ingredients when measuring for recipes.
-
-    13. Wrist Rest: When placed in front of a keyboard, the ruler can act as a wrist rest to maintain a neutral position while typing.
-
-    14. Kitchen Cabinet Organizer: Placed vertically, it can help separate cutting boards or trays within a cabinet.
-
-    15. Morse Code Practice Tool: Tapping the end of the ruler on a surface could be a way to practice or teach Morse code.
     `,
     "Rope":
     `
@@ -139,4 +109,12 @@ export const gptAid = {
     
     10. Measurement Marker: Make small notches in a pencil to mark measurements for quick, on-the-go needs without a ruler.
     `
+}
+
+export const gptCoach = {
+    "Cardboard Box": ``,
+    "Flashlight": ``,
+    "Wooden Ruler": ``,
+    "Rope": ``,
+    "Pencil": ``
 }

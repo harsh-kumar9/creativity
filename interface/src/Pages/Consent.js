@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-// import { useState } from "react";
+import background from "../assets/blur-background.svg";
 
 const Consent = () => {
 
@@ -21,7 +21,8 @@ const Consent = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center bg-amber-500 rounded-[60px] px-10">    
+        <div style={{ backgroundImage: `url(${background})` }} className="text-white h-auto w-screen items-center justify-center space-y-8 p-14 bg-cover">
+            <div className="flex flex-col items-center justify-center outline outline-2 outline-white rounded-[60px] px-10 py-8 bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>    
             <h1 className="text-3xl font-bold mb-4">University of Toronto Research Project Participation Consent Form</h1>
     
             <div className="consent-form text-lg">
@@ -52,6 +53,7 @@ const Consent = () => {
                 {`  `}I agree to this consent form*
             </label>
             <button onClick={handleClick} className="mt-3 text-2xl outline outline-offset-2 outline-2 rounded-md font-semibold px-4 py-1 hover:bg-orange-600">SUBMIT</button>
+            </div>
         </div>
     );
     

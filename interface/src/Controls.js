@@ -7,13 +7,13 @@ const Controls = () => {
 
   const navigate = useNavigate();
 
-  const experimentTypes = ["absent", "generate"]
+  const experimentTypes = ["absent", "generate", "coach"]
 
   const {data, addData} = useContext(DataContext);
 
   useEffect(() => {
-    const randomType = experimentTypes[Math.floor(Math.random() * 2)];
-    navigate(`/creativity/${randomType}`);
+    const randomType = experimentTypes[Math.floor(Math.random() * 3)];
+    navigate(`/creativity/instruct${randomType}`);
     addData(randomType);
   }, [])
 

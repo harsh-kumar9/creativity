@@ -22,19 +22,7 @@
   .custom-captcha input {  
     padding: 5px;  
     margin-bottom: 10px;
-    /* min-width: 100%;  */
-    color: black;
   }  
     
-  .custom-captcha button {  
-    background-color: #FBBF24; 
-    color: black;   
-    padding: 10px 20px;  
-    border: none;  
-    cursor: pointer;  
-  }  
-    
-  .custom-captcha button:hover {  
-    background-color: rgb(122, 74, 20);  
-  }  
+
   
