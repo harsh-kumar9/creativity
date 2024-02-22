@@ -50,7 +50,7 @@ const Absent = () => {
 
   const handleSubmit = (e) => { // e is short for event
       e.preventDefault(); // prevents page from refreshing upon clicking submit
-      setIdeas([...ideas, { id: nextId++, name: input }]);
+      setIdeas([...ideas, { id: nextId++, name: input, time: new Date().toISOString()}]);
       setInput(''); // clears the input form
   }
 
@@ -58,6 +58,7 @@ const Absent = () => {
     const updatedIdeas = [...ideas].map((idea) => {
       if (idea.id === id) {
         idea.name = editingText;
+        idea.time = new Date().toISOString();
       }
       return idea;
     })
@@ -77,7 +78,7 @@ const Absent = () => {
   }
 
   // timer countdown in seconds
-  const [time, setTime] = useState(60);
+  const [time, setTime] = useState(2);
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -95,18 +96,17 @@ const Absent = () => {
   
   useEffect(() => {
     if (time === 0) {
-      if (!(promptId === 4)) {
+      if (!(promptId === 3)) {
         addData({
           "Prompt": promptCopy[promptId][0],
-          "Response": ideas,
-          "Time": 5
+          "Response": ideas
         })
       }
       if (promptId === 4) {navigate('/creativity/feedback')} 
       else {
         promptId += 1;
         // reset states and timer
-        setTime(60);
+        setTime(2);
 
         setInput("");
         setIdeas([]);

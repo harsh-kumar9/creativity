@@ -10,6 +10,7 @@ import Introduction from "./Pages/Captcha";
 import InstructAbsent from './Pages/InstructAbsent';
 import InstructGenerate from './Pages/InstructGenerate';
 import InstructCoach from './Pages/InstructCoach';
+import Thanks from './Pages/Thanks';
 import Captcha from "./Pages/Captcha";
 import Consent from "./Pages/Consent";
 import Feedback from "./Pages/Feedback";
@@ -68,6 +69,7 @@ function App() {
                   <Route path="/creativity/instructabsent" element={<InstructAbsent />} />
                   <Route path="/creativity/instructgenerate" element={<InstructGenerate />} />
                   <Route path="/creativity/instructcoach" element={<InstructCoach />} />
+                  <Route path="/creativity/thanks" element={<Thanks />} />
                   <Route path="/creativity/consent" element={<Consent />} />
                   <Route path="/creativity/controls" element={<Controls />} />
                   <Route path="/creativity/absent" element={<Absent />} />

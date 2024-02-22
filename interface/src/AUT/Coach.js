@@ -49,7 +49,7 @@ const Coach = () => {
 
     const handleSubmit = (e) => { // e is short for event
         e.preventDefault(); // prevents page from refreshing upon clicking submit
-        setIdeas([...ideas, { id: nextId++, name: input }]);
+        setIdeas([...ideas, { id: nextId++, name: input, time: new Date().toISOString() }]);
         setInput(''); // clears the input form
     }
 
@@ -57,6 +57,7 @@ const Coach = () => {
         const updatedIdeas = [...ideas].map((idea) => {
         if (idea.id === id) {
             idea.name = editingText;
+            idea.time = new Date().toISOString();
         }
         return idea;
         })
@@ -89,8 +90,7 @@ const Coach = () => {
         if (!(promptId === 3)) {
           addData({
             "Prompt": promptCopy[promptId][0],
-            "Response": ideas,
-            "Time": 5
+            "Response": ideas
           })
         }
         if (promptId === 4) {navigate('/creativity/feedback')} 

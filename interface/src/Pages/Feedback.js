@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import { DataContext } from "../App";
 import { mTurkContext } from "../App";
+import { useNavigate } from 'react-router-dom';
 import background from "../assets/blur-background.svg";
 
 const Feedback = () => {
 
+    const navigate = useNavigate();
     const {data, addData} = useContext(DataContext);
     const {mTurk, addMTurk} = useContext(mTurkContext);
 
@@ -17,21 +19,20 @@ const Feedback = () => {
     const [q4, setQ4] = useState("");
     const [q5, setQ5] = useState("");
 
-    useEffect(() => {
-        addMTurk("data", data);
-        addMTurk("timestamp", new Date().toISOString())
-        console.log(mTurk);
-    }, [])
-
-    const handleClick = () => {
+    const handleClick = async () => {
         if (!(q1 === "" || q2 === "" || q3 === "" || q4 === "" || q5 === "")) {
-            console.log(q1);
-            console.log(q2);
-            console.log(q3);
-            console.log(q4);
-            console.log(q5);
+            // Assume addData is asynchronous and returns a promise
+            await addData({
+                "Test Object difficulty": q1,
+                "Use of AI in daily life makes you feel": q2,
+                "How helpful was AI": q3,
+                "How else could AI help": q4,
+                "How do you use ChatGPT daily": q5
+            });
+    
+            navigate('/creativity/thanks');
         }
-    }
+    };
 
     return (
         <div style={{ backgroundImage: `url(${background})` }}

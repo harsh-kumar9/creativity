@@ -151,8 +151,15 @@ const getRandomFood = () => {
     };
   
     gameOver() {
-      alert(`GAME OVER, your score is ${this.state.snakeDots.length - 2}`);
-      this.setState(initialState);
+      
+      // Preserve the current timeRemaining instead of resetting to 60 seconds
+      const currentTimeRemaining = this.state.timeRemaining;
+
+      // Reset the game state, but keep the current time remaining
+      this.setState({
+        ...initialState,
+        timeRemaining: currentTimeRemaining
+      });
     }
   
     onDown = () => {

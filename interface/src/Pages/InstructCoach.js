@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DataContext } from "../App";
 import background from "../assets/blur-background.svg";
 
 const InstructCoach = () => {
 
     const navigate = useNavigate();
+    const {data, addData} = useContext(DataContext);
 
     const [sliderValue, setSliderValue] = useState(50); // Default slider value set to 50%
     const [q2, setQ2] = useState("");
@@ -15,6 +17,10 @@ const InstructCoach = () => {
 
     const handleClick = () => {
         if (checked && !(q2 === "")) {
+            addData({
+                "How Creative?": sliderValue,
+                "Increased AI use makes you feel": q2
+              });
             navigate('/creativity/coach')
         } else {
             alert("Please read the instructions & answer all questions to proceed");
