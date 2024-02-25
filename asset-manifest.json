@@ -1,26 +1,35 @@
 {
   "files": {
-    "main.css": "/creativity/static/css/main.9c10b290.css",
-    "main.js": "/creativity/static/js/main.bcf14c87.js",
+    "main.css": "/creativity/static/css/main.4d1c4e83.css",
+    "main.js": "/creativity/static/js/main.fdba5245.js",
     "static/js/127.ee1c244f.chunk.js": "/creativity/static/js/127.ee1c244f.chunk.js",
     "static/js/795.b953f243.chunk.js": "/creativity/static/js/795.b953f243.chunk.js",
     "static/js/787.ee2b75c0.chunk.js": "/creativity/static/js/787.ee2b75c0.chunk.js",
     "static/media/rope.png": "/creativity/static/media/rope.5108b31a4985f90331c2.png",
-    "static/media/candle.png": "/creativity/static/media/candle.c4d84075c12a71b66f7b.png",
+    "static/media/ball.jpg": "/creativity/static/media/ball.0db06b150daa2fbbafaa.jpg",
+    "static/media/tire.jpg": "/creativity/static/media/tire.21b6f6685abe8703f1c3.jpg",
     "static/media/flashlight.jpg": "/creativity/static/media/flashlight.f87106da949d6c87ee02.jpg",
+    "static/media/table.jpg": "/creativity/static/media/table.7b4da04fd0a5192967d4.jpg",
     "static/media/pencil.png": "/creativity/static/media/pencil.7240bee856c0e670308a.png",
+    "static/media/pants.jpg": "/creativity/static/media/pants.a150118741658133e310.jpg",
+    "static/media/bottle.jpeg": "/creativity/static/media/bottle.117d17aaa14f640dd712.jpeg",
+    "static/media/backpack.avif": "/creativity/static/media/backpack.dd3c950331d7bf22988e.avif",
+    "static/media/lightbulb.webp": "/creativity/static/media/lightbulb.5c584beaf7547d772a9a.webp",
     "static/media/woodenruler.jpg": "/creativity/static/media/woodenruler.22019034b4da8963e30e.jpg",
     "static/media/cardboardbox.jpg": "/creativity/static/media/cardboardbox.541545bd9e95e447d4ff.jpg",
+    "static/media/fork.webp": "/creativity/static/media/fork.8f145d5fd7fd1eef2380.webp",
+    "static/media/shoe.avif": "/creativity/static/media/shoe.55bc18d47da962c15fcd.avif",
+    "static/media/toothbrush.webp": "/creativity/static/media/toothbrush.468ad59b6f70347b3ce4.webp",
     "index.html": "/creativity/index.html",
     "static/media/blur-background.svg": "/creativity/static/media/blur-background.793407f819514a1a28864591914e67e4.svg",
-    "main.9c10b290.css.map": "/creativity/static/css/main.9c10b290.css.map",
-    "main.bcf14c87.js.map": "/creativity/static/js/main.bcf14c87.js.map",
+    "main.4d1c4e83.css.map": "/creativity/static/css/main.4d1c4e83.css.map",
+    "main.fdba5245.js.map": "/creativity/static/js/main.fdba5245.js.map",
     "127.ee1c244f.chunk.js.map": "/creativity/static/js/127.ee1c244f.chunk.js.map",
     "795.b953f243.chunk.js.map": "/creativity/static/js/795.b953f243.chunk.js.map",
     "787.ee2b75c0.chunk.js.map": "/creativity/static/js/787.ee2b75c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c10b290.css",
-    "static/js/main.bcf14c87.js"
+    "static/css/main.4d1c4e83.css",
+    "static/js/main.fdba5245.js"
   ]
 }
