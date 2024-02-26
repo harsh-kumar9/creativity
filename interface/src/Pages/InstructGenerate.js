@@ -38,8 +38,7 @@ const InstructGenerate = () => {
             <div className="flex flex-col h-full items-center justify-center outline outline-2 outline-white rounded-[60px] px-10 py-8 bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>    
             <h1 className="text-3xl font-bold mb-4">Introduction</h1>
 
-            <p className="text-2xl mb-2">In this HIT you will be shown three objects in a Practice round, followed by one more object in a Test round. 
-            You will be asked to come up with ways of utilizing common everyday objects outside of their intended use. </p>
+            <p className="text-2xl mb-2">In this HIT, you will shown an object and asked to come up with original and creative uses for the object. You will see 3 objects in a Practice round, followed by one more object in a Test round. </p>
 
             <p className="text-2xl mb-2">The goal is to come up with creative ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different. 
             Your ideas don't have to be practical or realistic; they can be silly or strange, even, so long as they are CREATIVE uses rather than ordinary uses. You can type in as many ideas as you can, but creative quality is more important than quantity. 
