@@ -16,10 +16,6 @@ import toothbrush from "../assets/toothbrush.webp";
 import backpack from "../assets/backpack.avif";
 
 export const promptsArray = [
-    ["Cardboard Box", cardboardbox],
-    ["Flashlight", flashlight],
-    ["Wooden Ruler", woodenruler],
-    ["Rope", rope],
     ["Pencil", pencil],
     ["Tire", tire],
     ["Pants", pants],
