@@ -38,12 +38,17 @@ const Feedback = () => {
         <div style={{ backgroundImage: `url(${background})` }}
         className="h-screen w-screen items-center justify-center flex text-white text-3xl font-semibold bg-amber-400 p-14 bg-cover"> 
             <div className="flex flex-col text-center h-full w-full items-center justify-center  outline outline-2 outline-white rounded-[60px] px-10 bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
-                <h1> Creativity Research Project Feedback Form</h1>
-                <h2 className="text-2xl mb-2">Please answer and submit the following questions to complete the HIT and get paid.</h2>  
+                {/* <h1> Creativity Research Project Feedback Form</h1> */}
+                <h2 className="text-2xl mb-2">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
 
                 <div className="overflow-auto text-left">
                 <h2 className="text-2xl">How difficult did you find the object in the Test round?</h2>
-                <form className="text-lg space-x-4">
+                <form 
+                className="text-lg space-x-4"
+                action={`${turkSubmitTo}/mturk/externalSubmit`} 
+                method="POST"
+                onSubmit={handleSubmit} 
+                >
                     <div className="flex flex-col">
                     <label>
                         <input 
@@ -178,7 +183,7 @@ const Feedback = () => {
                     onChange={(e) => setQ4(e.target.value)}
                   />
 
-                <h2 className="text-2xl mb-2">How do you use ChatGPT on a day-to-day basis?</h2>
+                <h2 className="text-2xl mb-2">Did you have any technical issues during the HIT?</h2>
                 <input 
                     type="text" 
                     value={q5}
