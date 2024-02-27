@@ -45,9 +45,9 @@ const Feedback = () => {
                 <h2 className="text-2xl">How difficult did you find the object in the Test round?</h2>
                 <form 
                 className="text-lg space-x-4"
-                action={`${turkSubmitTo}/mturk/externalSubmit`} 
-                method="POST"
-                onSubmit={handleSubmit} 
+                // action={`${turkSubmitTo}/mturk/externalSubmit`} 
+                // method="POST"
+                // onSubmit={handleSubmit} 
                 >
                     <div className="flex flex-col">
                     <label>
