@@ -11,6 +11,15 @@ const Feedback = () => {
     const {data, addData} = useContext(DataContext);
     const {mTurk, addMTurk} = useContext(mTurkContext);
 
+    const [sliderValue, setSliderValue] = useState(50); // Default slider value set to 50%
+
+    // Event handler for changing the slider value
+    const handleSliderChange = (e) => {
+        // Update the sliderValue state with the new value
+        setSliderValue(e.target.value);
+    };
+
+
     // const [date, setDate] = useState(new Date());
 
     const [q1, setQ1] = useState("");
@@ -25,7 +34,7 @@ const Feedback = () => {
             await addData({
                 "Test Object difficulty": q1,
                 "Use of AI in daily life makes you feel": q2,
-                "How helpful was AI": q3,
+                "Attention Check": q3,
                 "How else could AI help": q4,
                 "How do you use ChatGPT daily": q5
             });
@@ -42,7 +51,7 @@ const Feedback = () => {
                 <h2 className="text-2xl mb-2">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
 
                 <div className="overflow-auto text-left">
-                <h2 className="text-2xl">How difficult did you find the object in the Test round?</h2>
+                <h2 className="text-2xl">1. How difficult was it to come up with uses for the last object?</h2>
                 <form 
                 className="text-lg space-x-4"
                 // action={`${turkSubmitTo}/mturk/externalSubmit`} 
@@ -97,7 +106,7 @@ const Feedback = () => {
                     </div>
                 </form>
                 
-                <h2 className="text-2xl">Artificial intelligence computer programs are designed to learn tasks that humans typically do. Would you say the increased use of artificial intelligence computer programs in daily life makes you feel...</h2>
+                <h2 className="text-2xl">2. Artificial intelligence computer programs are designed to learn tasks that humans typically do. Would you say the increased use of artificial intelligence computer programs in daily life makes you feel...</h2>
                 <form className="text-lg space-x-4">
                     <div className="flex flex-col">
                     <label>
@@ -136,54 +145,65 @@ const Feedback = () => {
                     </div>
                 </form>
 
-                <h2 className="text-2xl">How helpful was AI in helping you with the task?</h2>
+                <h2 className="text-2xl">3. How many objects in total did you encounter in this HIT?</h2>
                 <form className="text-lg space-x-4">
                     <div className="flex flex-col">
                     <label>
                         <input 
                             type="radio" 
                             name="q1"
-                            value="Not helpful at all"
-                            checked={q3 === "Not helpful at all"}
+                            value="3"
+                            checked={q3 === "3"}
                             className="mr-2"
                             onChange={(e) => setQ3(e.target.value)} 
                         />
-                        Not helpful at all
+                        3
                     </label>
                     <label>
                         <input 
                             type="radio" 
                             name="q1"
-                            value="Somewhat helpful"
-                            checked={q3 === "Somewhat helpful"}
+                            value="4"
+                            checked={q3 === "4"}
                             className="mr-2"
                             onChange={(e) => setQ3(e.target.value)} 
                         />
-                        Somewhat helpful
+                        4
                     </label>
                     <label>
                         <input 
                             type="radio" 
                             name="q1"
-                            value="Very helpful"
-                            checked={q3 === "Very helpful"}
+                            value="5"
+                            checked={q3 === "5"}
                             className="mr-2"
                             onChange={(e) => setQ3(e.target.value)} 
                         />
-                        Very helpful
+                        5
                     </label>
                     </div>
                 </form>
 
-                <h2 className="text-2xl mb-2">How else would the AI have been helpful?</h2>
+                {/* <h2 className="text-2xl mb-2">How else would the AI have been helpful?</h2>
                 <input 
                     type="text" 
                     value={q4}
                     className="text-lg p-2 w-3/5 mb-2 text-black"
                     onChange={(e) => setQ4(e.target.value)}
-                  />
+                  /> */}
+                
+                <h2 className="text-2xl mb-2">4. Adjust the slider below: <i>I am more creative than <b><span>{sliderValue}%</span></b> of humans</i></h2>
+                <input
+                    type="range"
+                    id="creative-slider"
+                    name="creative-slider"
+                    min="0"
+                    max="100"
+                    value={sliderValue}
+                    onChange={handleSliderChange}
+                />
 
-                <h2 className="text-2xl mb-2">Did you have any technical issues during the HIT?</h2>
+                <h2 className="text-2xl mb-2">5. Did you have any technical issues during the HIT?</h2>
                 <input 
                     type="text" 
                     value={q5}
