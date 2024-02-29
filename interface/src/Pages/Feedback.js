@@ -78,7 +78,7 @@ const Feedback = () => {
                   action={`${mTurk.turkSubmitTo}/mturk/externalSubmit`}
                   method="POST"
                   onSubmit={handleSubmit}>
-                <h2 className="text-2xl mb-2">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
+                <h2 className="text-3xl mb-2">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
     
                 {/* Question 1 */}
                 <div className="flex flex-col mb-4">
@@ -190,8 +190,15 @@ const Feedback = () => {
                 {/* Technical issues question */}
                 <div className="mb-4">
                     <h2 className="text-2xl mb-2">5. Did you have any technical issues during the HIT?</h2>
-                    <input type="text" name="q5" value={q5} onChange={(e) => setQ5(e.target.value)} className="text-lg p-2 w-3/5 text-black"/>
+                    <textarea 
+                        name="q5" 
+                        value={q5} 
+                        onChange={(e) => setQ5(e.target.value)} 
+                        className="text-lg p-2 w-full h-32 text-black" // Adjust width (w-full for full width) and height (h-32 for height) as needed
+                        style={{ resize: "none" }} // Optional: prevents the user from resizing the textarea
+                    ></textarea>
                 </div>
+
     
                 {/* Hidden inputs for MTurk */}
                 <input type="hidden" name="assignmentId" value={mTurk.assignmentId} />
