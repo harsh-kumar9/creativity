@@ -219,9 +219,9 @@ const getRandomFood = () => {
   
       return (
         <div className="bg-orange-900 text-white flex flex-col justify-center items-center w-screen h-screen p-32">
-          <h1 className="text-3xl font-bold mb-2">Congratulations! You have completed the practice problems.</h1>
-          <p className="text-2xl mb-4">To give yourself a break before moving onto the test problems, 
-          you have {timeRemaining} seconds to play Snake.</p>
+          <h1 className="text-3xl font-bold mb-2">Congratulations! You have completed the Practice round.</h1>
+          <p className="text-2xl mb-4">To give yourself a break before moving onto the Test round, 
+          you have {timeRemaining} seconds to play a game of Snake.</p>
           {route === "menu" ? (
             <div>
               <Menu onRouteChange={this.onRouteChange} />
