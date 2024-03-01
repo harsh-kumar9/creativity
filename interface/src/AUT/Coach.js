@@ -10,6 +10,8 @@ import Game from "../Game/Game";
 
 let nextId = 0;
 let promptId = 0;
+let itemId = 0;
+let ideasCount = 0;
 
 const Coach = () => {
     const [input, setInput] = useState(""); // store currently inputted idea in input form
@@ -71,6 +73,10 @@ const Coach = () => {
     // timer countdown in seconds
     const [time, setTime] = useState(90);
 
+    const deleteIdea = (id) => {
+        setIdeas(ideas.filter((idea) => idea.id !== id));
+    };
+
     useEffect(() => {
         let timer = setInterval(() => {
         setTime((time) => {
@@ -88,16 +94,32 @@ const Coach = () => {
     useEffect(() => {
       if (time === 0) {
         if (!(promptId === 3)) {
-          addData({
-            "Prompt": promptCopy[promptId][0],
-            "Response": ideas
-          })
+            // reorder id and iid properly
+            for (let i=0; i<ideas.length; i++) {
+              ideas[i].id = ideasCount + i;
+            }
+            for (let i=0; i<ideas.length; i++) {
+              ideas[i].iid = i;
+            }
+            ideasCount += ideas.length;
+    
+            addData({
+              "Prompt": promptCopy[promptId][0],
+              "Response": ideas
+            })
         }
+
         if (promptId === 4) {navigate('/creativity/feedback')} 
         else {
           promptId += 1;
           // reset states and timer
-          setTime(90);
+          if (promptId === 3) {
+            setTime(60);
+          } else {
+            setTime(90);
+          }
+
+          itemId = 0;
           setInput("");
           setIdeas([]);
         }
@@ -174,7 +196,7 @@ const Coach = () => {
                              key={idea.id}
                              className="text-white text-left text-xl flex flex-col w-full px-2 space-y-1"
                              >
-                             <div className="flex flex-row w-full justify-between items-center justify-center">
+                             <div className="flex flex-row w-full justify-between items-center justify-center mt-2">
                                  
                                  {ideaEditing === idea.id ? 
                                  (
@@ -182,7 +204,7 @@ const Coach = () => {
                                  <input
                                      type="text"
                                      value={editingText}
-                                     className="w-full p-1 outline outline-1"
+                                     className="w-full p-1 outline outline-1 bg-transparent"
                                      onChange={(e) => setEditingText(e.target.value)}
                                  />
                                  <input input type="submit" value="✔️" />
@@ -204,9 +226,7 @@ const Coach = () => {
                                  </button>
  
                                  <button
-                                     onClick={() => {
-                                     setIdeas(ideas.filter((a) => a.id !== idea.id));
-                                     }}
+                                    onClick={() => deleteIdea(idea.id)}
                                  >
                                      ❌
                                  </button>
@@ -300,7 +320,7 @@ const Coach = () => {
                             key={idea.id}
                             className="text-white text-left text-xl flex flex-col w-full px-2 space-y-1"
                             >
-                            <div className="flex flex-row w-full justify-between items-center justify-center">
+                            <div className="flex flex-row w-full justify-between items-center justify-center mt-2">
                                 
                                 {ideaEditing === idea.id ? 
                                 (
@@ -308,7 +328,7 @@ const Coach = () => {
                                 <input
                                     type="text"
                                     value={editingText}
-                                    className="w-full p-1 outline outline-1"
+                                    className="w-full p-1 outline outline-1 bg-transparent"
                                     onChange={(e) => setEditingText(e.target.value)}
                                 />
                                 <input input type="submit" value="✔️" />
@@ -330,9 +350,7 @@ const Coach = () => {
                                 </button>
 
                                 <button
-                                    onClick={() => {
-                                    setIdeas(ideas.filter((a) => a.id !== idea.id));
-                                    }}
+                                    onClick={() => deleteIdea(idea.id)}
                                 >
                                     ❌
                                 </button>

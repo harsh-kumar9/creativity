@@ -7,6 +7,8 @@ import Game from "../Game/Game";
 
 let nextId = 0;
 let promptId = 0;
+let itemId = 0;
+let ideasCount = 0;
 
 const Absent = () => {
   const [input, setInput] = useState(""); // store currently inputted idea in input form
@@ -50,7 +52,7 @@ const Absent = () => {
 
   const handleSubmit = (e) => { // e is short for event
       e.preventDefault(); // prevents page from refreshing upon clicking submit
-      setIdeas([...ideas, { id: nextId++, name: input, time: new Date().toISOString()}]);
+      setIdeas([...ideas, { id: nextId++, iid: itemId++, name: input, time: new Date().toISOString()}]);
       setInput(''); // clears the input form
   }
 
@@ -69,16 +71,12 @@ const Absent = () => {
     setEditingText("");
   }
 
-    // Fisher-Yates shuffle algorithm
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
-
   // timer countdown in seconds
   const [time, setTime] = useState(90);
+
+  const deleteIdea = (id) => {
+    setIdeas(ideas.filter((idea) => idea.id !== id));
+  };
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -97,23 +95,39 @@ const Absent = () => {
   useEffect(() => {
     if (time === 0) {
       if (!(promptId === 3)) {
+        // reorder id and iid properly
+        for (let i=0; i<ideas.length; i++) {
+          ideas[i].id = ideasCount + i;
+        }
+        for (let i=0; i<ideas.length; i++) {
+          ideas[i].iid = i;
+        }
+        ideasCount += ideas.length;
+
         addData({
           "Prompt": promptCopy[promptId][0],
           "Response": ideas
         })
       }
+
       if (promptId === 4) {navigate('/creativity/feedback')} 
       else {
         promptId += 1;
         // reset states and timer
-        setTime(90);
-
+        if (promptId === 3) {
+          setTime(60);
+        } else {
+          setTime(90);
+        }
+        
+        itemId = 0;
         setInput("");
         setIdeas([]);
       }
     }
     if (promptId >= Object.keys(promptCopy).length) { setTime(0); }
   }, [time])
+
 
   return (
     ( (!(promptId === 3)) ?
@@ -171,14 +185,14 @@ const Absent = () => {
                  </div>
              </form>
 
-             <div className="h-3/4 w-full rounded-b-[60px] bg-orange-600 mt-6 rounded-lg p-4 grid place-items-start bg-slate-500" style={{ backgroundColor: 'rgba(71, 85, 105, 0.18)' }}>
-             <ul className="flex flex-col items-center w-full h-full overflow-hidden overflow-y-auto">
+             <div className="h-3/4 w-full rounded-b-[60px] bg-orange-600 mt-6 rounded-lg px-4 py-4 grid place-items-start bg-slate-500" style={{ backgroundColor: 'rgba(71, 85, 105, 0.18)' }}>
+             <ul className="flex flex-col items-center w-full h-full overflow-hidden overflow-y-auto mt-2">
                  {ideas.map((idea) => (
                      <li
                      key={idea.id}
                      className="text-white text-left text-xl flex flex-col w-full px-2 space-y-1"
                      >
-                     <div className="flex flex-row w-full justify-between items-center justify-center">
+                     <div className="flex flex-row w-full justify-between items-center justify-center mt-2">
                          
                          {ideaEditing === idea.id ? 
                          (
@@ -186,7 +200,7 @@ const Absent = () => {
                          <input
                              type="text"
                              value={editingText}
-                             className="w-full p-1 outline outline-1"
+                             className="w-full p-1 outline outline-1 bg-transparent"
                              onChange={(e) => setEditingText(e.target.value)}
                          />
                          <input input type="submit" value="✔️" />
@@ -208,10 +222,8 @@ const Absent = () => {
                          </button>
 
                          <button
-                             onClick={() => {
-                             setIdeas(ideas.filter((a) => a.id !== idea.id));
-                             }}
-                         >
+                            onClick={() => deleteIdea(idea.id)}
+                          >
                              ❌
                          </button>
                          </div>
