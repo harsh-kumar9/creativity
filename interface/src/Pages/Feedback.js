@@ -110,7 +110,7 @@ const Feedback = () => {
                     <label>
                             <input 
                                 type="radio" 
-                                name="q1"
+                                name="q2"
                                 value="More concerned than excited"
                                 checked={q2 === "More concerned than excited"}
                                 className="mr-2"
@@ -121,7 +121,7 @@ const Feedback = () => {
                         <label>
                             <input 
                                 type="radio" 
-                                name="q1"
+                                name="q2"
                                 value="More excited than concerned"
                                 checked={q2 === "More excited than concerned"}
                                 className="mr-2"
@@ -132,7 +132,7 @@ const Feedback = () => {
                         <label>
                             <input 
                                 type="radio" 
-                                name="q1"
+                                name="q2"
                                 value="Equally excited and concerned"
                                 checked={q2 === "Equally excited and concerned"}
                                 className="mr-2"
@@ -149,7 +149,7 @@ const Feedback = () => {
                     <label>
                             <input 
                                 type="radio" 
-                                name="q1"
+                                name="q3"
                                 value="3"
                                 checked={q3 === "3"}
                                 className="mr-2"
@@ -160,7 +160,7 @@ const Feedback = () => {
                         <label>
                             <input 
                                 type="radio" 
-                                name="q1"
+                                name="q3"
                                 value="4"
                                 checked={q3 === "4"}
                                 className="mr-2"
@@ -171,7 +171,7 @@ const Feedback = () => {
                         <label>
                             <input 
                                 type="radio" 
-                                name="q1"
+                                name="q3"
                                 value="5"
                                 checked={q3 === "5"}
                                 className="mr-2"
