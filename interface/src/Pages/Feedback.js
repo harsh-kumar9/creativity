@@ -72,17 +72,17 @@ const Feedback = () => {
 
     return (
         <div style={{ backgroundImage: `url(${background})` }}
-             className="h-screen w-screen items-center justify-center flex text-white text-3xl font-semibold bg-amber-400 p-14 bg-cover"> 
-            <form className="flex flex-col text-center h-full w-full items-center justify-center  outline outline-2 outline-white rounded-[60px] px-10 bg-slate-500"
+             className="h-auto w-screen items-center justify-center flex text-white text-3xl font-semibold bg-amber-400 p-14 bg-cover"> 
+            <form className="flex flex-col text-center h-full w-full items-center justify-center outline outline-2 outline-white rounded-[60px] py-10 px-10 bg-slate-500"
                   style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}
                   action={`${mTurk.turkSubmitTo}/mturk/externalSubmit`}
                   method="POST"
                   onSubmit={handleSubmit}>
-                <h2 className="text-3xl mb-2">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
+                <h2 className="text-3xl mb-8">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
     
                 {/* Question 1 */}
-                <div className="flex flex-col mb-4">
-                    <h2 className="text-2xl">1. How difficult was it to come up with uses for the last object?</h2>
+                <div className="text-2xl flex flex-col mb-4">
+                    <h2>1. How difficult was it to come up with uses for the last object?</h2>
                     {/* Options for Question 1 */}
                     <label>
                         <input type="radio" name="q1" value="Very easy" checked={q1 === "Very easy"} onChange={(e) => setQ1(e.target.value)} className="mr-2"/>
@@ -104,8 +104,8 @@ const Feedback = () => {
     
                 {/* Additional questions follow a similar pattern to Question 1 */}
                 {/* Example for Question 2 */}
-                <div className="flex flex-col mb-4">
-                    <h2 className="text-2xl">2. Artificial intelligence computer programs are designed to learn tasks that humans typically do. Would you say the increased use of artificial intelligence computer programs in daily life makes you feel</h2>
+                <div className="text-2xl flex flex-col mb-4">
+                    <h2>2. Artificial intelligence computer programs are designed to learn tasks that humans typically do. Would you say the increased use of artificial intelligence computer programs in daily life makes you feel</h2>
                     {/* Options for Question 2 */}
                     <label>
                             <input 
@@ -143,8 +143,8 @@ const Feedback = () => {
                 </div>
                 
                 {/* Question 3 */}
-                <div className="flex flex-col mb-4">
-                    <h2 className="text-2xl">3. How many objects in total did you encounter in this HIT?</h2>
+                <div className="text-2xl flex flex-col mb-4">
+                    <h2>3. How many objects in total did you encounter in this HIT?</h2>
                     {/* Options for Question 3 */}
                     <label>
                             <input 
