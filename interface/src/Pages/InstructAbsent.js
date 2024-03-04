@@ -34,8 +34,8 @@ const InstructAbsent = () => {
     };
 
     return (
-        <div style={{ backgroundImage: `url(${background})` }} className="text-white h-screen w-screen items-center justify-center space-y-8 p-14 bg-cover">
-            <div className="flex flex-col h-full items-center justify-center outline outline-2 outline-white rounded-[60px] px-10 py-8 bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>    
+        <div style={{ backgroundImage: `url(${background})` }} className="text-white h-auto w-screen items-center justify-center space-y-8 p-14 bg-cover">
+            <div className="flex flex-col items-center justify-center outline outline-2 outline-white rounded-[60px] px-10 py-8 bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>    
             <h1 className="text-3xl font-bold mb-4">Introduction</h1>
 
             <p className="text-2xl mb-2">In this HIT, you will shown an object and asked to come up with original and creative uses for the object. You will see 3 objects in a Practice round, followed by one more object in a Test round. </p>
@@ -105,7 +105,7 @@ const InstructAbsent = () => {
                 <input type="checkbox" checked={checked} onChange={handleCheck}/>
                 <b>{`  `}I understand the instructions above and am ready to continue*</b>
             </label>
-            <button onClick={handleClick} className="mt-3 text-2xl outline outline-offset-2 outline-2 rounded-md font-semibold px-4 py-1 hover:bg-orange-600">SUBMIT</button>
+            <button onClick={handleClick} className="mt-6 text-2xl outline outline-offset-2 outline-2 rounded-md font-semibold px-4 py-1 hover:bg-orange-600">SUBMIT</button>
             
             </div>
         </div>
