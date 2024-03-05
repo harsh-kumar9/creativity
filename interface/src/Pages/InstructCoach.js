@@ -42,7 +42,7 @@ const InstructCoach = () => {
 
             <p className="text-2xl mb-2">The goal is to come up with creative ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different. 
             Your ideas don't have to be practical or realistic; they can be silly or strange, even, so long as they are CREATIVE uses rather than ordinary uses. You can type in as many ideas as you can, but creative quality is more important than quantity. 
-            It's better to have a few really good ideas than a lot of uncreative ones. You have 60 seconds to respond to each object.</p>
+            It's better to have a few really good ideas than a lot of uncreative ones. You have 2 minutes to respond to each object.</p>
 
             <p className="text-2xl mb-8">In the Practice round, to spark your imagination, you will receive guidance from AI (i.e., ChatGPT) to help you come up with creative ideas. This will be shown on the right side of the screen.</p>
 

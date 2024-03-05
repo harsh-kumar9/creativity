@@ -42,7 +42,7 @@ const InstructAbsent = () => {
 
             <p className="text-2xl mb-8">The goal is to come up with creative ideas, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different. 
             Your ideas don't have to be practical or realistic; they can be silly or strange, even, so long as they are CREATIVE uses rather than ordinary uses. You can type in as many ideas as you can, but creative quality is more important than quantity. 
-            It's better to have a few really good ideas than a lot of uncreative ones. You have 60 seconds to respond to each object.</p>
+            It's better to have a few really good ideas than a lot of uncreative ones. You have 2 minutes to respond to each object.</p>
 
             <b><p className="text-2xl mb-8">Please answer the following questions:</p></b>
 
