@@ -8,21 +8,25 @@ const InstructGenerate = () => {
     const navigate = useNavigate();
     const {data, addData} = useContext(DataContext);
 
-    const [sliderValue, setSliderValue] = useState(50); // Default slider value set to 50%
+    const [sliderValue, setSliderValue] = useState(null);
     const [q2, setQ2] = useState("");
 
     const handleChange = (event) => {
         setSliderValue(event.target.value);
       };
 
-      const handleClick = () => {
-        if (checked && !(q2 === "")) {
+    const handleClick = () => {
+        if (checked && !(q2 === "") && !(sliderValue === null)) {
             addData({
                 "How Creative?": sliderValue,
                 "Increased AI use makes you feel": q2
               });
-            navigate('/creativity/generate')
-        } else {
+            navigate('/creativity/absent')
+        } 
+        else if (checked && !(q2 === "") && sliderValue === null) {
+            alert("Please select a value for Question 1 (Slider)");
+        }
+        else {
             alert("Please read the instructions & answer all questions to proceed");
         }
     }
@@ -58,7 +62,8 @@ const InstructGenerate = () => {
                 name="creative-slider"
                 min="0"
                 max="100"
-                value={sliderValue}
+                // Conditionally render the value only if sliderValue is not null
+                value={sliderValue ?? ''}
                 onChange={handleChange}
             />
             </div>

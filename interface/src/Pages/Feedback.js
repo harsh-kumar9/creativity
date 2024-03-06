@@ -11,7 +11,7 @@ const Feedback = () => {
     const {data, addData} = useContext(DataContext);
     const {mTurk, addMTurk} = useContext(mTurkContext);
 
-    const [sliderValue, setSliderValue] = useState(50); // Default slider value set to 50%
+    const [sliderValue, setSliderValue] = useState(null); 
     // console.log(mTurk.assignmentId);
     // console.log(mTurk.workerId);
 
@@ -20,7 +20,7 @@ const Feedback = () => {
     const [q1, setQ1] = useState("");
     const [q2, setQ2] = useState("");
     const [q3, setQ3] = useState("");
-    const [q4, setQ4] = useState(sliderValue.toString()); // Sync with slider
+    const [q4, setQ4] = useState(null); 
     const [q5, setQ5] = useState("");
 
     const handleSliderChange = (e) => {
@@ -33,38 +33,43 @@ const Feedback = () => {
         event.preventDefault(); // Prevent the default form submission
 
         // Data validation
-        if (!(q1 && q2 && q3 && q4 && q5)) {
-            alert("Please answer all the questions before submitting.");
+        if (!(q1==="") && !(q2==="") && !(q3==="") && !(q4===null) && !(q5==="")) {
+            // Prepare feedback responses for submission
+            const feedbackData = {
+                q1, q2, q3, q4, q5
+            };
+
+            // Optionally, update your application state with new feedback data
+            addData(feedbackData);
+
+            // Construct the data object for MTurk submission
+            const submissionData = {
+                ...data, // Spread existing data into the submission object
+                feedback: feedbackData, // Add new feedback data
+                assignmentId: mTurk.assignmentId,
+                hitId: mTurk.hitId,
+                workerId: mTurk.workerId,
+                ts_submitted_: new Date().toISOString(),  
+            };
+
+            // For MTurk submission: Set the value of a hidden input to include all necessary data
+            const dataInput = document.createElement("input");
+            dataInput.type = "hidden";
+            dataInput.name = "data";
+            dataInput.value = submissionData;
+            event.target.appendChild(dataInput);
+
+            // Submit the form
+            event.target.submit();
+        }
+        else if (!(q1==="") && !(q2==="") && !(q3==="") && (q4===null) && !(q5==="")) {
+            alert("Please select a value for Question 4 (Slider)");
             return;
         }
-
-        // Prepare feedback responses for submission
-        const feedbackData = {
-            q1, q2, q3, q4, q5
-        };
-
-        // Optionally, update your application state with new feedback data
-        addData(feedbackData);
-
-        // Construct the data object for MTurk submission
-        const submissionData = {
-            ...data, // Spread existing data into the submission object
-            feedback: feedbackData, // Add new feedback data
-            assignmentId: mTurk.assignmentId,
-            hitId: mTurk.hitId,
-            workerId: mTurk.workerId,
-            ts_submitted_: new Date().toISOString(),  
-        };
-
-        // For MTurk submission: Set the value of a hidden input to include all necessary data
-        const dataInput = document.createElement("input");
-        dataInput.type = "hidden";
-        dataInput.name = "data";
-        dataInput.value = submissionData;
-        event.target.appendChild(dataInput);
-
-        // Submit the form
-        event.target.submit();
+        else {
+            alert("Please read the instructions & answer all questions to proceed");
+            return;
+        }
 
     };
 

@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "dotenv": "^16.3.1",
+    "gh-pages": "^6.1.1",
     "langchain": "^0.0.195",
     "openai": "^4.19.1",
     "react": "^18.2.0",
