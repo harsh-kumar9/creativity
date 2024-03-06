@@ -60,14 +60,12 @@ const Feedback = () => {
         const dataInput = document.createElement("input");
         dataInput.type = "hidden";
         dataInput.name = "data";
-        dataInput.value = JSON.stringify(submissionData);
+        dataInput.value = submissionData;
         event.target.appendChild(dataInput);
 
         // Submit the form
         event.target.submit();
 
-        // Navigate to the thank you page or handle the submission acknowledgment
-        // navigate('/creativity/thanks'); // This might not be necessary if you're submitting the form traditionally
     };
 
     return (
