@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, createContext, useEffect } from 'react';
-import Controls from './Controls';
+import Controls from './Pages/Controls';
 import Absent from './AUT/Absent';
 import Generate from './AUT/Generate';
 import Coach from './AUT/Coach';
