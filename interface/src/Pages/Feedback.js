@@ -56,7 +56,7 @@ const Feedback = () => {
             const dataInput = document.createElement("input");
             dataInput.type = "hidden";
             dataInput.name = "data";
-            dataInput.value = submissionData;
+            dataInput.value = JSON.stringify(submissionData);
             event.target.appendChild(dataInput);
 
             // Submit the form
