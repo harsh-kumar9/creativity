@@ -277,7 +277,7 @@ const Refine = () => {
             <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
                 <div className="w-1/3 rounded-[60px] bg-orange-500 flex flex-col h-full text-left items-center p-8">
                     <text className="text-lg ml-4 mb-4">
-                        For the following objects, come up with alternative uses that are different from it's typical intended use.
+                        For the following objects, come up with alternative uses that are different from its typical intended use.
                     </text>
                     <text className="text-lg mb-4 ml-4">
                         The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.

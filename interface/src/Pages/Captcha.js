@@ -79,7 +79,7 @@ const Introduction = () => {
             />  
         </div>  
         <input type="submit" value="SUBMIT" onClick={handleSubmit}
-        className="outline outline-offset-2 outline-white text-white outline-2 rounded-md mt-4 font-bold text-2xl px-2 py-2 hover:bg-orange-500"/>
+        className="mt-3 text-2xl outline outline-offset-8 outline-2 rounded-md font-semibold p-8 hover:bg-orange-600"/>
         </div>  
         </div>
     </div>

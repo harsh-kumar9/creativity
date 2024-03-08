@@ -140,7 +140,7 @@ const Generate = () => {
              <div className="flex flex-row space-x-4 p-4 h-full w-full items-center justify-center rounded-[60px]">
                  <div className="w-1/3 rounded-[60px] flex flex-col h-full text-left items-center p-8 outline outline-2 outline-white bg-slate-500" style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}>
                      <div className="text-white text-lg ml-4 mb-4">
-                         For the following object, come up with alternative uses that are different from it's typical intended use.
+                         For the following object, come up with alternative uses that are different from its typical intended use.
                      </div>
                      <div className="text-white text-lg mb-4 ml-4">
                          The ideas don't have to be practical/realistic, so long as they strike people as clever, original, unusual, and innovative.
