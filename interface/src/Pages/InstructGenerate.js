@@ -21,7 +21,7 @@ const InstructGenerate = () => {
                 "How Creative?": sliderValue,
                 "Increased AI use makes you feel": q2
               });
-            navigate('/creativity/absent')
+            navigate('/creativity/generate')
         } 
         else if (checked && !(q2 === "") && sliderValue === null) {
             alert("Please select a value for Question 1 (Slider)");

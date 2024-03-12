@@ -280,7 +280,7 @@ const Coach = () => {
                     {
                     (shuffled) ?
                     
-                    <h1 className="mt-8 text-white  flex justify-between text-center text-2xl space-x-4">
+                    <h1 className="mt-4 text-white  flex justify-between text-center text-2xl space-x-4">
                       <span className="whitespace-nowrap">{promptCopy[promptId][0]}</span>
                       {/* <button className="outline outline-offset-2 outline-2 rounded-md w-4/5 text-xl px-2 hover:bg-orange-500" onClick={nextItem}>Next Item</button> */}
                     </h1>
