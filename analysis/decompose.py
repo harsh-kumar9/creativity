@@ -1,8 +1,56 @@
 import pandas as pd
+import requests
 import json
 
+# Originality Calculation function
+def call_score_api(prompt, inputs):
+    """
+    Args:
+    - prompt (str): The prompt to use with the API.
+    - inputs (list): The inputs to send to the API.
+
+    Returns:
+    Originality Score (float) using Semantic Models
+    """
+    # Define the API endpoint
+    api_endpoint = "https://openscoring.du.edu/score"
+
+    # Set the default parameters
+    params = {
+        "model": "glove_840B", 
+        "prompt": prompt,
+        "input": inputs,  
+        "input_type": "csv", 
+
+        "elab_method": "stoplist", 
+        "stopword": "true",
+        "term_weighting": "true",
+        "normalize": "false",
+        "exclude_target": "true" 
+    }
+
+    # handle NULL values
+    if inputs[0] == "":
+        return -1.0
+
+    # Make the API call
+    response = requests.get(api_endpoint, params=params)
+    
+    # Check if the API call was successful
+    if response.status_code == 200:
+        # Parse the JSON response
+        data = response.json()
+        # Assuming there is only one score, directly return the 'originality' float
+        originality_score = data["scores"][0]["originality"]
+        return originality_score
+    else:
+        # If the call fails, raise an error with the status code
+        # raise Exception(f"API call failed with status code {response.status_code}")
+        print("prompt:" + prompt)
+        print("response:" + inputs[0])
+
 # Load the CSV file
-file_path = 'pilot.csv'
+file_path = 'analysis/data_31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE.csv'
 df = pd.read_csv(file_path)
 
 # Filter the DataFrame to keep only the rows with the 'data' variable  
@@ -53,6 +101,7 @@ for row_id in data_rows.index:
             'item_order': '1', 
             'item_name': item_name_one, 
             'response': response, 
+            'originality': call_score_api(prompt=item_name_one, inputs=[response]),
             'response_order': response_order
         }
 
@@ -77,6 +126,7 @@ for row_id in data_rows.index:
             'item_order': '2', 
             'item_name': item_name_two, 
             'response': response, 
+            'originality': call_score_api(prompt=item_name_two, inputs=[response]),
             'response_order': response_order
         }
 
@@ -101,6 +151,7 @@ for row_id in data_rows.index:
             'item_order': '3', 
             'item_name': item_name_three, 
             'response': response, 
+            'originality': call_score_api(prompt=item_name_three, inputs=[response]),
             'response_order': response_order
         }
 
@@ -125,6 +176,7 @@ for row_id in data_rows.index:
             'item_order': '4', 
             'item_name': item_name_four, 
             'response': response, 
+            'originality': call_score_api(prompt=item_name_four, inputs=[response]),
             'response_order': response_order
         }
 
@@ -153,5 +205,5 @@ for row_id in data_rows.index:
     participants_df = pd.concat([participants_df, q_dictionary], ignore_index=True)
 
 
-# responses_df.to_csv('responses.csv', index=False)
-participants_df.to_csv('participants.csv', index=False)
+responses_df.to_csv('responses.csv', index=False)
+# participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
