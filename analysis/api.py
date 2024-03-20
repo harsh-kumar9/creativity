@@ -5,6 +5,10 @@ def call_llm_api(prompt, inputs):
     Args:
     - prompt (str): The prompt to use with the API.
     - inputs (list): The inputs to send to the API.
+
+    Returns:
+    Originality Score (float) from 1-5 using Large Language Models
+    1 is minimally original, and 5 is maximally original
     """
     # Define the API endpoint
     api_endpoint = "https://openscoring.du.edu/llm"
@@ -16,10 +20,8 @@ def call_llm_api(prompt, inputs):
         "input": inputs, 
         "input_type": "csv",  
         "elab_method": "none",  
-        "language": "english",  
+        "language": "English",  
         "task": "uses",  
-        "question_in_input": False,  
-        "question": "question"  
     }
 
     # Make the API call
@@ -28,7 +30,9 @@ def call_llm_api(prompt, inputs):
     # Check if the API call was successful
     if response.status_code == 200:
         # Return the JSON response if the call was successful
-        return response.json()
+        data = response.json()
+        originality_score = data["scores"][0]["originality"]
+        return originality_score
     else:
         # Return an error message if the call failed
         return {"error": "API call failed with status code {}".format(response.status_code)}
@@ -66,7 +70,6 @@ def call_score_api(prompt, inputs):
     if response.status_code == 200:
         # Parse the JSON response
         data = response.json()
-        # Assuming there is only one score, directly return the 'originality' float
         originality_score = data["scores"][0]["originality"]
         return originality_score
     else:
@@ -74,5 +77,5 @@ def call_score_api(prompt, inputs):
         raise Exception(f"API call failed with status code {response.status_code}")
 
 # Example call to the function with prompt 'pants' and input ['makeshift flag']
-print(call_score_api(prompt="mason jar", inputs=["store strawberry jam"]))
+print(call_llm_api(prompt="mason jar", inputs=["store strawberry jam"]))
 

@@ -2,7 +2,48 @@ import pandas as pd
 import requests
 import json
 
-# Originality Calculation function
+# Originality Calculation functions
+def call_llm_api(prompt, inputs):
+    """
+    Args:
+    - prompt (str): The prompt to use with the API.
+    - inputs (list): The inputs to send to the API.
+
+    Returns:
+    Originality Score (float) from 1-5 using Large Language Models
+    1 is minimally original, and 5 is maximally original
+    """
+    # Define the API endpoint
+    api_endpoint = "https://openscoring.du.edu/llm"
+
+    # Set the default parameters
+    params = {
+        "model": "ocsai-1.5", 
+        "prompt": prompt,
+        "input": inputs, 
+        "input_type": "csv",  
+        "elab_method": "none",  
+        "language": "English",  
+        "task": "uses",  
+    }
+    
+    # handle NULL values
+    if inputs[0] == "":
+        return -1.0
+
+    # Make the API call
+    response = requests.get(api_endpoint, params=params)
+    
+    # Check if the API call was successful
+    if response.status_code == 200:
+        # Return the JSON response if the call was successful
+        data = response.json()
+        originality_score = data["scores"][0]["originality"]
+        return originality_score
+    else:
+        # Return an error message if the call failed
+        return {"error": "API call failed with status code {}".format(response.status_code)}
+    
 def call_score_api(prompt, inputs):
     """
     Args:
@@ -91,22 +132,25 @@ for row_id in data_rows.index:
         response_order = r['iid']
         response = r['name']
 
-        d = {
-            'assignment_id' : assignment_id, 
-            'hit_id': hit_id,
-            'worker_id': worker_id,
-            'start_time': start_time,
-            'condition' : condition, 
-            'phase': 'Practice', 
-            'item_order': '1', 
-            'item_name': item_name_one, 
-            'response': response, 
-            'originality': call_score_api(prompt=item_name_one, inputs=[response]),
-            'response_order': response_order
-        }
+        originality_one = call_llm_api(prompt=item_name_one, inputs=[response])
 
-        df_dictionary = pd.DataFrame([d])
-        responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
+        if originality_one != -1.0:
+            d = {
+                'assignment_id' : assignment_id, 
+                'hit_id': hit_id,
+                'worker_id': worker_id,
+                'start_time': start_time,
+                'condition' : condition, 
+                'phase': 'Practice', 
+                'item_order': '1', 
+                'item_name': item_name_one, 
+                'response': response, 
+                'originality': originality_one,
+                'response_order': response_order
+            }
+            
+            df_dictionary = pd.DataFrame([d])
+            responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
     
     # Practice Round 2
     item_two = data_dict['3']
@@ -116,22 +160,25 @@ for row_id in data_rows.index:
         response_order = r['iid']
         response = r['name']
 
-        d = {
-            'assignment_id' : assignment_id, 
-            'hit_id': hit_id,
-            'worker_id': worker_id,
-            'start_time': start_time,
-            'condition' : condition, 
-            'phase': 'Practice', 
-            'item_order': '2', 
-            'item_name': item_name_two, 
-            'response': response, 
-            'originality': call_score_api(prompt=item_name_two, inputs=[response]),
-            'response_order': response_order
-        }
+        originality_two = call_llm_api(prompt=item_name_two, inputs=[response])
 
-        df_dictionary = pd.DataFrame([d])
-        responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
+        if originality_two != -1.0:
+            d = {
+                'assignment_id' : assignment_id, 
+                'hit_id': hit_id,
+                'worker_id': worker_id,
+                'start_time': start_time,
+                'condition' : condition, 
+                'phase': 'Practice', 
+                'item_order': '2', 
+                'item_name': item_name_two, 
+                'response': response, 
+                'originality': originality_two,
+                'response_order': response_order
+            }
+
+            df_dictionary = pd.DataFrame([d])
+            responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
     # Practice Round 3
     item_three = data_dict['4']
@@ -141,22 +188,25 @@ for row_id in data_rows.index:
         response_order = r['iid']
         response = r['name']
 
-        d = {
-            'assignment_id' : assignment_id, 
-            'hit_id': hit_id,
-            'worker_id': worker_id,
-            'start_time': start_time,
-            'condition' : condition, 
-            'phase': 'Practice', 
-            'item_order': '3', 
-            'item_name': item_name_three, 
-            'response': response, 
-            'originality': call_score_api(prompt=item_name_three, inputs=[response]),
-            'response_order': response_order
-        }
+        originality_three = call_llm_api(prompt=item_name_three, inputs=[response])
 
-        df_dictionary = pd.DataFrame([d])
-        responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
+        if originality_three != -1.0:
+            d = {
+                'assignment_id' : assignment_id, 
+                'hit_id': hit_id,
+                'worker_id': worker_id,
+                'start_time': start_time,
+                'condition' : condition, 
+                'phase': 'Practice', 
+                'item_order': '3', 
+                'item_name': item_name_three, 
+                'response': response, 
+                'originality': originality_three,
+                'response_order': response_order
+            }
+            
+            df_dictionary = pd.DataFrame([d])
+            responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
     # Test Round 
     item_four = data_dict['5']
@@ -166,22 +216,25 @@ for row_id in data_rows.index:
         response_order = r['iid']
         response = r['name']
 
-        d = {
-            'assignment_id' : assignment_id, 
-            'hit_id': hit_id,
-            'worker_id': worker_id,
-            'start_time': start_time,
-            'condition' : condition, 
-            'phase': 'Test', 
-            'item_order': '4', 
-            'item_name': item_name_four, 
-            'response': response, 
-            'originality': call_score_api(prompt=item_name_four, inputs=[response]),
-            'response_order': response_order
-        }
+        originality_four = call_llm_api(prompt=item_name_four, inputs=[response])
 
-        df_dictionary = pd.DataFrame([d])
-        responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
+        if originality_four != -1.0:
+            d = {
+                'assignment_id' : assignment_id, 
+                'hit_id': hit_id,
+                'worker_id': worker_id,
+                'start_time': start_time,
+                'condition' : condition, 
+                'phase': 'Test', 
+                'item_order': '4', 
+                'item_name': item_name_four, 
+                'response': response, 
+                'originality': originality_four,
+                'response_order': response_order
+            }
+
+            df_dictionary = pd.DataFrame([d])
+            responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
     # Survey & Feedback Answers
     survey_answers = data_dict['1']
@@ -205,5 +258,5 @@ for row_id in data_rows.index:
     participants_df = pd.concat([participants_df, q_dictionary], ignore_index=True)
 
 
-responses_df.to_csv('responses.csv', index=False)
+responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
 # participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
