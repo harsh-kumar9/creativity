@@ -1,5 +1,6 @@
 import requests
 
+# Originality Calculation functions
 def call_llm_api(prompt, inputs):
     """
     Args:
@@ -23,6 +24,10 @@ def call_llm_api(prompt, inputs):
         "language": "English",  
         "task": "uses",  
     }
+    
+    # handle NULL values
+    if inputs[0] == "":
+        return -1.0
 
     # Make the API call
     response = requests.get(api_endpoint, params=params)
@@ -63,6 +68,10 @@ def call_score_api(prompt, inputs):
         "exclude_target": "true" 
     }
 
+    # handle NULL values
+    if inputs[0] == "":
+        return -1.0
+
     # Make the API call
     response = requests.get(api_endpoint, params=params)
     
@@ -70,12 +79,24 @@ def call_score_api(prompt, inputs):
     if response.status_code == 200:
         # Parse the JSON response
         data = response.json()
+        # Assuming there is only one score, directly return the 'originality' float
         originality_score = data["scores"][0]["originality"]
         return originality_score
     else:
         # If the call fails, raise an error with the status code
-        raise Exception(f"API call failed with status code {response.status_code}")
+        # raise Exception(f"API call failed with status code {response.status_code}")
+        print("prompt:" + prompt)
+        print("response:" + inputs[0])
 
 # Example call to the function with prompt 'pants' and input ['makeshift flag']
-print(call_llm_api(prompt="mason jar", inputs=["store strawberry jam"]))
+# print(call_llm_api(prompt="mason jar", inputs=["store strawberry jam"]))
+
+from sentence_transformers import SentenceTransformer
+from scipy.spatial.distance import cosine
+response1 = ["musical instrument with water filled to various levels"]
+response2 = ["use for paint"]
+model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
+embedding1 = model.encode(response1)
+embedding2 = model.encode(response2)
+print(cosine(embedding1[0], embedding2[0]))
 

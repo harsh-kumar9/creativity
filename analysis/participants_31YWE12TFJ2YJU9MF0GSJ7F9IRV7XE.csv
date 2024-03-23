@@ -1,20 +1,20 @@
-assignment_id,hit_id,worker_id,condition,I am more creative than \% of humans (before),Increased use of AI computer programs in daily life makes you feel (before),How difficult was it to come up with uses for the last object?,Increased use of AI computer programs in daily life makes you feel (after),How many total objects encountered?,I am more creative than \% of humans (after),Technical Issues?
-308XBLVES2U4BUNT9KRHOBB8PBSBRV,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3CCFD0700KTPV,absent,65,Equally excited and concerned,Very difficult,More concerned than excited,4,62,no
-3G0WWMR1UFA602XQZV7QAG1XAE4NQV,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A14O5IIY74ZV0P,generate,100,Equally excited and concerned,Very easy,Equally excited and concerned,3,83,No
-3O7L7BFSHYFPPYWUTOZYBRG25CMIEY,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2YW7RDY1OLC66,coach,83,More concerned than excited,Somewhat easy,More excited than concerned,4,100,No. 
-3634BBTX08KHVCWQOZJ4T912HD1IFG,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A35BJZCQC3ETPX,coach,88,Equally excited and concerned,Somewhat easy,Equally excited and concerned,4,85,None
-3VAR3R6G19RICJX6EGQ33EG26IN8OK,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A1M1UFZJSPPN6Q,generate,100,Equally excited and concerned,Somewhat easy,Equally excited and concerned,3,98,none
-3Z2R0DQ0J14LEDIS4LE6OB9LGGPE2J,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,AOUCGFFGELTA7,generate,0,Equally excited and concerned,Somewhat easy,Equally excited and concerned,4,0,Nothing
-3FE2ERCCZHY3IBWN0XSEP0BSVSXOPU,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A22T0PKVR6VIBC,coach,100,More excited than concerned,Somewhat easy,More concerned than excited,5,86,no
-3OONKJ5DKW91EHVDHSADUG63EO8BOM,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,AJ173YQLT4Z9A,absent,65,Equally excited and concerned,Somewhat difficult,Equally excited and concerned,4,65,No I did not faced any issue.
-3GU1KF0O42RJZH7EWSNSJGBTOT4BP3,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A102C1DTGBA0K,coach,75,More concerned than excited,Very easy,More concerned than excited,5,81,no very perfect hit
-3JAOYWH7V2UAK3DJ6GGPBT7JVJ0L95,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A24UWUL93BCA60,absent,55,Equally excited and concerned,Somewhat easy,Equally excited and concerned,4,55,No.
-3AMW0RGHOXSL0QWBZIS1ABBN5IINP4,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3JEZEPRDOOQ58,coach,59,More excited than concerned,Somewhat easy,Equally excited and concerned,4,59,No.
-3TU5ZICBRXRLXVAMTTI7SJB2LJ5Q8A,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3C1QLGNYG36M1,coach,71,More excited than concerned,Somewhat difficult,Equally excited and concerned,4,17,No
-3YDGXNSEOJKE8QNOVWBUPGAXPSY84N,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2CKX2DBHYJM1Y,absent,62,Equally excited and concerned,Somewhat difficult,More excited than concerned,4,57,No
-3S3AMIZX3EVTKPWU5JSSU60MSVBCD7,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3BUAU6657FMNA,absent,62,Equally excited and concerned,Somewhat difficult,Equally excited and concerned,4,62,No.
-33PPO7FECF5KXSIUXTOE59YH50LID5,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A1D34XFWJBJ3E8,generate,100,Equally excited and concerned,Very easy,Equally excited and concerned,4,100,a little bit lag in this hit.
-32EYX73OYKZJ7TWZ9B8CT13WEXRRUM,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2D8FARZ4P8JYY,generate,100,More concerned than excited,Somewhat difficult,More concerned than excited,4,99,"No, I didn't face any technical issues during this hit."
-33FOTY3KE6BZSUGIPQ8XT4ZD3ZVC16,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2P6TSH9SEDAC,generate,100,More concerned than excited,Somewhat easy,More concerned than excited,5,100,NO
-3M1CVSFP6KVZGJ31QR2LOAHXB9IQAV,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,AJJQ1GYYH8VR2,absent,60,More concerned than excited,Somewhat easy,More excited than concerned,3,81,NOTHING
-3M81GAB8AK94ZT8TW52HJL13TRGBQO,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A1M7R2XY0YNLHG,coach,100,Equally excited and concerned,Very easy,Equally excited and concerned,5,100,No technical issues.
+assignment_id,hit_id,worker_id,condition,diversity,I am more creative than \% of humans (before),Increased use of AI computer programs in daily life makes you feel (before),How difficult was it to come up with uses for the last object?,Increased use of AI computer programs in daily life makes you feel (after),How many total objects encountered?,I am more creative than \% of humans (after),Technical Issues?
+308XBLVES2U4BUNT9KRHOBB8PBSBRV,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3CCFD0700KTPV,absent,0.5278388459552553,65,Equally excited and concerned,Very difficult,More concerned than excited,4,62,no
+3G0WWMR1UFA602XQZV7QAG1XAE4NQV,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A14O5IIY74ZV0P,generate,0.6601951019204813,100,Equally excited and concerned,Very easy,Equally excited and concerned,3,83,No
+3O7L7BFSHYFPPYWUTOZYBRG25CMIEY,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2YW7RDY1OLC66,coach,0.5003154880735565,83,More concerned than excited,Somewhat easy,More excited than concerned,4,100,No. 
+3634BBTX08KHVCWQOZJ4T912HD1IFG,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A35BJZCQC3ETPX,coach,0.5303686170056885,88,Equally excited and concerned,Somewhat easy,Equally excited and concerned,4,85,None
+3VAR3R6G19RICJX6EGQ33EG26IN8OK,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A1M1UFZJSPPN6Q,generate,0.5476333633834674,100,Equally excited and concerned,Somewhat easy,Equally excited and concerned,3,98,none
+3Z2R0DQ0J14LEDIS4LE6OB9LGGPE2J,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,AOUCGFFGELTA7,generate,0.4561906171244513,0,Equally excited and concerned,Somewhat easy,Equally excited and concerned,4,0,Nothing
+3FE2ERCCZHY3IBWN0XSEP0BSVSXOPU,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A22T0PKVR6VIBC,coach,0.3006099939744347,100,More excited than concerned,Somewhat easy,More concerned than excited,5,86,no
+3OONKJ5DKW91EHVDHSADUG63EO8BOM,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,AJ173YQLT4Z9A,absent,0.6726384887911112,65,Equally excited and concerned,Somewhat difficult,Equally excited and concerned,4,65,No I did not faced any issue.
+3GU1KF0O42RJZH7EWSNSJGBTOT4BP3,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A102C1DTGBA0K,coach,0.47203125555098446,75,More concerned than excited,Very easy,More concerned than excited,5,81,no very perfect hit
+3JAOYWH7V2UAK3DJ6GGPBT7JVJ0L95,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A24UWUL93BCA60,absent,0.33926160762156127,55,Equally excited and concerned,Somewhat easy,Equally excited and concerned,4,55,No.
+3AMW0RGHOXSL0QWBZIS1ABBN5IINP4,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3JEZEPRDOOQ58,coach,0.47345899695138816,59,More excited than concerned,Somewhat easy,Equally excited and concerned,4,59,No.
+3TU5ZICBRXRLXVAMTTI7SJB2LJ5Q8A,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3C1QLGNYG36M1,coach,0.38680795163172477,71,More excited than concerned,Somewhat difficult,Equally excited and concerned,4,17,No
+3YDGXNSEOJKE8QNOVWBUPGAXPSY84N,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2CKX2DBHYJM1Y,absent,0.423692429363013,62,Equally excited and concerned,Somewhat difficult,More excited than concerned,4,57,No
+3S3AMIZX3EVTKPWU5JSSU60MSVBCD7,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A3BUAU6657FMNA,absent,0.4389648772660269,62,Equally excited and concerned,Somewhat difficult,Equally excited and concerned,4,62,No.
+33PPO7FECF5KXSIUXTOE59YH50LID5,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A1D34XFWJBJ3E8,generate,0.5519427377177664,100,Equally excited and concerned,Very easy,Equally excited and concerned,4,100,a little bit lag in this hit.
+32EYX73OYKZJ7TWZ9B8CT13WEXRRUM,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2D8FARZ4P8JYY,generate,0.3721304481013978,100,More concerned than excited,Somewhat difficult,More concerned than excited,4,99,"No, I didn't face any technical issues during this hit."
+33FOTY3KE6BZSUGIPQ8XT4ZD3ZVC16,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A2P6TSH9SEDAC,generate,0.4618304563347652,100,More concerned than excited,Somewhat easy,More concerned than excited,5,100,NO
+3M1CVSFP6KVZGJ31QR2LOAHXB9IQAV,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,AJJQ1GYYH8VR2,absent,0.6109772332838079,60,More concerned than excited,Somewhat easy,More excited than concerned,3,81,NOTHING
+3M81GAB8AK94ZT8TW52HJL13TRGBQO,31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE,A1M7R2XY0YNLHG,coach,0.5779150396100247,100,Equally excited and concerned,Very easy,Equally excited and concerned,5,100,No technical issues.

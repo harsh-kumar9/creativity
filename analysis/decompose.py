@@ -1,94 +1,14 @@
 import pandas as pd
 import requests
 import json
+import statistics 
 
-# Originality Calculation functions
-def call_llm_api(prompt, inputs):
-    """
-    Args:
-    - prompt (str): The prompt to use with the API.
-    - inputs (list): The inputs to send to the API.
+from api import call_llm_api, call_score_api
 
-    Returns:
-    Originality Score (float) from 1-5 using Large Language Models
-    1 is minimally original, and 5 is maximally original
-    """
-    # Define the API endpoint
-    api_endpoint = "https://openscoring.du.edu/llm"
+from sentence_transformers import SentenceTransformer
+from scipy.spatial.distance import cosine
 
-    # Set the default parameters
-    params = {
-        "model": "ocsai-1.5", 
-        "prompt": prompt,
-        "input": inputs, 
-        "input_type": "csv",  
-        "elab_method": "none",  
-        "language": "English",  
-        "task": "uses",  
-    }
-    
-    # handle NULL values
-    if inputs[0] == "":
-        return -1.0
-
-    # Make the API call
-    response = requests.get(api_endpoint, params=params)
-    
-    # Check if the API call was successful
-    if response.status_code == 200:
-        # Return the JSON response if the call was successful
-        data = response.json()
-        originality_score = data["scores"][0]["originality"]
-        return originality_score
-    else:
-        # Return an error message if the call failed
-        return {"error": "API call failed with status code {}".format(response.status_code)}
-    
-def call_score_api(prompt, inputs):
-    """
-    Args:
-    - prompt (str): The prompt to use with the API.
-    - inputs (list): The inputs to send to the API.
-
-    Returns:
-    Originality Score (float) using Semantic Models
-    """
-    # Define the API endpoint
-    api_endpoint = "https://openscoring.du.edu/score"
-
-    # Set the default parameters
-    params = {
-        "model": "glove_840B", 
-        "prompt": prompt,
-        "input": inputs,  
-        "input_type": "csv", 
-
-        "elab_method": "stoplist", 
-        "stopword": "true",
-        "term_weighting": "true",
-        "normalize": "false",
-        "exclude_target": "true" 
-    }
-
-    # handle NULL values
-    if inputs[0] == "":
-        return -1.0
-
-    # Make the API call
-    response = requests.get(api_endpoint, params=params)
-    
-    # Check if the API call was successful
-    if response.status_code == 200:
-        # Parse the JSON response
-        data = response.json()
-        # Assuming there is only one score, directly return the 'originality' float
-        originality_score = data["scores"][0]["originality"]
-        return originality_score
-    else:
-        # If the call fails, raise an error with the status code
-        # raise Exception(f"API call failed with status code {response.status_code}")
-        print("prompt:" + prompt)
-        print("response:" + inputs[0])
+model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
 file_path = 'analysis/data_31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE.csv'
@@ -236,15 +156,41 @@ for row_id in data_rows.index:
             df_dictionary = pd.DataFrame([d])
             responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
-    # Survey & Feedback Answers
+    # Survey & Feedback Answers, Idea Diversity
     survey_answers = data_dict['1']
     feedback_answers = data_dict['feedback']
 
+    # Create embeddings for practise round responses
+    practice_embeddings = []
+    for r in responses_one:
+        embedding = model.encode(r['name'])
+        practice_embeddings.append(embedding)
+    for r in responses_two:
+        embedding = model.encode(r['name'])
+        practice_embeddings.append(embedding)
+    for r in responses_three:
+        embedding = model.encode(r['name'])
+        practice_embeddings.append(embedding)
+
+    # Find maximum cosine distance for each test round response
+    distances = []
+    for r in responses_four:
+        max_distance = 0
+        embedding = model.encode(r['name'])
+        for p in practice_embeddings:
+            distance = abs(cosine(embedding, p))
+            if distance > max_distance:
+                max_distance = distance
+        distances.append(max_distance)
+
+    median_distance = statistics.median(distances)
+    
     q = {
             'assignment_id' : assignment_id, 
             'hit_id': hit_id,
             'worker_id': worker_id,
             'condition' : condition, 
+            'diversity': median_distance,
             'I am more creative than \% of humans (before)': survey_answers['How Creative?'],
             'Increased use of AI computer programs in daily life makes you feel (before)': survey_answers['Increased AI use makes you feel'],
             'How difficult was it to come up with uses for the last object?': feedback_answers['q1'],
@@ -258,5 +204,5 @@ for row_id in data_rows.index:
     participants_df = pd.concat([participants_df, q_dictionary], ignore_index=True)
 
 
-responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
-# participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
+# responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
+participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
