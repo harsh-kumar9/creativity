@@ -22,6 +22,7 @@ const Feedback = () => {
     const [q3, setQ3] = useState("");
     const [q4, setQ4] = useState(null); 
     const [q5, setQ5] = useState("");
+    const [q6, setQ6] = useState("");
 
     const handleSliderChange = (e) => {
         const newValue = e.target.value;
@@ -33,10 +34,10 @@ const Feedback = () => {
         event.preventDefault(); // Prevent the default form submission
 
         // Data validation
-        if (!(q1==="") && !(q2==="") && !(q3==="") && !(q4===null) && !(q5==="")) {
+        if (!(q1==="") && !(q2==="") && !(q3==="") && !(q4===null) && !(q5==="") && !(q6==="")) {
             // Prepare feedback responses for submission
             const feedbackData = {
-                q1, q2, q3, q4, q5
+                q1, q2, q3, q4, q5, q6
             };
 
             // Optionally, update your application state with new feedback data
@@ -62,7 +63,7 @@ const Feedback = () => {
             // Submit the form
             event.target.submit();
         }
-        else if (!(q1==="") && !(q2==="") && !(q3==="") && (q4===null) && !(q5==="")) {
+        else if (!(q1==="") && !(q2==="") && !(q3==="") && (q4===null) && !(q5==="") && !(q6==="")) {
             alert("Please select a value for Question 4 (Slider)");
             return;
         }
@@ -189,14 +190,26 @@ const Feedback = () => {
                     <h2 className="text-2xl mb-2">4. Adjust the slider below: <i>I am more creative than <b><span>{sliderValue}%</span></b> of humans.</i></h2>
                     <input type="range" id="creative-slider" name="creative-slider" min="0" max="100" value={sliderValue} onChange={handleSliderChange} className="w-full"/>
                 </div>
-    
-                {/* Technical issues question */}
+
+                {/* New question */}
                 <div className="mb-4">
-                    <h2 className="text-2xl mb-2">5. Did you have any technical issues during the HIT?</h2>
+                    <h2 className="text-2xl mb-2">5. Question here?</h2>
                     <textarea 
                         name="q5" 
                         value={q5} 
                         onChange={(e) => setQ5(e.target.value)} 
+                        className="text-lg p-2 w-full h-32 text-black" // Adjust width (w-full for full width) and height (h-32 for height) as needed
+                        style={{ resize: "none" }} // Optional: prevents the user from resizing the textarea
+                    ></textarea>
+                </div>
+    
+                {/* Technical issues question */}
+                <div className="mb-4">
+                    <h2 className="text-2xl mb-2">6. Did you have any technical issues during the HIT?</h2>
+                    <textarea 
+                        name="q6" 
+                        value={q6} 
+                        onChange={(e) => setQ6(e.target.value)} 
                         className="text-lg p-2 w-full h-32 text-black" // Adjust width (w-full for full width) and height (h-32 for height) as needed
                         style={{ resize: "none" }} // Optional: prevents the user from resizing the textarea
                     ></textarea>
