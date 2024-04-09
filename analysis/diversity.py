@@ -23,21 +23,21 @@ test_coach = []
 
 # Looping through each row in the DataFrame
 for index, row in df.iterrows():
-    item_name = row['item_name'] 
     
-    if row['condition'] == 'Practice':
-        if row['phase'] == 'absent':
+    if row['phase'] == 'Practice':
+        if row['condition'] == 'absent':
             practice_absent.append(row['response'])
-        elif row['phase'] == 'generate':
+        elif row['condition'] == 'generate':
             practice_generate.append(row['response'])
-        else: # row['phase'] == 'coach':
+        else: # row['condition'] == 'coach':
             practice_coach.append(row['response'])
+
     else: # row['phase'] == 'Test':
-        if row['phase'] == 'absent':
+        if row['condition'] == 'absent':
             test_absent.append(row['response'])
-        elif row['phase'] == 'generate':
+        elif row['condition'] == 'generate':
             test_generate.append(row['response'])
-        else: # row['phase'] == 'coach':
+        else: # row['condition'] == 'coach':
             test_coach.append(row['response'])
 
 practice_absent_cos = []
