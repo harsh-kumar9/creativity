@@ -77,6 +77,6 @@ print("practice absent median: " + str(statistics.median(practice_absent_cos)) +
 print("practice generate median: " + str(statistics.median(practice_generate_cos)) + "\n")
 print("practice coach median: " + str(statistics.median(practice_coach_cos)) + "\n")
 
-print("practice absent median: " + str(statistics.median(test_absent_cos)) + "\n")
-print("practice generate median: " + str(statistics.median(test_generate_cos)) + "\n")
-print("practice coach median: " + str(statistics.median(test_coach_cos)) + "\n")
+print("test absent median: " + str(statistics.median(test_absent_cos)) + "\n")
+print("test generate median: " + str(statistics.median(test_generate_cos)) + "\n")
+print("test coach median: " + str(statistics.median(test_coach_cos)) + "\n")
