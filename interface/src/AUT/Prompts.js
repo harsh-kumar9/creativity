@@ -15,16 +15,23 @@ import lightbulb from "../assets/lightbulb.webp";
 import toothbrush from "../assets/toothbrush.webp";
 import backpack from "../assets/backpack.avif";
 
+// export const promptsArray = [
+//     ["Pencil", pencil],
+//     ["Tire", tire],
+//     ["Pants", pants],
+//     ["Shoe", shoe],
+//     ["Table", table],
+//     ["Bottle", bottle],
+//     ["Ball", ball],
+//     ["Fork", fork],
+//     ["Lightbulb", lightbulb],
+//     ["Toothbrush", toothbrush],
+//     ["Backpack", backpack]
+// ]
+
 export const promptsArray = [
-    ["Pencil", pencil],
     ["Tire", tire],
     ["Pants", pants],
     ["Shoe", shoe],
-    ["Table", table],
-    ["Bottle", bottle],
-    ["Ball", ball],
-    ["Fork", fork],
-    ["Lightbulb", lightbulb],
-    ["Toothbrush", toothbrush],
-    ["Backpack", backpack]
+    ["Table", table]
 ]
