@@ -193,7 +193,7 @@ const Feedback = () => {
 
                 {/* New question */}
                 <div className="mb-4">
-                    <h2 className="text-2xl mb-2">5. Question here?</h2>
+                    <h2 className="text-2xl mb-2">5. What was your strategy for coming up with ideas for the last object?</h2>
                     <textarea 
                         name="q5" 
                         value={q5} 
