@@ -11,7 +11,7 @@ from scipy.spatial.distance import cosine
 model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
-file_path = 'analysis/data_31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE.csv'
+file_path = 'data_3RTFSSG7URWI9FTY9PLG0TJ350ALW7.csv'
 df = pd.read_csv(file_path)
 
 # Filter the DataFrame to keep only the rows with the 'data' variable  
@@ -40,7 +40,7 @@ for row_id in data_rows.index:
     post_survey = data_dict['feedback']
 
     # Practice Round 1
-    item_one = data_dict['2']
+    item_one = data_dict['3']
     item_name_one = item_one['Prompt']
     responses_one = item_one['Response']
 
@@ -73,7 +73,7 @@ for row_id in data_rows.index:
             responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
     
     # Practice Round 2
-    item_two = data_dict['3']
+    item_two = data_dict['4']
     item_name_two = item_two['Prompt']
     responses_two = item_two['Response']
     for r in responses_two:
@@ -101,7 +101,7 @@ for row_id in data_rows.index:
             responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
     # Practice Round 3
-    item_three = data_dict['4']
+    item_three = data_dict['5']
     item_name_three = item_three['Prompt']
     responses_three = item_three['Response']
     for r in responses_three:
@@ -129,7 +129,7 @@ for row_id in data_rows.index:
             responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
     # Test Round 
-    item_four = data_dict['5']
+    item_four = data_dict['6']
     item_name_four = item_four['Prompt']
     responses_four = item_four['Response']
     for r in responses_four:
@@ -155,6 +155,10 @@ for row_id in data_rows.index:
 
             df_dictionary = pd.DataFrame([d])
             responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
+
+    # Miscellaneous Data
+    page_load = data_dict['2']
+    hide_time = data_dict['7']
 
     # Survey & Feedback Answers, Idea Diversity
     survey_answers = data_dict['1']
@@ -197,6 +201,8 @@ for row_id in data_rows.index:
             'Increased use of AI computer programs in daily life makes you feel (after)': feedback_answers['q2'],
             'How many total objects encountered?': feedback_answers['q3'],
             'I am more creative than \% of humans (after)': feedback_answers['q4'],
+            'Hide Time': hide_time,
+            'Page Load': page_load,
             'Technical Issues?': feedback_answers['q5']
     }
 
@@ -204,5 +210,5 @@ for row_id in data_rows.index:
     participants_df = pd.concat([participants_df, q_dictionary], ignore_index=True)
 
 
-# responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
+responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
 participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
