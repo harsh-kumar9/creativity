@@ -11,7 +11,7 @@ from scipy.spatial.distance import cosine
 model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
-file_path = 'analysis/responses_31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE.csv'
+file_path = 'responses_3RTFSSG7URWI9FTY9PLG0TJ350ALW7.csv'
 df = pd.read_csv(file_path)
 
 practice_absent = []
@@ -59,11 +59,12 @@ def cosine_permutations(responses, cosine_distances):
 
             model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
-            embedding1 = model.encode(response1)
-            embedding2 = model.encode(response2)
+            if response1 != 'nan' and response2 != 'nan' and (not isinstance(response1, float)) and (not isinstance(response2, float)):
+                embedding1 = model.encode(response1)
+                embedding2 = model.encode(response2)
+                cosine_distance = cosine(embedding1, embedding2)
+                cosine_distances.append(cosine_distance)
 
-            cosine_distance = cosine(embedding1, embedding2)
-            cosine_distances.append(cosine_distance)
 
 cosine_permutations(practice_absent, practice_absent_cos)
 cosine_permutations(practice_generate, practice_generate_cos)
