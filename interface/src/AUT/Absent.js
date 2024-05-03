@@ -223,19 +223,15 @@ const Absent = () => {
           style={{ backgroundColor: "rgba(64, 64, 64, 0.17)" }}
         >
           <form onSubmit={handleSubmit} className="w-full">
-            <div className="flex flex-row justify-between items-center mt-8 px-3">
+            <div className="flex flex-row justify-between items-center mb-4 mt-8 px-3">
               <h2 className="text-white text-lg 2xl:text-2xl text-center">
-                Enter Alternative Uses below
+                Enter Alternative Uses one by one
               </h2>
               <p className="text-white w-fit  outline outline-1  rounded-lg text-xl p-1">
                 Time: {`${Math.floor(time / 60)}`.padStart(2, 0)}:
                 {`${time % 60}`.padStart(2, 0)}
               </p>
             </div>
-
-            <h2 className="text-white text-lg 2xl:text-2xl mb-4 px-3 ">
-                  one by one, without typing any commas
-              </h2>
 
             <div className="flex flex-row space-x-4 justify-between">
               <input
