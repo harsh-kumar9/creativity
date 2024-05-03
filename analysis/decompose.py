@@ -187,7 +187,10 @@ for row_id in data_rows.index:
                 max_distance = distance
         distances.append(max_distance)
 
-    median_distance = statistics.median(distances)
+    if len(distances) != 0:
+        median_distance = statistics.median(distances)
+    else: 
+        median_distance = "n/a"
     
     q = {
             'assignment_id' : assignment_id, 
@@ -211,4 +214,4 @@ for row_id in data_rows.index:
 
 
 responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
-participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
+# participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)

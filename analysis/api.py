@@ -26,11 +26,11 @@ def call_llm_api(prompt, inputs):
     }
     
     # handle NULL values
-    if inputs[0] == "":
+    if inputs[0] == "" or len(inputs) == 0:
         return -1.0
 
     # Make the API call
-    response = requests.get(api_endpoint, params=params)
+    response = requests.get(api_endpoint, params=params, verify=False)
     
     # Check if the API call was successful
     if response.status_code == 200:
@@ -73,7 +73,7 @@ def call_score_api(prompt, inputs):
         return -1.0
 
     # Make the API call
-    response = requests.get(api_endpoint, params=params)
+    response = requests.get(api_endpoint, params=params, verify=False)
     
     # Check if the API call was successful
     if response.status_code == 200:

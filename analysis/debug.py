@@ -18,7 +18,7 @@ def test_llm_api(prompt, inputs):
     }
 
     # Make API call
-    response = requests.get(api_endpoint, params=params)
+    response = requests.get(api_endpoint, params=params, verify=False)
     
     # Check if the API call was successful
     if response.status_code == 200:
