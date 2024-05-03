@@ -35,7 +35,7 @@ theme_set(theme_bw())
 
 # set paths
 figure_dir <- here("figures")
-data_dir <- here("data")
+data_dir <- '/Users/harsh/Desktop/css-projs/creativity/analysis/'
 ```
 
 # Load and clean data
@@ -150,6 +150,8 @@ ggplot(originality_summary, aes(x = item_order, y = mean_originality)) +
   ggtitle("Mean Originality Across Item Orders by Condition") +
   facet_wrap(~condition) +
   theme(legend.position = "none")
+
+#what was your strategy?
 ```
 
 
