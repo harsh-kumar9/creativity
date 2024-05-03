@@ -35,13 +35,13 @@ theme_set(theme_bw())
 
 # set paths
 figure_dir <- here("figures")
-data_dir <- '/Users/harsh/Desktop/css-projs/creativity/analysis/'
+data_dir <- '/Users/harsh/Desktop/css-projs/creativity/data'
 ```
 
 # Load and clean data
 
 ```{r load-data}
-hit_ids <- c("31YWE12TFJ2YJU9MF0GSJ7F9IRV7XE")
+hit_ids <- c("3RTFSSG7URWI9FTY9PLG0TJ350ALW7")
 
 # read participants data
 participants <- hit_ids %>%
@@ -96,8 +96,8 @@ diversity_summary <- participants %>%
 ggplot(diversity_summary, aes(x = condition, y = mean_diversity)) +
   geom_point(size = 3) +
   geom_errorbar(aes(ymin = mean_diversity - se, ymax = mean_diversity + se), width = 0.2) +
-  labs(x = "Condition", y = "Diversity") +
-  ggtitle("Diversity Across Conditions") +
+  labs(x = "Condition", y = "Similarity") +
+  ggtitle("Similarity of Ideas in Test and Practice Across Conditions") +
   theme(legend.position = "none")
 ```
 
