@@ -33,5 +33,6 @@ export const promptsArray = [
     ["Tire", tire],
     ["Pants", pants],
     ["Shoe", shoe],
-    ["Table", table]
+    ["Table", table],
+    ["Bottle", bottle]
 ]
