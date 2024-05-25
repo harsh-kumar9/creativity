@@ -4,7 +4,7 @@ import { DataContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import ReactTyped from "react-typed";
 import { promptsArray } from "./Prompts";
-import { gptAid } from "./Aid";
+import { gptAid, tireAid, pantsAid, shoeAid, tableAid, bottleAid } from "./Aid";
 import background from "../assets/blur-background.svg";
 import Game from "../Game/Game";
 
@@ -22,6 +22,19 @@ const Generate = () => {
 
   const [promptCopy, setPromptCopy] = useState([...promptsArray]);
   const [shuffled, setShuffled] = useState(false);
+
+  const [copiedTireAid, setCopiedTireAid] = useState([...tireAid]);
+  const [copiedPantsAid, setCopiedPantsAid] = useState([...pantsAid]);
+  const [copiedShoeAid, setCopiedShoeAid] = useState([...shoeAid]);
+  const [copiedTableAid, setCopiedTableAid] = useState([...tableAid]);
+  const [copiedBottleAid, setCopiedBottleAid] = useState([...bottleAid]);
+  const [newGptAid, setNewGptAid] = useState({
+    "Tire": "",
+      "Pants": "",
+      "Shoe": "",
+      "Table": "",
+      "Bottle": ""
+  });
 
   const outOfFocusStart = useRef(0);
   const [outOfFocusTime, setOutOfFocusTime] = useState(0);
@@ -70,7 +83,7 @@ const Generate = () => {
   }, [outOfFocusTime]);
 
   useEffect(() => {
-    // Shuffle the array using the Fisher-Yates shuffle algorithm
+    // Shuffle item prompt array using the Fisher-Yates shuffle algorithm
     const shuffleArray = (array) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -79,7 +92,7 @@ const Generate = () => {
       return array;
     };
 
-    // Set the randomized list in the state during component mount or refresh
+    // Set the randomized item prompt list in the state during component mount or refresh
     setPromptCopy(() => {
       const shuffledCopy = shuffleArray(promptCopy);
       return [
@@ -89,7 +102,29 @@ const Generate = () => {
       ];
     });
     setShuffled(true);
+
+    // Set the randomized aid list in the state during component mount or refresh
+    setCopiedTireAid(shuffleArray([...tireAid]).slice(0, 7));
+    setCopiedPantsAid(shuffleArray([...pantsAid]).slice(0, 7));
+    setCopiedShoeAid(shuffleArray([...shoeAid]).slice(0, 7));
+    setCopiedTableAid(shuffleArray([...tableAid]).slice(0, 7));
+    setCopiedBottleAid(shuffleArray([...bottleAid]).slice(0, 7));
+
+  
   }, []);
+
+  useEffect(() => {
+    setNewGptAid({
+      "Tire": copiedTireAid.join("\n\n"),
+      "Pants": copiedPantsAid.join("\n\n"),
+      "Shoe": copiedShoeAid.join("\n\n"),
+      "Table": copiedTableAid.join("\n\n"),
+      "Bottle": copiedBottleAid.join("\n\n")
+    })
+
+    console.log(newGptAid)
+
+  }, [copiedTireAid, copiedPantsAid, copiedShoeAid, copiedTableAid, copiedBottleAid])
 
   const handleSubmit = (e) => {
     // e is short for event
@@ -450,8 +485,8 @@ const Generate = () => {
               style={{ backgroundColor: "rgba(71, 85, 105, 0.18)" }}
             >
               <ReactTyped
-                key={gptAid[promptCopy[promptId][0]]}
-                strings={[gptAid[promptCopy[promptId][0]]]}
+                key={newGptAid[promptCopy[promptId][0]]}
+                strings={[newGptAid[promptCopy[promptId][0]]]}
                 typeSpeed={0.1}
                 cursorChar="⬤"
                 showCursor={true}

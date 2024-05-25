@@ -177,6 +177,127 @@ export const gptAid = {
     `
 }
 
+export const tireAid = [
+    "Garden Planter: Cut a tire in half and use it as a unique planter for flowers or vegetables.",
+    "Swing: Hang a tire from a tree to create a fun outdoor swing for kids.",
+    "Coffee Table: Stack a few tires on top of each other, paint them, and add a glass top to create a unique coffee table.",
+    "Sandbox: Fill a large tire with sand to create a small sandbox for children.",
+    "Tire Ottoman: Stuff a tire with cushioning material and cover it with fabric to create a unique ottoman.",
+    "Tire Pond: Dig a hole in your backyard, place a tire in it, and fill it with water to create a small pond.",
+    "Tire Climbing Wall: Attach several tires to a wall to create a climbing wall for kids.",
+    "Tire Mirror Frame: Cut a tire in half and use it as a frame for a large mirror.",
+    "Tire Chandelier: Hang a tire from the ceiling and attach light bulbs around it to create a unique chandelier.",
+    "Tire Dog Bed: Fill a tire with a soft cushion to create a comfortable bed for your pet.",
+    "Tire Wine Rack: Cut a tire in half and use it as a wine rack.",
+    "Tire Christmas Tree: Stack several tires of decreasing sizes on top of each other, paint them green, and decorate them to create a Christmas tree.",
+    "Tire Hose Reel: Use a tire as a hose reel in your garden.",
+    "Tire Staircase: Stack several tires to create a staircase for a treehouse or a loft.",
+    "Tire Snowman: Paint a few tires white, stack them, and decorate them to create a snowman.",
+    "Tire Drum: Cover a tire with a piece of leather or plastic to create a drum.",
+    "Tire Bird Bath: Place a tire on a stand, fill it with water, and use it as a bird bath.",
+    "Tire Bookshelf: Attach a tire to a wall and use it as a bookshelf.",
+    "Tire Garden Path: Lay several tires on the ground to create a garden path.",
+    "Tire Umbrella Stand: Fill a tire with rocks and use it as an umbrella stand."
+];
+
+export const pantsAid = [
+    "Plant Pot Cover: Use pants to cover unsightly plant potThe pockets can also hold gardening tools.",
+    "Art Canvas: Use the fabric of the pants as a canvas for painting or drawing.",
+    "Hammock for Small Pets: Sew the ends of the legs together to create a cozy hammock for small pets.",
+    "Wine Bottle Bag: Use a pant leg as a chic, recycled wine bottle gift bag.",
+    "Patchwork Quilt: Combine various pants to create a unique patchwork quilt.",
+    "DIY Bag: Convert an old pair of jeans into a stylish tote bag.",
+    "Halloween Decorations: Stuff the pants with hay or newspapers and pair with a shirt to make a scarecrow.",
+    "Chair Cover: Use pants to cover a chair or stool for a quirky touch to your interior décor.",
+    "Innovative Apron: Turn your old jeans into a useful kitchen apron.",
+    "DIY Rug: Cut the pants into strips and weave them into a rustic rug.",
+    "Garden Kneeler: Stuff a pant leg with padding and sew up the ends to create a comfortable kneeler for gardening.",
+    "DIY Puppet: Use the fabric to create a puppet, with buttons from the pants as eyes.",
+    "Bed for Pets: Stuff an old pair of pants with filling to make a comfy bed for your pet.",
+    "Throw Pillows: Cut out squares or shapes from the pants fabric to create unique throw pillows.",
+    "Book Covers: Use the fabric to create durable, unique book covers.",
+    "Cushion Covers: Make cushion covers from the pants material.",
+    "Jewelry Organizer: Use the pockets of the pants to hold and organize small jewelry items.",
+    "Bulletin Board: Stretch and secure the fabric over a corkboard for a unique bulletin board.",
+    "Hand Gloves: Cut out a glove shape from the pants material and sew the edges to create hand gloves.",
+    "DIY Hair Accessories: Use the fabric to create hair ties, headbands or bows."
+];
+
+export const shoeAid = [
+    "Flower Pot: You can fill up an old boot with soil and plant some flowers or herbs in it.",
+    "Door Stopper: A heavy shoe can be used as a door stopper to prevent a door from closing.",
+    "Bookend: A pair of sturdy shoes can be used as an innovative bookend to keep books upright on a shelf.",
+    "Jewelry Holder: A high-heeled shoe can be used to hang necklaces or bracelets, making a quirky jewelry holder.",
+    "Pin Cushion: Stuff a shoe with foam or fabric and use it as a pin cushion for sewing.",
+    "Pet Bed: A large boot can be filled with soft fabric and used as a small pet bed for hamsters, guinea pigs, or small kittens.",
+    "Birdhouse: An old shoe can be hung from a tree and used as a unique birdhouse.",
+    "Pencil Holder: An old shoe can be used as a pencil or stationary holder on a desk.",
+    "Wine Bottle Holder: High heeled shoes can be used as a creative wine bottle holder.",
+    "Garden Decoration: Shoes can be used as quirky garden decorations, either on their own or filled with plants.",
+    "Camera Stand: A shoe can be used as a makeshift camera stand in a pinch.",
+    "Hammer: In a pinch, a heavy shoe or boot can be used to hammer in a nail.",
+    "Message Board: Cover a shoe in chalkboard paint and use it as a message board.",
+    "Hide-a-Key: A shoe can be used as a place to hide a spare key outside.",
+    "Bug Smasher: A shoe can be used to kill bugs or spiders.",
+    "Game: A shoe can be used in a throw-and-catch game.",
+    "Ice Scraper: In a pinch, a shoe can be used as an ice scraper for a car windshield.",
+    "Money Box: Cut a slot in a shoe to make a creative money box.",
+    "Soap Dish: A shoe can be used as a soap dish in the bathroom.",
+    "Photo Frame: Attach a photo to the inside of a shoe for a quirky photo frame.",
+    "Shoe Bathtub Toys: Waterproof shoes like Crocs can be used as fun bath toys for kids.",
+    "Shoe Planter: Use an old boot as a succulent planter for a rustic look.",
+    "Tool Organizer: Use an old shoe to organize small tools in the garage or workshop.",
+    "Shoe Chia Pet: Apply some chia seeds and watch them grow into a shoe-shaped mini garden.",
+    "DIY Shoe Clock: Remove the sole and replace it with a clock mechanism for a unique timepiece."
+];
+
+export const tableAid = [
+    "Art Canvas: A table can be used as a canvas for painting or drawinYou can create a unique piece of art right on the surface of the table.",
+    "Plant Stand: A table can be used as a plant stand, especially for larger plants that need more space.",
+    "Cat Playground: If you have cats, a table can be turned into a fun playground for them with the addition of some toys and climbing structures.",
+    "Mini Library: A table can be converted into a mini library by stacking books on it and adding some comfortable seating around it.",
+    "DIY Bar: A table can be transformed into a DIY bar for parties or gatheringJust add some bottles, glasses, and a cocktail shaker.",
+    "Indoor Picnic Spot: Lay a blanket over the table and have an indoor picnic.",
+    "Puppet Theater: A table with a long tablecloth can be turned into a puppet theater for kids.",
+    "Indoor Garden: A table can be used to create an indoor garden with potted plants, succulents, or herbs.",
+    "Fashion Runway: For kids who love fashion, a long table can be used as a runway for a fashion show.",
+    "DIY Photo Studio: A table can be used as a base for a DIY photo studJust add a backdrop and some lights.",
+    "Music Station: A table can be used to set up a music station with instruments, a stereo, or a turntable.",
+    "Board Game Arena: A table can be used to host a board game nigIt can hold multiple games and snacks.",
+    "Mini Cinema: With a projector, a table can be used to hold a mini cinema night at home.",
+    "Crafting Station: A table can be used as a crafting station, holding all the necessary supplies for various projects.",
+    "Indoor Camping: A table can be used to create an indoor camping experienJust throw a sheet over it to create a tent.",
+    "DIY Spa: A table can be used to set up a DIY spa at home with candles, essential oils, and beauty treatments.",
+    "Lego Building Station: A table can be used as a Lego building station for kids.",
+    "Homework Station: A table can be used as a dedicated homework station for kids, complete with all necessary supplies.",
+    "Reading Nook: A table can be used to create a cozy reading nook with books, a lamp, and a comfy chair.",
+    "Sewing Table: A table can be used as a sewing station with a sewing machine and all necessary supplies."
+];
+
+export const bottleAid = [
+    "Flower Vase: A bottle can be used as a simple yet elegant flower vase.",
+    "Candle Holder: A bottle can be used as a candle holder for long candles.",
+    "Bird Feeder: A bottle can be transformed into a bird feeder with some modifications.",
+    "Soap Dispenser: A bottle can be used as a soap dispenser with the right pump.",
+    "Storage Container: A bottle can be used to store small items like buttons, beads, or spices.",
+    "Lamp Base: A bottle can be used as a base for a DIY lamp project.",
+    "Watering Can: A bottle can be used as a watering can for small plants.",
+    "Piggy Bank: A bottle can be used as a piggy bank with a coin slot cut in the top.",
+    "Plant Watering System: A bottle can be used to create a slow-release watering system for plants.",
+    "Garden Decor: A bottle can be used as garden decor, painted or left clear.",
+    "Wind Chime: A bottle can be used to make a wind chime with some additional materials.",
+    "Hanging Light: A bottle can be used as a hanging light fixture with some modifications.",
+    "DIY Spray Bottle: A bottle can be used as a DIY spray bottle for cleaning solutions or water.",
+    "Decorative Centerpiece: A bottle can be used as part of a decorative centerpiece for tables.",
+    "Message in a Bottle: A bottle can be used for a message in a bottle craft or project.",
+    "Herb Garden: A bottle can be used to grow herbs, either in water or soil.",
+    "DIY Snow Globe: A bottle can be used to create a DIY snow globe with some glitter and water.",
+    "Bottle Tree: A bottle can be used to create a bottle tree in your yard.",
+    "Insect Trap: A bottle can be used as an insect trap with some bait inside.",
+    "Christmas Decoration: A bottle can be decorated and used as a Christmas ornament or decor piece."
+];
+
+
 export const gptCoach = {
     "Tire": 
     `
