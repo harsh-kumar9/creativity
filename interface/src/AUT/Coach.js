@@ -443,7 +443,7 @@ const Coach = () => {
             </h2>
             <div
               onCopy={preventDefaultAction}
-              className="text-white select-none h-5/6 text-xs w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"
+              className="text-white select-none h-5/6 text-sm w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"
               style={{ backgroundColor: "rgba(71, 85, 105, 0.18)" }}
             >
               <ReactTyped
