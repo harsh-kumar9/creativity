@@ -14,6 +14,9 @@ def test_llm_api(prompt, inputs):
         "input_type": "csv",  
         "elab_method": "none",  
         "language": "English",  
+        "question": None,
+        "prompt_in_input": False,
+        "question_in_input": False,
         "task": "uses",  
     }
 

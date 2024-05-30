@@ -11,6 +11,7 @@ def call_llm_api(prompt, inputs):
     Originality Score (float) from 1-5 using Large Language Models
     1 is minimally original, and 5 is maximally original
     """
+    return 0
     # Define the API endpoint
     api_endpoint = "https://openscoring.du.edu/llm"
 
@@ -22,6 +23,9 @@ def call_llm_api(prompt, inputs):
         "input_type": "csv",  
         "elab_method": "none",  
         "language": "English",  
+        "question": None,
+        "prompt_in_input": False,
+        "question_in_input": False,
         "task": "uses",  
     }
     

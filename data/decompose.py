@@ -11,7 +11,7 @@ from scipy.spatial.distance import cosine
 model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
-file_path = 'data_3RTFSSG7URWI9FTY9PLG0TJ350ALW7.csv'
+file_path = 'data/data_371QPA24DLEDRRL0LAYMTU3Q4Z0T1V.csv'
 df = pd.read_csv(file_path)
 
 # Filter the DataFrame to keep only the rows with the 'data' variable  
@@ -33,6 +33,7 @@ for row_id in data_rows.index:
     data_value = data_rows['value'][row_id]
 
     # Convert the provided JSON string into a Python dictionary
+    print(data_value)
     data_dict = json.loads(data_value)
 
     condition = data_dict['0']
@@ -204,8 +205,8 @@ for row_id in data_rows.index:
             'Increased use of AI computer programs in daily life makes you feel (after)': feedback_answers['q2'],
             'How many total objects encountered?': feedback_answers['q3'],
             'I am more creative than \% of humans (after)': feedback_answers['q4'],
-            'Hide Time': hide_time,
-            'Page Load': page_load,
+            'Hide Time': hide_time['HideTime'],
+            'Page Load': page_load['PageLoad'],
             'Technical Issues?': feedback_answers['q5']
     }
 
@@ -213,5 +214,5 @@ for row_id in data_rows.index:
     participants_df = pd.concat([participants_df, q_dictionary], ignore_index=True)
 
 
-responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
-# participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
+# responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
+participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
