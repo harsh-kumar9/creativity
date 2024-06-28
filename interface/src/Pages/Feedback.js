@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { DataContext } from "../App";
 import { mTurkContext } from "../App";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import background from "../assets/blur-background.svg";
 
 const Feedback = () => {
@@ -30,7 +31,30 @@ const Feedback = () => {
         setQ4(newValue); // Keep slider value and q4 in sync
     };
 
-    const handleSubmit = (event) => {
+    const submitData = async (data) => {
+        try {
+          const response = await fetch("https://creative-gpt.azurewebsites.net/api/HttpTrigger1?code=SfnloefDXU04OK8Ao4QAvrwDRNIBeoDKWmco5VKt33xSAzFukmwSbw%3D%3D", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+      
+          if (!response.ok) {
+            console.log("Response not okay");
+          }
+      
+          const result = await response.json();
+          return result;
+        } 
+        catch (error) {
+          console.error('Error submitting data:', error);
+          throw error;
+        }
+    };
+
+    const handleSubmit = async (event) => {
         event.preventDefault(); // Prevent the default form submission
 
         // Data validation
@@ -60,8 +84,31 @@ const Feedback = () => {
             dataInput.value = JSON.stringify(submissionData);
             event.target.appendChild(dataInput);
 
-            // Submit the form
-            event.target.submit();
+            // Send data using Azure function
+            submitData(submissionData)
+            .then(result => {
+                console.log('Data submitted successfully:', result);
+            })
+            .catch(error => {
+                console.error('Error in submission:', error);
+            });
+
+            // // Submit the mTurk form
+            // event.target.submit();
+            
+            // Call backend endpoint to send data to node.js server
+            try {
+                const response = await axios.post('http://localhost:3001/results', {
+                  hit_id: mTurk.hitId,
+                  assignment_id: mTurk.assignmentId,
+                  worker_id: mTurk.workerId,
+                  variable: submissionData,
+                  value: submissionData,
+                });
+                console.log('Result added:', response.data);
+              } catch (error) {
+                console.error('Error adding result:', error);
+              }
         }
         else if (!(q1==="") && !(q2==="") && !(q3==="") && (q4===null) && !(q5==="") && !(q6==="")) {
             alert("Please select a value for Question 4 (Slider)");

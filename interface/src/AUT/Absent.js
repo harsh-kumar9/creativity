@@ -119,7 +119,7 @@ const Absent = () => {
   }
 
   // timer countdown in seconds
-  const [time, setTime] = useState(120);
+  const [time, setTime] = useState(3);
 
   const deleteIdea = (id) => {
     setIdeas(ideas.filter((idea) => idea.id !== id));
@@ -164,9 +164,9 @@ const Absent = () => {
         promptId += 1;
         // reset states and timer
         if (promptId === 3) {
-          setTime(60);
+          setTime(3);
         } else {
-          setTime(120);
+          setTime(3);
         }
 
         itemId = 0;
