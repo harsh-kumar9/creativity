@@ -96,19 +96,19 @@ const Feedback = () => {
             // // Submit the mTurk form
             // event.target.submit();
             
-            // Call backend endpoint to send data to node.js server
-            try {
-                const response = await axios.post('http://localhost:3001/results', {
-                  hit_id: mTurk.hitId,
-                  assignment_id: mTurk.assignmentId,
-                  worker_id: mTurk.workerId,
-                  variable: submissionData,
-                  value: submissionData,
-                });
-                console.log('Result added:', response.data);
-              } catch (error) {
-                console.error('Error adding result:', error);
-              }
+            // // Call backend endpoint to send data to node.js server
+            // try {
+            //     const response = await axios.post('http://localhost:3001/results', {
+            //       hit_id: mTurk.hitId,
+            //       assignment_id: mTurk.assignmentId,
+            //       worker_id: mTurk.workerId,
+            //       variable: submissionData,
+            //       value: submissionData,
+            //     });
+            //     console.log('Result added:', response.data);
+            //   } catch (error) {
+            //     console.error('Error adding result:', error);
+            //   }
         }
         else if (!(q1==="") && !(q2==="") && !(q3==="") && (q4===null) && !(q5==="") && !(q6==="")) {
             alert("Please select a value for Question 4 (Slider)");
