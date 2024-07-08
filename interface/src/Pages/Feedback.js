@@ -7,21 +7,16 @@ import axios from 'axios';
 import background from "../assets/blur-background.svg";
 
 const Feedback = () => {
-
     const navigate = useNavigate();
-    const {data, addData} = useContext(DataContext);
-    const {mTurk, addMTurk} = useContext(mTurkContext);
+    const { data, addData } = useContext(DataContext);
+    const { mTurk, addMTurk } = useContext(mTurkContext);
 
-    const [sliderValue, setSliderValue] = useState(null); 
-    // console.log(mTurk.assignmentId);
-    // console.log(mTurk.workerId);
-
-    // const [date, setDate] = useState(new Date());
+    const [sliderValue, setSliderValue] = useState(null);
 
     const [q1, setQ1] = useState("");
     const [q2, setQ2] = useState("");
     const [q3, setQ3] = useState("");
-    const [q4, setQ4] = useState(null); 
+    const [q4, setQ4] = useState(null);
     const [q5, setQ5] = useState("");
     const [q6, setQ6] = useState("");
 
@@ -33,24 +28,20 @@ const Feedback = () => {
 
     const submitData = async (data) => {
         try {
-          const response = await fetch("https://creative-gpt.azurewebsites.net/api/HttpTrigger1?code=SfnloefDXU04OK8Ao4QAvrwDRNIBeoDKWmco5VKt33xSAzFukmwSbw%3D%3D", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
-      
-          if (!response.ok) {
-            console.log("Response not okay");
-          }
-      
-          const result = await response.json();
-          return result;
-        } 
-        catch (error) {
-          console.error('Error submitting data:', error);
-          throw error;
+            const response = await axios.post("https://creative-gpt.azurewebsites.net/api/httptrigger2?code=SfnloefDXU04OK8Ao4QAvrwDRNIBeoDKWmco5VKt33xSAzFukmwSbw%3D%3D", data, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (response.status !== 200) {
+                console.log("Response not okay");
+            }
+
+            return response.data;
+        } catch (error) {
+            console.error('Error submitting data:', error);
+            throw error;
         }
     };
 
@@ -58,7 +49,7 @@ const Feedback = () => {
         event.preventDefault(); // Prevent the default form submission
 
         // Data validation
-        if (!(q1==="") && !(q2==="") && !(q3==="") && !(q4===null) && !(q5==="") && !(q6==="")) {
+        if (!(q1 === "") && !(q2 === "") && !(q3 === "") && !(q4 === null) && !(q5 === "") && !(q6 === "")) {
             // Prepare feedback responses for submission
             const feedbackData = {
                 q1, q2, q3, q4, q5, q6
@@ -74,7 +65,7 @@ const Feedback = () => {
                 assignmentId: mTurk.assignmentId,
                 hitId: mTurk.hitId,
                 workerId: mTurk.workerId,
-                ts_submitted_: new Date().toISOString(),  
+                ts_submitted_: new Date().toISOString(),
             };
 
             // For MTurk submission: Set the value of a hidden input to include all necessary data
@@ -86,69 +77,47 @@ const Feedback = () => {
 
             // Send data using Azure function
             submitData(submissionData)
-            .then(result => {
-                console.log('Data submitted successfully:', result);
-            })
-            .catch(error => {
-                console.error('Error in submission:', error);
-            });
-
-            // // Submit the mTurk form
-            // event.target.submit();
-            
-            // // Call backend endpoint to send data to node.js server
-            // try {
-            //     const response = await axios.post('http://localhost:3001/results', {
-            //       hit_id: mTurk.hitId,
-            //       assignment_id: mTurk.assignmentId,
-            //       worker_id: mTurk.workerId,
-            //       variable: submissionData,
-            //       value: submissionData,
-            //     });
-            //     console.log('Result added:', response.data);
-            //   } catch (error) {
-            //     console.error('Error adding result:', error);
-            //   }
-        }
-        else if (!(q1==="") && !(q2==="") && !(q3==="") && (q4===null) && !(q5==="") && !(q6==="")) {
+                .then(result => {
+                    console.log('Data submitted successfully:', result);
+                })
+                .catch(error => {
+                    console.error('Error in submission:', error);
+                });
+        } else if (!(q1 === "") && !(q2 === "") && !(q3 === "") && (q4 === null) && !(q5 === "") && !(q6 === "")) {
             alert("Please select a value for Question 4 (Slider)");
             return;
-        }
-        else {
+        } else {
             alert("Please read the instructions & answer all questions to proceed");
             return;
         }
-
     };
 
     return (
         <div style={{ backgroundImage: `url(${background})` }}
-             className="h-auto w-screen items-center justify-center flex text-white text-3xl font-semibold bg-amber-400 p-14 bg-cover"> 
+            className="h-auto w-screen items-center justify-center flex text-white text-3xl font-semibold bg-amber-400 p-14 bg-cover">
             <form className="flex flex-col text-center h-full w-full items-center justify-center outline outline-2 outline-white rounded-[60px] py-10 px-10 bg-slate-500"
-                  style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}
-                  action={`${mTurk.turkSubmitTo}/mturk/externalSubmit`}
-                  method="POST"
-                  onSubmit={handleSubmit}>
-                <h2 className="text-3xl mb-8">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>  
+                style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}
+                onSubmit={handleSubmit}>
+                <h2 className="text-3xl mb-8">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>
     
                 {/* Question 1 */}
                 <div className="text-2xl flex flex-col mb-4">
                     <h2>1. How difficult was it to come up with uses for the last object?</h2>
                     {/* Options for Question 1 */}
                     <label>
-                        <input type="radio" name="q1" value="Very easy" checked={q1 === "Very easy"} onChange={(e) => setQ1(e.target.value)} className="mr-2"/>
+                        <input type="radio" name="q1" value="Very easy" checked={q1 === "Very easy"} onChange={(e) => setQ1(e.target.value)} className="mr-2" />
                         Very easy
                     </label>
                     <label>
-                        <input type="radio" name="q1" value="Somewhat easy" checked={q1 === "Somewhat easy"} onChange={(e) => setQ1(e.target.value)} className="mr-2"/>
+                        <input type="radio" name="q1" value="Somewhat easy" checked={q1 === "Somewhat easy"} onChange={(e) => setQ1(e.target.value)} className="mr-2" />
                         Somewhat easy
                     </label>
                     <label>
-                        <input type="radio" name="q1" value="Somewhat difficult" checked={q1 === "Somewhat difficult"} onChange={(e) => setQ1(e.target.value)} className="mr-2"/>
+                        <input type="radio" name="q1" value="Somewhat difficult" checked={q1 === "Somewhat difficult"} onChange={(e) => setQ1(e.target.value)} className="mr-2" />
                         Somewhat difficult
                     </label>
                     <label>
-                        <input type="radio" name="q1" value="Very difficult" checked={q1 === "Very difficult"} onChange={(e) => setQ1(e.target.value)} className="mr-2"/>
+                        <input type="radio" name="q1" value="Very difficult" checked={q1 === "Very difficult"} onChange={(e) => setQ1(e.target.value)} className="mr-2" />
                         Very difficult
                     </label>
                 </div>
@@ -159,77 +128,77 @@ const Feedback = () => {
                     <h2>2. Artificial intelligence computer programs are designed to learn tasks that humans typically do. Would you say the increased use of artificial intelligence computer programs in daily life makes you feel</h2>
                     {/* Options for Question 2 */}
                     <label>
-                            <input 
-                                type="radio" 
-                                name="q2"
-                                value="More concerned than excited"
-                                checked={q2 === "More concerned than excited"}
-                                className="mr-2"
-                                onChange={(e) => setQ2(e.target.value)} 
-                            />
-                            More concerned than excited
-                        </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="q2"
-                                value="More excited than concerned"
-                                checked={q2 === "More excited than concerned"}
-                                className="mr-2"
-                                onChange={(e) => setQ2(e.target.value)} 
-                            />
-                            More excited than concerned
-                        </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="q2"
-                                value="Equally excited and concerned"
-                                checked={q2 === "Equally excited and concerned"}
-                                className="mr-2"
-                                onChange={(e) => setQ2(e.target.value)} 
-                            />
-                            Equally excited and concerned
-                        </label>
+                        <input 
+                            type="radio" 
+                            name="q2"
+                            value="More concerned than excited"
+                            checked={q2 === "More concerned than excited"}
+                            className="mr-2"
+                            onChange={(e) => setQ2(e.target.value)} 
+                        />
+                        More concerned than excited
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="q2"
+                            value="More excited than concerned"
+                            checked={q2 === "More excited than concerned"}
+                            className="mr-2"
+                            onChange={(e) => setQ2(e.target.value)} 
+                        />
+                        More excited than concerned
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="q2"
+                            value="Equally excited and concerned"
+                            checked={q2 === "Equally excited and concerned"}
+                            className="mr-2"
+                            onChange={(e) => setQ2(e.target.value)} 
+                        />
+                        Equally excited and concerned
+                    </label>
                 </div>
-                
+    
                 {/* Question 3 */}
                 <div className="text-2xl flex flex-col mb-4">
                     <h2>3. How many objects in total did you encounter in this HIT?</h2>
                     {/* Options for Question 3 */}
                     <label>
-                            <input 
-                                type="radio" 
-                                name="q3"
-                                value="3"
-                                checked={q3 === "3"}
-                                className="mr-2"
-                                onChange={(e) => setQ3(e.target.value)} 
-                            />
-                            3
-                        </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="q3"
-                                value="4"
-                                checked={q3 === "4"}
-                                className="mr-2"
-                                onChange={(e) => setQ3(e.target.value)} 
-                            />
-                            4
-                        </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                name="q3"
-                                value="5"
-                                checked={q3 === "5"}
-                                className="mr-2"
-                                onChange={(e) => setQ3(e.target.value)} 
-                            />
-                            5
-                        </label>
+                        <input 
+                            type="radio" 
+                            name="q3"
+                            value="3"
+                            checked={q3 === "3"}
+                            className="mr-2"
+                            onChange={(e) => setQ3(e.target.value)} 
+                        />
+                        3
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="q3"
+                            value="4"
+                            checked={q3 === "4"}
+                            className="mr-2"
+                            onChange={(e) => setQ3(e.target.value)} 
+                        />
+                        4
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="q3"
+                            value="5"
+                            checked={q3 === "5"}
+                            className="mr-2"
+                            onChange={(e) => setQ3(e.target.value)} 
+                        />
+                        5
+                    </label>
                 </div>
     
                 {/* Slider for Self-creativity */}
@@ -237,7 +206,7 @@ const Feedback = () => {
                     <h2 className="text-2xl mb-2">4. Adjust the slider below: <i>I am more creative than <b><span>{sliderValue}%</span></b> of humans.</i></h2>
                     <input type="range" id="creative-slider" name="creative-slider" min="0" max="100" value={sliderValue} onChange={handleSliderChange} className="w-full"/>
                 </div>
-
+    
                 {/* New question */}
                 <div className="mb-4">
                     <h2 className="text-2xl mb-2">5. What was your strategy for coming up with ideas for the last object?</h2>
@@ -261,19 +230,14 @@ const Feedback = () => {
                         style={{ resize: "none" }} // Optional: prevents the user from resizing the textarea
                     ></textarea>
                 </div>
-
-    
-                {/* Hidden inputs for MTurk */}
-                <input type="hidden" name="assignmentId" value={mTurk.assignmentId} />
-                <input type="hidden" name="hitId" value={mTurk.hitId} />
-                <input type="hidden" name="workerId" value={mTurk.workerId} />
     
                 {/* Submit button */}
                 <input type="submit" value="SUBMIT" 
-                       className="outline outline-offset-2 outline-white text-white outline-2 rounded-md mt-4 font-bold text-2xl px-4 py-2 hover:bg-orange-500"/>
+                        className="outline outline-offset-2 outline-white text-white outline-2 rounded-md mt-4 font-bold text-2xl px-4 py-2 hover:bg-orange-500"/>
             </form>
         </div>
     );
+    
 }
 
 export default Feedback;
