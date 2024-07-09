@@ -34,6 +34,9 @@ const Feedback = () => {
                 },
             });
 
+            // Redirect to the Prolific URL
+            window.location.href = 'https://app.prolific.com/submissions/complete?cc=C13Q7C8J';
+
             if (response.status !== 200) {
                 console.log("Response not okay");
             }
@@ -43,6 +46,7 @@ const Feedback = () => {
             console.error('Error submitting data:', error);
             throw error;
         }
+        
     };
 
     const handleSubmit = async (event) => {
