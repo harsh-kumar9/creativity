@@ -5,7 +5,7 @@ import csv
 
 def fetch_rows_by_hit_id(hit_id, output_file):
     # Define your connection string (make sure to fill in your actual connection details)
-    connection_string = "host=c-prolific-db.a7hlpsupw5nhkv.postgres.cosmos.azure.com port=5432 dbname=citus user=citus password=your_password sslmode=require"
+    connection_string = "host=c-prolific-db.a7hlpsupw5nhkv.postgres.cosmos.azure.com port=5432 dbname=citus user=citus password=Wonderwall@1 sslmode=require"
     
     try:
         # Connect to your PostgreSQL database

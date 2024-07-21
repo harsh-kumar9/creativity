@@ -164,7 +164,7 @@ const Absent = () => {
         promptId += 1;
         // reset states and timer
         if (promptId === 3) {
-          setTime(120);
+          setTime(60);
         } else {
           setTime(120);
         }

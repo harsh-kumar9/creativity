@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+/data/your_output_file.csv
+/data/prolific_download.py
