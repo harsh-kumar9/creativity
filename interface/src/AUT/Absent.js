@@ -32,6 +32,8 @@ const Absent = () => {
   };
 
   useEffect(() => {
+    // log condition type
+    addData('Absent');
     // log page load time
     addData({ PageLoad: new Date().toISOString() });
   }, []);
