@@ -59,11 +59,12 @@ const Feedback = () => {
         // Data validation
         if (!(q1 === "") && !(q2 === "") && !(q3 === "") && !(q4 === null) && !(q5 === "") && !(q6 === "")) {
             // Prepare feedback responses for submission
+            q5.replace(/['"]/g, '');
+            q6.replace(/['"]/g, '');
             const feedbackData = {
                 q1, q2, q3, q4, q5, q6
             };
 
-            // Optionally, update your application state with new feedback data
             addData(feedbackData);
 
             // Construct the data object for MTurk submission

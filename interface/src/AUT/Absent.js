@@ -153,9 +153,11 @@ const Absent = () => {
         }
         ideasCount += ideas.length;
 
+        const sanitizedIdeas = ideas.map(idea => idea.name.replace(/['"]/g, ''));
+
         addData({
           Prompt: promptCopy[promptId][0],
-          Response: ideas,
+          Response: sanitizedIdeas,
         });
       }
 
@@ -170,7 +172,7 @@ const Absent = () => {
         } else {
           setTime(120);
         }
-
+        
         itemId = 0;
         setInput("");
         setIdeas([]);
