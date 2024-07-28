@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import { DataContext } from "../App";
 import { mTurkContext } from "../App";
@@ -19,6 +19,10 @@ const Feedback = () => {
     const [q4, setQ4] = useState(null);
     const [q5, setQ5] = useState("");
     const [q6, setQ6] = useState("");
+
+    useEffect(() => {
+        console.log(data)
+    }, [])
 
     const handleSliderChange = (e) => {
         const newValue = e.target.value;

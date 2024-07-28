@@ -1,5 +1,6 @@
 import pandas as pd
 import requests
+import ast
 import json
 import statistics 
 
@@ -11,11 +12,11 @@ from scipy.spatial.distance import cosine
 model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
-file_path = 'data/data_371QPA24DLEDRRL0LAYMTU3Q4Z0T1V.csv'
-df = pd.read_csv(file_path)
+file_path = 'output.csv'
+data_rows = pd.read_csv(file_path)
 
-# Filter the DataFrame to keep only the rows with the 'data' variable  
-data_rows = df[df['variable'] == 'data']  
+# # Filter the DataFrame to keep only the rows with the 'data' variable  
+# data_rows = df[df['variable'] == 'data']  
 
 # Define responses dataframe (missing originality)
 response_columns = ['assignment_id', 'hit_id', 'worker_id', 'start_time', 'condition', 'phase', 'item_order', 'item_name', 'response', 'response_order']
@@ -26,19 +27,21 @@ participants_columns = ['assignment_id', 'hit_id', 'worker_id', 'condition']
 participants_df = pd.DataFrame(columns=participants_columns)
 
 for row_id in data_rows.index:
-    hit_id = data_rows['hit_id'][row_id]
-    assignment_id = data_rows['assignment_id'][row_id]
-    worker_id = data_rows['worker_id'][row_id]
+    hit_id = data_rows['hitid'][row_id]
+    worker_id = data_rows['workerid'][row_id]
 
-    data_value = data_rows['value'][row_id]
+    data_value = data_rows['raw_json'][row_id]
 
     # Convert the provided JSON string into a Python dictionary
-    print(data_value)
-    data_dict = json.loads(data_value)
+    # print(data_value)
+    try:
+        data_dict = ast.literal_eval(data_value)
+    except (ValueError, SyntaxError) as e:
+        print(f"Error decoding JSON for row {row_id}: {e}")
+        data_dict = None
 
-    condition = data_dict['0']
-    pre_survey = data_dict['1']
-    post_survey = data_dict['feedback']
+    condition = data_dict['1']
+    assignment_id = data_dict['assignmentId']
 
     # Practice Round 1
     item_one = data_dict['3']
@@ -130,6 +133,7 @@ for row_id in data_rows.index:
             responses_df = pd.concat([responses_df, df_dictionary], ignore_index=True)
 
     # Test Round 
+    print(data_dict)
     item_four = data_dict['6']
     item_name_four = item_four['Prompt']
     responses_four = item_four['Response']
@@ -162,7 +166,7 @@ for row_id in data_rows.index:
     hide_time = data_dict['7']
 
     # Survey & Feedback Answers, Idea Diversity
-    survey_answers = data_dict['1']
+    survey_answers = data_dict['0']
     feedback_answers = data_dict['feedback']
 
     # Create embeddings for practise round responses
@@ -207,7 +211,8 @@ for row_id in data_rows.index:
             'I am more creative than \% of humans (after)': feedback_answers['q4'],
             'Hide Time': hide_time['HideTime'],
             'Page Load': page_load['PageLoad'],
-            'Technical Issues?': feedback_answers['q5']
+            'Strategy for last object': feedback_answers['q5'],
+            'Technical Issues?': feedback_answers['q6']
     }
 
     q_dictionary = pd.DataFrame([q])
