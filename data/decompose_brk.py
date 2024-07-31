@@ -48,13 +48,8 @@ for row_id in data_rows.index:
     item_name_one = item_one['Prompt']
     responses_one = item_one['Response']
 
-    start_time = 'N/A'
-    if len(responses_one) > 0:
-        start_time = responses_one[0]['time']
-
     for r in responses_one:
-        response_order = r['iid']
-        response = r['name']
+        response = r
 
         originality_one = call_llm_api(prompt=item_name_one, inputs=[response])
 
@@ -63,14 +58,12 @@ for row_id in data_rows.index:
                 'assignment_id' : assignment_id, 
                 'hit_id': hit_id,
                 'worker_id': worker_id,
-                'start_time': start_time,
                 'condition' : condition, 
                 'phase': 'Practice', 
                 'item_order': '1', 
                 'item_name': item_name_one, 
                 'response': response, 
-                'originality': originality_one,
-                'response_order': response_order
+                'originality': originality_one
             }
             
             df_dictionary = pd.DataFrame([d])
@@ -81,8 +74,7 @@ for row_id in data_rows.index:
     item_name_two = item_two['Prompt']
     responses_two = item_two['Response']
     for r in responses_two:
-        response_order = r['iid']
-        response = r['name']
+        response = r
 
         originality_two = call_llm_api(prompt=item_name_two, inputs=[response])
 
@@ -91,14 +83,12 @@ for row_id in data_rows.index:
                 'assignment_id' : assignment_id, 
                 'hit_id': hit_id,
                 'worker_id': worker_id,
-                'start_time': start_time,
                 'condition' : condition, 
                 'phase': 'Practice', 
                 'item_order': '2', 
                 'item_name': item_name_two, 
                 'response': response, 
-                'originality': originality_two,
-                'response_order': response_order
+                'originality': originality_two
             }
 
             df_dictionary = pd.DataFrame([d])
@@ -109,8 +99,7 @@ for row_id in data_rows.index:
     item_name_three = item_three['Prompt']
     responses_three = item_three['Response']
     for r in responses_three:
-        response_order = r['iid']
-        response = r['name']
+        response = r
 
         originality_three = call_llm_api(prompt=item_name_three, inputs=[response])
 
@@ -119,14 +108,12 @@ for row_id in data_rows.index:
                 'assignment_id' : assignment_id, 
                 'hit_id': hit_id,
                 'worker_id': worker_id,
-                'start_time': start_time,
                 'condition' : condition, 
                 'phase': 'Practice', 
                 'item_order': '3', 
                 'item_name': item_name_three, 
                 'response': response, 
-                'originality': originality_three,
-                'response_order': response_order
+                'originality': originality_three
             }
             
             df_dictionary = pd.DataFrame([d])
@@ -138,8 +125,7 @@ for row_id in data_rows.index:
     item_name_four = item_four['Prompt']
     responses_four = item_four['Response']
     for r in responses_four:
-        response_order = r['iid']
-        response = r['name']
+        response = r
 
         originality_four = call_llm_api(prompt=item_name_four, inputs=[response])
 
@@ -148,14 +134,12 @@ for row_id in data_rows.index:
                 'assignment_id' : assignment_id, 
                 'hit_id': hit_id,
                 'worker_id': worker_id,
-                'start_time': start_time,
                 'condition' : condition, 
                 'phase': 'Test', 
                 'item_order': '4', 
                 'item_name': item_name_four, 
                 'response': response, 
-                'originality': originality_four,
-                'response_order': response_order
+                'originality': originality_four
             }
 
             df_dictionary = pd.DataFrame([d])
@@ -172,20 +156,20 @@ for row_id in data_rows.index:
     # Create embeddings for practise round responses
     practice_embeddings = []
     for r in responses_one:
-        embedding = model.encode(r['name'])
+        embedding = model.encode(r)
         practice_embeddings.append(embedding)
     for r in responses_two:
-        embedding = model.encode(r['name'])
+        embedding = model.encode(r)
         practice_embeddings.append(embedding)
     for r in responses_three:
-        embedding = model.encode(r['name'])
+        embedding = model.encode(r)
         practice_embeddings.append(embedding)
 
     # Find maximum cosine distance for each test round response
     distances = []
     for r in responses_four:
         max_distance = 0
-        embedding = model.encode(r['name'])
+        embedding = model.encode(r)
         for p in practice_embeddings:
             distance = abs(cosine(embedding, p))
             if distance > max_distance:

@@ -153,11 +153,14 @@ const Absent = () => {
         }
         ideasCount += ideas.length;
 
-        const sanitizedIdeas = ideas.map(idea => idea.name.replace(/['"]/g, ''));
+        // remove " and ' from responses
+        ideas.forEach((idea) => {
+          idea.name.replace(/['"]/g, '')
+        })
 
         addData({
           Prompt: promptCopy[promptId][0],
-          Response: sanitizedIdeas,
+          Response: ideas,
         });
       }
 
