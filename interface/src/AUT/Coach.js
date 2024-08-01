@@ -40,7 +40,7 @@ const Coach = () => {
       console.log(randomDelay);
     }
     setDelayTime(randomDelay);
-    const conditionDetails = delayTime === 60000 ? "Coach Delay" : "Coach Immediate"
+    const conditionDetails = randomDelay === 60000 ? "Coach Delay" : "Coach Immediate"
 
     // log condition type
     addData(conditionDetails);

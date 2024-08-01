@@ -53,7 +53,7 @@ const Generate = () => {
       console.log(randomDelay);
     }
     setDelayTime(randomDelay);
-    const conditionDetails = delayTime === 60000 ? "Generate Delay" : "Generate Immediate"
+    const conditionDetails = randomDelay === 60000 ? "Generate Delay" : "Generate Immediate"
 
     // log condition type
     addData(conditionDetails);
