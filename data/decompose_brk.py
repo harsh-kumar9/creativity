@@ -204,4 +204,4 @@ for row_id in data_rows.index:
 
 
 responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
-participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
+# participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
