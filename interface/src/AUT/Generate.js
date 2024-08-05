@@ -39,24 +39,13 @@ const Generate = () => {
   const outOfFocusStart = useRef(0);
   const [outOfFocusTime, setOutOfFocusTime] = useState(0);
 
-  const [delayType, setDelayType] = useState([0, 60000]) // time in milisecond
-  const [delayTime, setDelayTime] = useState(); // time in milliseconds
-
   const { data, addData } = useContext(DataContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    // randomly determine delay type
-    const randomDelay = delayType[Math.floor(Math.random() * delayType.length)];
-    if (!(randomDelay == null)) {
-      console.log(randomDelay);
-    }
-    setDelayTime(randomDelay);
-    const conditionDetails = randomDelay === 60000 ? "Generate Delay" : "Generate Immediate"
-
     // log condition type
-    addData(conditionDetails);
+    addData('Generate');
     // log page load time
     addData({ PageLoad: new Date().toISOString() });
   }, []);
@@ -508,7 +497,7 @@ const Generate = () => {
                 typeSpeed={0.1}
                 cursorChar="⬤"
                 showCursor={true}
-                startDelay={delayTime}
+                startDelay={5000}
               />
             </div>
           </div>
