@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect, useContext } from "react";
 import { DataContext } from "../App";
 import { mTurkContext } from "../App";
-import background from "../assets/blur-background.svg";
+import background from "../assets/blur-background.png";
 
 const Thanks = () => {
 

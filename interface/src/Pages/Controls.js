@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { DataContext } from "../App";
 import { useNavigate } from 'react-router-dom';
-import background from "../assets/blur-background.svg";
+import background from "../assets/blur-background.png";
 import "./Controls.css";
 
 const Controls = () => {

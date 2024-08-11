@@ -58,7 +58,7 @@ function App() {
         {!acceptedHIT ? (
           <div>
             In this study, you will be asked to provide alternative uses for commonly found items. 
-            We estimate this task will take around 10 minutes. You must accept this HIT to continue.
+            We estimate this task will take around 10 minutes. You must accept this task to continue.
           </div>
         ) : (
           <DataContext.Provider value={{data, addData}}>

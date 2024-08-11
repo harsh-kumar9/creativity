@@ -491,3 +491,53 @@ export const gptCoach = {
     Reverse: How about reversing the purpose of the backpack? Instead of using it to carry items, it could be turned into a portable, mini cupboard or storage unit when hung up, perfect for camping trips or dorm rooms.  
     `
 }
+
+export const tireCoach = [
+    "What can you replace on the tire to improve it or give it a new use?",
+    "How can you combine the tire with other items or ideas to create something new?",
+    "How can the tire be adapted or modified to serve another purpose?",
+    "How can altering the shape, size, or color of the tire create new uses or improvements?",
+    "What completely different uses can you brainstorm for the tire, beyond its original purpose?",
+    "What might happen if parts of the tire were removed or simplified? How does this change its potential uses?",
+    "What would happen if you reversed the tire's purpose or use? Would it function differently or serve a new role?"
+];
+
+export const pantsCoach = [
+    "What could you replace the fabric or parts of the pants with to create something new?",
+    "How can you combine pants with another item to make a unique product?",
+    "How could you modify pants to serve a completely different purpose?",
+    "What happens if you change the shape, size, or color of the pants?",
+    "What entirely different function could pants serve?",
+    "What if you remove certain parts of the pants? How does this change their use?",
+    "What if you reverse the way pants are used or worn? What new function could they serve?"
+];
+
+export const shoeCoach = [
+    "What parts of the shoe could be replaced to improve it or give it a new use?",
+    "How can you combine the shoe with other items to create something new?",
+    "How could the shoe be adapted to serve a different purpose?",
+    "What happens if you change the shoe's shape, size, or color?",
+    "Can the shoe be used for something entirely different from its original purpose?",
+    "What if you remove or simplify parts of the shoe? How does it change?",
+    "What if you reverse the shoe's purpose or use? How would it function?"
+];
+
+export const tableCoach = [
+    "What parts of the table can be replaced to improve it?",
+    "How can you combine the table with other objects to create something new?",
+    "How can the table be adapted for a different purpose?",
+    "What happens if you change the table's shape, size, or color?",
+    "Can the table be used for something entirely different?",
+    "What if you remove or simplify parts of the table?",
+    "What if you reverse the table's purpose or use?"
+];
+
+export const bottleCoach = [
+    "What parts of the bottle can be replaced to improve or change its use?",
+    "How can the bottle be combined with other items to create something new?",
+    "How can the bottle be adapted to serve a different purpose?",
+    "What happens if you change the bottle's shape, size, or color?",
+    "What completely different uses can the bottle have?",
+    "What if you remove or simplify parts of the bottle?",
+    "What if you reverse the bottle's purpose or use?"
+];

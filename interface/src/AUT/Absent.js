@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 import { DataContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import { prompts, promptsArray } from "./Prompts";
-import background from "../assets/blur-background.svg";
+import background from "../assets/blur-background.png";
 import Game from "../Game/Game";
 
 let nextId = 0;

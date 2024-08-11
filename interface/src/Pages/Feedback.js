@@ -4,7 +4,7 @@ import { DataContext } from "../App";
 import { mTurkContext } from "../App";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import background from "../assets/blur-background.svg";
+import background from "../assets/blur-background.png";
 
 const Feedback = () => {
     const navigate = useNavigate();
@@ -107,7 +107,7 @@ const Feedback = () => {
             <form className="flex flex-col text-center h-full w-full items-center justify-center outline outline-2 outline-white rounded-[60px] py-10 px-10 bg-slate-500"
                 style={{ backgroundColor: 'rgba(64, 64, 64, 0.17)' }}
                 onSubmit={handleSubmit}>
-                <h2 className="text-3xl mb-8">Please answer the following questions. You must complete these and click submit below to complete the HIT and get paid.</h2>
+                <h2 className="text-3xl mb-8">Please answer the following questions. You must complete these and click submit below to complete the task and get paid.</h2>
     
                 {/* Question 1 */}
                 <div className="text-2xl flex flex-col mb-4">
@@ -173,7 +173,7 @@ const Feedback = () => {
     
                 {/* Question 3 */}
                 <div className="text-2xl flex flex-col mb-4">
-                    <h2>3. How many objects in total did you encounter in this HIT?</h2>
+                    <h2>3. How many objects in total did you encounter in this task?</h2>
                     {/* Options for Question 3 */}
                     <label>
                         <input 
@@ -230,7 +230,7 @@ const Feedback = () => {
     
                 {/* Technical issues question */}
                 <div className="mb-4">
-                    <h2 className="text-2xl mb-2">6. Did you have any technical issues during the HIT?</h2>
+                    <h2 className="text-2xl mb-2">6. Did you have any technical issues during the task?</h2>
                     <textarea 
                         name="q6" 
                         value={q6} 

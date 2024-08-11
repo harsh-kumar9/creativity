@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import background from "../assets/blur-background.svg";
+import background from "../assets/blur-background.png";
 import './Captcha.css';
 
 

@@ -4,8 +4,8 @@ import { DataContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import ReactTyped from "react-typed";
 import { promptsArray } from "./Prompts";
-import { gptCoach } from "./Aid";
-import background from "../assets/blur-background.svg";
+import { tireCoach, pantsCoach, shoeCoach, tableCoach, bottleCoach } from "./Aid";
+import background from "../assets/blur-background.png";
 import Game from "../Game/Game";
 
 let nextId = 0;
@@ -22,6 +22,20 @@ const Coach = () => {
 
   const [promptCopy, setPromptCopy] = useState([...promptsArray]);
   const [shuffled, setShuffled] = useState(false);
+
+  const [copiedTireCoach, setCopiedTireCoach] = useState([...tireCoach]);
+  const [copiedPantsCoach, setCopiedPantsCoach] = useState([...pantsCoach]);
+  const [copiedShoeCoach, setCopiedShoeCoach] = useState([...shoeCoach]);
+  const [copiedTableCoach, setCopiedTableCoach] = useState([...tableCoach]);
+  const [copiedBottleCoach, setCopiedBottleCoach] = useState([...bottleCoach]);
+  const [newGptCoach, setNewGptCoach] = useState({
+      "Tire": "",
+      "Pants": "",
+      "Shoe": "",
+      "Table": "",
+      "Bottle": ""
+  });
+
 
   const outOfFocusStart = useRef(0);
   const [outOfFocusTime, setOutOfFocusTime] = useState(0);
@@ -90,7 +104,28 @@ const Coach = () => {
       ];
     });
     setShuffled(true);
+
+    // Set the randomized coach list in the state during component mount or refresh
+    setCopiedTireCoach(shuffleArray([...tireCoach]).slice(0, 7));
+    setCopiedPantsCoach(shuffleArray([...pantsCoach]).slice(0, 7));
+    setCopiedShoeCoach(shuffleArray([...shoeCoach]).slice(0, 7));
+    setCopiedTableCoach(shuffleArray([...tableCoach]).slice(0, 7));
+    setCopiedBottleCoach(shuffleArray([...bottleCoach]).slice(0, 7));
+
   }, []);
+
+  useEffect(() => {
+    setNewGptCoach({
+        "Tire": copiedTireCoach.join("\n\n"),
+        "Pants": copiedPantsCoach.join("\n\n"),
+        "Shoe": copiedShoeCoach.join("\n\n"),
+        "Table": copiedTableCoach.join("\n\n"),
+        "Bottle": copiedBottleCoach.join("\n\n")
+    });
+
+    console.log(newGptCoach);
+
+}, [copiedTireCoach, copiedPantsCoach, copiedShoeCoach, copiedTableCoach, copiedBottleCoach]);
 
   const handleSubmit = (e) => {
     // e is short for event
@@ -449,12 +484,12 @@ const Coach = () => {
             </h2>
             <div
               onCopy={preventDefaultAction}
-              className="text-white select-none h-5/6 text-sm w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"
+              className="text-white select-none h-5/6 text-base w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"
               style={{ backgroundColor: "rgba(71, 85, 105, 0.18)" }}
             >
               <ReactTyped
-                key={gptCoach[promptCopy[promptId][0]]}
-                strings={[gptCoach[promptCopy[promptId][0]]]}
+                key={newGptCoach[promptCopy[promptId][0]]}
+                strings={[newGptCoach[promptCopy[promptId][0]]]}
                 typeSpeed={0.1}
                 cursorChar="⬤"
                 showCursor={true}

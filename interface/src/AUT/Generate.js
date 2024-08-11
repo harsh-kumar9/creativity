@@ -4,8 +4,8 @@ import { DataContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import ReactTyped from "react-typed";
 import { promptsArray } from "./Prompts";
-import { gptAid, tireAid, pantsAid, shoeAid, tableAid, bottleAid } from "./Aid";
-import background from "../assets/blur-background.svg";
+import { tireAid, pantsAid, shoeAid, tableAid, bottleAid } from "./Aid";
+import background from "../assets/blur-background.png";
 import Game from "../Game/Game";
 
 let nextId = 0;
@@ -111,7 +111,6 @@ const Generate = () => {
     setCopiedShoeAid(shuffleArray([...shoeAid]).slice(0, 7));
     setCopiedTableAid(shuffleArray([...tableAid]).slice(0, 7));
     setCopiedBottleAid(shuffleArray([...bottleAid]).slice(0, 7));
-
   
   }, []);
 
@@ -195,6 +194,10 @@ const Generate = () => {
           Prompt: promptCopy[promptId][0],
           Response: ideas,
         });
+
+        addData({
+          Aid : newGptAid[promptCopy[promptId][0]]
+        })
       }
 
       if (promptId === 4) {
@@ -488,7 +491,7 @@ const Generate = () => {
                     </text> */}
             <div
               onCopy={preventDefaultAction}
-              className="text-white select-none h-5/6 text-sm w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"
+              className="text-white select-none h-5/6 text-base w-full bg-orange-600 rounded-b-[20px] rounded-lg mt-4 p-2 whitespace-pre-line overflow-auto"
               style={{ backgroundColor: "rgba(71, 85, 105, 0.18)" }}
             >
               <ReactTyped
