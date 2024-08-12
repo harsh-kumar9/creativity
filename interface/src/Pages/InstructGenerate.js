@@ -113,9 +113,11 @@ const InstructGenerate = () => {
                     </label>
             </div>
 
-            <p className='text-2xl mb-8'><p className='text-red-700 font-bold'>Important: Please do not take screenshots, copy any text, or consult external tools (e.g., ChatGPT).</p>We're just interested in your best effort and what you learn.
+            <p className='text-2xl mb-4'><p className='text-red-700 font-bold'>Important: Please do not take screenshots, copy any text, or consult external tools (e.g., ChatGPT).</p>We're just interested in your best effort and what you learn.
             The experiment will be ruined if you take screenshots or use external tools to do this task. So please do not do so! In fact, you have no reason to do so because you are not paid based on performance.
             </p>
+
+            <p className='text-2xl text-red-700 font-bold mb-8'>Please do not refresh the page. Refreshing the page will lose any progress you have made and you may not receive any compensation</p>
 
             <div><img src={cheat} alt="No screenshots or external tools allowed" style={{maxWidth: "40%", height: "auto", display: "block", margin: "0px auto"}}/></div>
             
