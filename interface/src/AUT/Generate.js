@@ -193,11 +193,8 @@ const Generate = () => {
         addData({
           Prompt: promptCopy[promptId][0],
           Response: ideas,
-        });
-
-        addData({
           Aid : newGptAid[promptCopy[promptId][0]]
-        })
+        });
       }
 
       if (promptId === 4) {
