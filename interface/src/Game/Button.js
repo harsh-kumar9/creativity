@@ -9,7 +9,12 @@ const Button = ({ onUp, onDown, onLeft, onRight }) => {
       </div>
       <div className="sideways">
         <input className="left" onClick={onLeft} type="button" value="LEFT" />
-        <input className="right" onClick={onRight} type="button" value="RIGHT" />
+        <input
+          className="right"
+          onClick={onRight}
+          type="button"
+          value="RIGHT"
+        />
       </div>
       <div className="downwards">
         <input className="down" onClick={onDown} type="button" value="DOWN" />
@@ -17,5 +22,4 @@ const Button = ({ onUp, onDown, onLeft, onRight }) => {
     </div>
   );
 };
-
 export default Button;
