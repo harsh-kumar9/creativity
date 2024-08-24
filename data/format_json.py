@@ -23,8 +23,8 @@ def process_csv(input_csv, output_csv):
             writer.writerow(row)
 
 # Example usage
-input_csv = 'results.csv'
-output_csv = 'data_668c95d8d24fe59d1423604a.csv'
+input_csv = 'your_output_file.csv'
+output_csv = 'data_66c51ff206a3b2ebed449186.csv'
 process_csv(input_csv, output_csv)
 
 

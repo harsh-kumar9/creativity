@@ -12,8 +12,8 @@ from scipy.spatial.distance import cosine
 model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
-file_path = 'data_668c95d8d24fe59d1423604a.csv'
-data_rows = pd.read_csv(file_path)
+file_path = 'your_output_file.csv'
+data_rows = pd.read_csv(file_path, encoding='ISO-8859-1')
 
 # # Filter the DataFrame to keep only the rows with the 'data' variable  
 # data_rows = df[df['variable'] == 'data']  
