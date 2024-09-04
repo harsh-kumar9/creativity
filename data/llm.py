@@ -100,6 +100,5 @@ for row_id in data_rows.index:
 
                 df_dictionary = pd.DataFrame([d])
                 llm_df = pd.concat([llm_df, df_dictionary], ignore_index=True)
-
     
 llm_df.to_csv("llm_{}.csv".format(hit_id), index=False)
