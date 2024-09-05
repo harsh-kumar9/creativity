@@ -69,7 +69,7 @@ for row_id in data_rows.index:
                     'assignment_id' : assignment_id, 
                     'hit_id': hit_id,
                     'worker_id': worker_id,
-                    'item_order': '1',
+                    'item_order': '2',
                     'item_name': item_name_two, 
                     'llm_idea': str(idea),
                     'originality': originality
@@ -92,7 +92,7 @@ for row_id in data_rows.index:
                     'assignment_id' : assignment_id, 
                     'hit_id': hit_id,
                     'worker_id': worker_id,
-                    'item_order': '1',
+                    'item_order': '3',
                     'item_name': item_name_three, 
                     'llm_idea': str(idea),
                     'originality': originality
