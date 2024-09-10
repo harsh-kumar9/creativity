@@ -12,7 +12,7 @@ from scipy.spatial.distance import cosine
 model = SentenceTransformer('sentence-transformers/bert-base-nli-max-tokens')
 
 # Load the CSV file
-file_path = 'your_output_file.csv'
+file_path = 'p1.csv'
 data_rows = pd.read_csv(file_path, encoding='ISO-8859-1')
 
 # # Filter the DataFrame to keep only the rows with the 'data' variable  
@@ -219,5 +219,8 @@ for row_id in data_rows.index:
     participants_df = pd.concat([participants_df, q_dictionary], ignore_index=True)
 
 
-responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
-participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
+# responses_df.to_csv("responses_{}.csv".format(hit_id), index=False)
+# participants_df.to_csv("participants_{}.csv".format(hit_id), index=False)
+
+responses_df.to_csv("responses_p.csv".format(hit_id), index=False)
+participants_df.to_csv("participants_p.csv".format(hit_id), index=False)
