@@ -5813,7 +5813,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Practice,3,Pants,gloves,2,3.5
 66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Practice,3,Pants,blanket,3,2.8
 66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Practice,3,Pants,rug,4,2.8
-66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Practice,3,Pants,table runner,5,{'error': 'API call failed with status code 504'}
+66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Practice,3,Pants,table runner,5,3.0
 66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Practice,3,Pants,mop,6,3.5
 66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Test,4,Bottle,vase,0,2.0
 66ddb05559c979f8136f4fb7,66dd0f5d2d96edbedcf4a80b,65c1152df8bf47156aa05a9d,2024-09-08T14:13:10.299Z,Coach,Test,4,Bottle,decor,1,2.5
@@ -6431,7 +6431,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,2,Table,remove feet and add rollerblades make intoa vehicle,5,4.0
 66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,use as a plate,0,3.0
 66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,use as a mixer,1,4.0
-66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,make into a table by adding legs,2,{'error': 'API call failed with status code 504'}
+66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,make into a table by adding legs,2,3.0
 66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,remove alloys and make into a mirror by inserting into middle,3,3.5
 66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,add another wheel make into a bike whith large wheels,4,2.0
 66ddb0c46c9f6afc38392f08,66dd0f5d2d96edbedcf4a80b,668173a56ae4ada528986b1d,2024-09-08T14:16:20.985Z,Coach,Practice,3,Tire,use as weights,5,2.5
@@ -6718,7 +6718,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Practice,3,Pants,"Attach the waist band around your head, to wear as a hat. Looks like two long ears dangling. Or stuff the legs so the ears have more form.",0,3.0
 66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Practice,3,Pants,Put your arms in the legs to wear as a type of jacket,1,3.2
 66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Test,4,Bottle,Use as a vase,0,2.0
-66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Test,4,Bottle,Use as a musical instrument by blowing into the top,1,{'error': 'API call failed with status code 504'}
+66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Test,4,Bottle,Use as a musical instrument by blowing into the top,1,3.2
 66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Test,4,Bottle,make a wall with them if you have lots,2,2.7
 66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Test,4,Bottle,fill with coloured water to make a stained glass thing,3,3.0
 66ddb14447e6b71129247585,66dd0f5d2d96edbedcf4a80b,5598528afdf99b38e56c8c0d,2024-09-08T14:16:47.858Z,Coach,Test,4,Bottle,paint it so it is pretty,4,2.2
@@ -7233,7 +7233,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb0e9afe6ccb762d9bc92,66dd0f5d2d96edbedcf4a80b,5778eeb20e49300001ba9ec0,2024-09-08T14:17:03.183Z,Absent,Test,4,Tire,raised border,1,2.0
 66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,1,Table,plant display,0,2.0
 66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,1,Table,dancing table,2,3.8
-66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,1,Table,model railway,3,{'error': 'API call failed with status code 504'}
+66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,1,Table,model railway,3,3.0
 66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,2,Tire,plant holder,0,2.5
 66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,2,Tire,swing,1,2.8
 66ddb1ad68878d4b9ee12c06,66dd0f5d2d96edbedcf4a80b,63cf05631552a8d1b2348bd6,2024-09-08T14:19:47.872Z,Generate,Practice,2,Tire,stack up and use as a table,2,3.0
@@ -7625,7 +7625,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,1,Table,puzzle table,5,3.2
 66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,clothing for pets,0,2.5
 66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,pet bed,1,3.0
-66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,stuff with foam and use as a pillow,2,{'error': 'API call failed with status code 504'}
+66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,stuff with foam and use as a pillow,2,3.2
 66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,seat cover,3,2.5
 66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,blanket,4,2.8
 66ddb15180a15cab924d2b3c,66dd0f5d2d96edbedcf4a80b,5bd86f63eb7da20001b4334a,2024-09-08T14:16:06.369Z,Generate,Practice,2,Pants,holder for food,5,2.5
@@ -7683,16 +7683,16 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,1,Shoe,Snail hut,7,4.0
 66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,1,Shoe,Container,8,2.8
 66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Flag,0,3.0
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Storage (pockets),1,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Bedding for an animal,2,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Fastenings - buttons etc,3,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Bunting,4,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Sleeping bag for two ferrets,5,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Grow bag for plants,6,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Decoration - could be hung from the hooks / D rings,7,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Picnic blanket,8,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Umbrella / Parasol / Shade from weather,9,{'error': 'API call failed with status code 504'}
-66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,3,Table,Diving platform,0,{'error': 'API call failed with status code 504'}
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Storage (pockets),1,2.0
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Bedding for an animal,2,3.0
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Fastenings - buttons etc,3,2.0
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Bunting,4,3.5
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Sleeping bag for two ferrets,5,4.0
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Grow bag for plants,6,3.0
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Decoration - could be hung from the hooks / D rings,7,2.5
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Picnic blanket,8,2.5
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,2,Pants,Umbrella / Parasol / Shade from weather,9,3.0
+66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,3,Table,Diving platform,0,3.0
 66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,3,Table,Gymnast horse / bars,1,3.7
 66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,3,Table,Hiding from bombs,2,4.0
 66ddb1eff0186cccb3d007e8,66dd0f5d2d96edbedcf4a80b,604423288e681f4949e19e9b,2024-09-08T14:19:07.063Z,Coach,Practice,3,Table,Transformed into a fort for animals / children,3,3.5
@@ -7820,7 +7820,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Practice,3,Tire,art,4,3.0
 66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Practice,3,Tire,flower pot,5,3.0
 66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Practice,3,Tire,bird feeder,6,3.2
-66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Test,4,Pants,scarcrow,0,{'error': 'API call failed with status code 504'}
+66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Test,4,Pants,scarcrow,0,3.0
 66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Test,4,Pants,bag,1,2.5
 66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Test,4,Pants,rope,2,3.0
 66ddb1cc8d2785fc13350b1c,66dd0f5d2d96edbedcf4a80b,66b282b2db6796f22a0711c5,2024-09-08T14:19:31.976Z,Generate,Test,4,Pants,dog toy,3,3.0
@@ -8274,13 +8274,13 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,2,Pants,to make one look fine,5,2.0
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,2,Pants,to make one happy ,6,3.0
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,to make vehicles move,0,2.0
-66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,to enhance the beauty of a car or machine ,1,{'error': 'API call failed with status code 504'}
+66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,to enhance the beauty of a car or machine ,1,2.0
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,to make the machine stand,2,2.5
-66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,for play in the park,3,{'error': 'API call failed with status code 504'}
-66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,fo build bridges,4,{'error': 'API call failed with status code 504'}
-66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,use as a cover to plant crops ,5,{'error': 'API call failed with status code 504'}
-66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,to store drinks ,0,{'error': 'API call failed with status code 504'}
-66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,to protect food from germs,1,{'error': 'API call failed with status code 504'}
+66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,for play in the park,3,2.0
+66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,fo build bridges,4,3.0
+66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Practice,3,Tire,use as a cover to plant crops ,5,3.5
+66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,to store drinks ,0,3.2
+66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,to protect food from germs,1,3.5
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,for drinking ,2,1.0
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,to give enhanced appearance to different things ,3,3.0
 66ddb18386bc76954afad47e,66dd0f5d2d96edbedcf4a80b,66dc56c4d7ddbc5fea77fb17,2024-09-08T14:20:22.832Z,Absent,Test,4,Bottle,to serve drinks better ,4,1.0
@@ -8392,7 +8392,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,1,Tire,Light: attach candles around the edge of the tire and suspend it from the ceiling,1,4.0
 66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,2,Shoe,Planter: fill it with soil and put a plant in it,0,3.0
 66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,2,Shoe,pattern make: cover the base with paint and use it to print walking patterns onto wallpaper,1,3.5
-66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,2,Shoe,Scarecrow component: Use old shoes as part of a scarecrow's outfit in your garden,2,{'error': 'API call failed with status code 504'}
+66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,2,Shoe,Scarecrow component: Use old shoes as part of a scarecrow's outfit in your garden,2,3.5
 66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,3,Bottle,Message in a bottle: Use a bottle to send a heartfelt message or a time capsule. Seal it well and either bury it or keep it as a keepsake.,0,3.2
 66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Practice,3,Bottle,Vase: use it as a vase for long stemmed flowers,1,2.0
 66ddb24559c979f8136f5026,66dd0f5d2d96edbedcf4a80b,65a6c929fb738432b886785c,2024-09-08T14:21:49.482Z,Generate,Test,4,Pants,Bling the uo: cut coloured shapes and patterns out of other fabrics and add them to the trousers to make them more interesting.,0,2.7
@@ -8835,7 +8835,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb2a1d574d40bb9ba0b4f,66dd0f5d2d96edbedcf4a80b,66921484ddb4167a6a923c12,2024-09-08T14:24:31.767Z,Generate,Test,4,Tire,Use it in sailing to tie to the quayside ,4,3.5
 66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,1,Pants,arm sleeves,0,3.0
 66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,1,Pants,turban,1,3.5
-66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,1,Pants,laptop bag,2,{'error': 'API call failed with status code 504'}
+66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,1,Pants,laptop bag,2,2.5
 66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,2,Shoe,comical fake phone ,0,3.0
 66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,2,Shoe,ear warmer,1,3.0
 66ddb246e36b03ad5b27e7f8,66dd0f5d2d96edbedcf4a80b,605e9cc770aa6d1947d02bfa,2024-09-08T14:22:30.115Z,Generate,Practice,2,Shoe,drink bottle,2,4.0
@@ -9046,7 +9046,7 @@ assignment_id,hit_id,worker_id,start_time,condition,phase,item_order,item_name,r
 66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,2,Pants,A cloth,6,2.0
 66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,2,Pants,a towel for a mouse,7,3.8
 66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,2,Pants,a blanket for a cat,8,3.2
-66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,3,Shoe,a battering ram,0,{'error': 'API call failed with status code 504'}
+66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,3,Shoe,a battering ram,0,4.0
 66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,3,Shoe,door stop,1,2.8
 66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,3,Shoe,kiling a bug,2,2.0
 66ddb3c2e22799406bb659c9,66dd0f5d2d96edbedcf4a80b,5a690038b9e3b50001a76235,2024-09-08T14:28:32.190Z,Coach,Practice,3,Shoe,a container for a drink,3,3.0

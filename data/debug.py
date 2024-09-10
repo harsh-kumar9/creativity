@@ -37,5 +37,5 @@ def test_llm_api(prompt, inputs):
         # Return an error message if the call failed
         return {"error": "API call failed with status code {}".format(response.status_code)}
 
-originality = test_llm_api(prompt="pants", inputs=['makeshift flag'])
+originality = test_llm_api(prompt="Shoe", inputs=['a battering ram'])
 print(originality)
